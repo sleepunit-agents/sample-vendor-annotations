@@ -201,19 +201,94 @@ family  = "strings"
 aliases = ["guitar", "guitars", "acoustic guitar", "electric guitar", "gtr"]
 
 [[instrument]]
+id      = "violin"
+family  = "strings"
+aliases = ["violin", "violins", "fiddle", "fiddles"]
+
+# viola after violin: both whole-word, no overlap, but keep the section
+# ordered piece-before-family like drums.
+[[instrument]]
+id      = "viola"
+family  = "strings"
+aliases = ["viola", "violas"]
+
+[[instrument]]
+id      = "cello"
+family  = "strings"
+aliases = ["cello", "cellos"]
+
+[[instrument]]
+id      = "harp"
+family  = "strings"
+aliases = ["harp", "harps"]
+avoid   = ["blues harp", "mouth harp", "jaw harp", "jews harp"]   # those are harmonicas
+
+[[instrument]]
 id      = "strings"
 family  = "strings"
-aliases = ["string", "strings", "violin", "viola", "cello", "orchestra", "orchestral", "harp"]
+aliases = ["string", "strings", "orchestra", "orchestral"]
 
+[[instrument]]
+id      = "trumpet"
+family  = "brass"
+aliases = ["trumpet", "trumpets"]
+
+[[instrument]]
+id      = "trombone"
+family  = "brass"
+aliases = ["trombone", "trombones"]
+
+# sax files with brass, not woodwind: vendors put it in the horn section
+# ("Brass & Sax", "Horns") and that grammar is what this file transcribes.
+[[instrument]]
+id      = "sax"
+family  = "brass"
+aliases = ["sax", "saxes", "saxophone", "saxophones"]
+avoid   = ["brass sax", "sax brass"]   # "Brass & Sax" section folders are the whole section
+
+[[instrument]]
+id      = "tuba"
+family  = "brass"
+aliases = ["tuba", "tubas", "sousaphone"]
+
+# "horn"/"horns" stays in the catch-all: a vendor's "Horns" folder is
+# usually the whole section, not french horns.
 [[instrument]]
 id      = "brass"
 family  = "brass"
-aliases = ["brass", "horn", "horns", "trumpet", "trombone", "sax", "saxophone", "tuba"]
+aliases = ["brass", "horn", "horns"]
+avoid   = ["english horn"]   # that one is the oboe entry, listed below
+
+[[instrument]]
+id      = "flute"
+family  = "woodwind"
+aliases = ["flute", "flutes", "piccolo", "pan pipes", "panpipes"]
+
+[[instrument]]
+id      = "clarinet"
+family  = "woodwind"
+aliases = ["clarinet", "clarinets"]
+
+[[instrument]]
+id      = "oboe"
+family  = "woodwind"
+aliases = ["oboe", "oboes", "cor anglais", "english horn"]
+
+[[instrument]]
+id      = "bassoon"
+family  = "woodwind"
+aliases = ["bassoon", "bassoons"]
+
+[[instrument]]
+id      = "recorder"
+family  = "woodwind"
+aliases = ["recorder", "recorders"]
+avoid   = ["tape recorder", "field recorder", "voice recorder"]
 
 [[instrument]]
 id      = "woodwind"
 family  = "woodwind"
-aliases = ["flute", "flutes", "clarinet", "oboe", "bassoon", "recorder", "woodwind"]
+aliases = ["woodwind", "woodwinds"]
 
 # ---- voice --------------------------------------------------------------
 
