@@ -31,11 +31,9 @@ sidecar_extensions = [".pti", ".pdf"]   # Tracker instruments; the licensing agr
 
 [[category]]
 id    = "one-shots"
-match = ["* 24 bit stereo", "* 16 bit stereo", "* 16 bit mono", "Downlifter", "FX", "Impact", "Riser", "Transitions", "bass", "clap and snare", "hats", "kicks and rumble", "percussion", "synths"]
-
-[[category]]
-id    = "kits"
-match = ["*Step Kits*", "Tracker PTI kits"]
+match = ["* 24 bit stereo", "* 16 bit stereo", "* 16 bit mono", "Downlifter", "FX", "Impact", "Riser", "Transitions", "bass", "clap and snare", "hats", "kicks and rumble", "percussion", "synths", "*Step Kits*", "Tracker PTI kits"]
+# the Step Kits / PTI dirs are device kit presets sliced from the same
+# one-shots — kits are one-shots (separate id retired 2026-08-30)
 
 [naming]
 # Files are <category>_<name>[_<n>].wav ("kit_bearings_1.wav",

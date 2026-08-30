@@ -46,14 +46,11 @@ sidecar_extensions = [
 
 [[category]]
 id    = "one-shots"
-match = ["*Individual Hits*", "*One Shots*", "*One Hits*"]
+match = ["*Individual Hits*", "*One Shots*", "*One Hits*", "*Kits*"]
 # observed: "01. Individual Hits" (31572 files), "Individual Hits" (7834),
-# "1. Individual Hits" (707), "01. One Shots" (1690), "01. One Hits" (832)
-
-[[category]]
-id    = "kits"
-match = ["*Kits*"]
-# observed: "02. Kits" (5242), "Kits" (744)
+# "1. Individual Hits" (707), "01. One Shots" (1690), "01. One Hits" (832),
+# "02. Kits" (5242), "Kits" (744) — kits are one-shots (vocabulary
+# retired the separate id, 2026-08-30)
 
 [[category]]
 id              = "loops"
@@ -69,7 +66,10 @@ id    = "multisamples"
 match = ["*Instrument Samples*", "*Basic Waveforms*"]
 # Synth packs also spread multisamples across instrument-named dirs
 # ("Leads", "Bass", "Keys and Pads", "05. Synth") with no marker token —
-# category matching alone can't claim those; pack-level annotation would.
+# category matching alone can't claim those. The consumer's structural
+# fallback does: a dir of chromatic note-suffixed siblings
+# ("0_Patch_SH101_C-2-…", "1_Patch_SH101_C#-2-…") reads as multisamples
+# when no label anywhere said otherwise.
 
 [[category]]
 id    = "fx"

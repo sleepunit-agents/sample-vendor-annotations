@@ -18,8 +18,10 @@
 # Entries are tried in file order per segment: specific beats generic.
 # `avoid` lists phrases that contain an alias but mean something else.
 #
-# Vocabulary matches SCHEMA [[category]]: one-shots, loops, kits,
-# multisamples, fx. Extend it in a PR when a vendor genuinely doesn't fit.
+# Vocabulary matches SCHEMA [[category]]: one-shots, loops, multisamples,
+# fx. Extend it in a PR when a vendor genuinely doesn't fit. "Kit" words
+# are one-shots aliases: a kit is a folder of one-shots, and splitting it
+# out just made two piles of the same thing (retired 2026-08-30).
 
 [[category]]
 id      = "loops"
@@ -39,13 +41,12 @@ aliases = [
   "single shot", "single shots", "shot", "shots",
   "individual hits", "one hits", "single hits", "hit", "hits",
   "stab", "stabs",
+  "kit", "kits", "drum kit", "drum kits", "sample kit", "sample kits",
 ]
 # observed: "01. Individual Hits", "One Shots", "Drum Hits",
-# "Snare Hit 03.wav", "Rim Shots"
-
-[[category]]
-id      = "kits"
-aliases = ["kit", "kits", "drum kit", "drum kits", "sample kit", "sample kits"]
+# "Snare Hit 03.wav", "Rim Shots"; kit words are slang for the same
+# thing ("808 Kit 1" is a folder of hits) — "Construction Kits" still
+# reads as loops because that entry sits above this one
 
 [[category]]
 id      = "fx"

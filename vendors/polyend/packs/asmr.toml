@@ -58,5 +58,5 @@ category = "one-shots"
 [[dir]]
 path = "ASMR Step Kits 16 bit mono"
 role = "format-tree"
-category = "kits"
+category = "one-shots"
 desc = "device kit presets built from the pack's one-shots"

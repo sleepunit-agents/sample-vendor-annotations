@@ -59,8 +59,11 @@ id    = "loops"
 match = ["*loop*", "songstarters", "*song_starter*", "*construction*"]
 
 [[category]]
-id    = "kits"
+id    = "one-shots"
 match = ["*kit*"]
+# kits are one-shots; kept as its own entry (not merged below) so
+# "*kit*" keeps its place in the order — drumkit folders must win
+# before the fx globs run
 
 [[category]]
 id    = "fx"
