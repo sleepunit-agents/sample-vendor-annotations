@@ -28,6 +28,49 @@
 # Observed against Samples From Mars (83 packs), Splice (220), Polyend (23),
 # Zero-G, Blu Mar Ten, Rhythm Lab, Elektron factory content, 2026-08-17.
 
+# ---- transition / sfx material: listed first on purpose ----------------
+# FX-ness beats instrument-ness: a "Flute Riser" is a riser someone made
+# with a flute, and a producer browsing flutes doesn't want it — it
+# belongs with the other risers. These words are near-unambiguous FX
+# labels, so they outrank every instrument below. The generic fx/effect
+# catch-all stays at the BOTTOM of this file so "Noise Bass" still reads
+# as bass.
+
+[[instrument]]
+id      = "riser"
+family  = "fx"
+aliases = ["riser", "risers", "uplifter", "uplifters"]
+
+[[instrument]]
+id      = "downlifter"
+family  = "fx"
+aliases = ["downlifter", "downlifters"]
+
+[[instrument]]
+id      = "impact"
+family  = "fx"
+aliases = ["impact", "impacts"]
+
+[[instrument]]
+id      = "sweep"
+family  = "fx"
+aliases = ["sweep", "sweeps", "whoosh", "whooshes"]
+
+[[instrument]]
+id      = "transition"
+family  = "fx"
+aliases = ["transition", "transitions", "spinback", "spinbacks"]
+
+[[instrument]]
+id      = "siren"
+family  = "fx"
+aliases = ["siren", "sirens"]
+
+[[instrument]]
+id      = "foley"
+family  = "fx"
+aliases = ["foley", "field recording", "field recordings", "found sound", "found sounds", "asmr"]
+
 # ---- drums: pieces first, families later -------------------------------
 
 [[instrument]]
@@ -298,18 +341,13 @@ family  = "vocal"
 aliases = ["vocal", "vocals", "vox", "voice", "voices", "acapella", "a capella", "spoken", "choir", "choirs", "chant", "chants", "adlib", "adlibs"]
 
 # ---- non-instrumental material -----------------------------------------
+# The generic fx catch-all. Specific FX types (riser, impact, sweep, …)
+# live at the TOP of this file — see the note there. This entry stays
+# last so ambiguous words ("noise", "reverse") only win when nothing
+# more specific spoke.
 
 [[instrument]]
 id      = "fx"
 family  = "fx"
-aliases = [
-  "fx", "sfx", "effect", "effects", "riser", "risers", "downlifter", "downlifters",
-  "uplifter", "impact", "impacts", "sweep", "sweeps", "transition", "transitions",
-  "whoosh", "spinback", "siren", "sirens", "reverse", "noise",
-]
-
-[[instrument]]
-id      = "foley"
-family  = "fx"
-aliases = ["foley", "field recording", "field recordings", "found sound", "found sounds", "asmr"]
+aliases = ["fx", "sfx", "effect", "effects", "reverse", "noise"]
 
