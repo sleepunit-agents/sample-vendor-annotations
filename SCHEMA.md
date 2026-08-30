@@ -368,6 +368,14 @@ apply — pack maps override, they don't replace.
 `docs` (manuals, artwork). `category`/`tags` describe musical content and
 usually live under the canonical tree.
 
+`instrument` pins every file under the entry to one id from the shared
+instrument lexicon (`instruments.toml`), overriding whatever the filenames
+appear to say — same deepest-match rule as `category`. Use it when names
+carry no honest instrument signal: jungle breaks named after their sources
+("Sub-Urban", "Clint Eastwood") read as anything but drums, and no lexicon
+can fix that. Pin only dirs whose content is genuinely uniform; where
+filenames do describe the sound, leave the lexicon to read them.
+
 ```toml
 [[dir]]
 path = "WAV"

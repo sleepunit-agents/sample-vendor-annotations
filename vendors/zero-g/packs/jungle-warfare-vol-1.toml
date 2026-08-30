@@ -57,6 +57,7 @@ manifest    = "manifests/jungle-warfare-vol-1.sha256"
 path = "Drum Rolls"
 role = "canonical-audio"
 category = "loops"
+instrument = "break"
 
 [[dir]]
 path = "Instruments"
@@ -74,12 +75,17 @@ path = "Pecussion Loops"
 role = "canonical-audio"
 category = "loops"
 
+# The loop dirs are all drum breaks, but the grooves are named after their
+# sources — Sub-Urban, Clint Eastwood, Think, Apache — so filenames carry
+# no honest instrument signal ("Sub-Urban" reads as sub bass). Pin them.
 [[dir]]
 path = "Programmed Loops"
 role = "canonical-audio"
 category = "loops"
+instrument = "break"
 
 [[dir]]
 path = "Straight Loops"
 role = "canonical-audio"
 category = "loops"
+instrument = "break"

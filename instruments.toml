@@ -160,10 +160,14 @@ aliases = ["percussion", "perc", "percs", "percussive"]
 
 # ---- bass ---------------------------------------------------------------
 
+# "Sub-Urban" normalizes to "sub urban" and the bare word "sub" would claim
+# it — but it's a groove name (Zero-G's jungle breaks, the artist Sub Urban),
+# never a sub bass.
 [[instrument]]
 id      = "sub"
 family  = "bass"
 aliases = ["sub", "subs", "sub bass", "subbass", "808 bass"]
+avoid   = ["sub urban", "suburban"]
 
 [[instrument]]
 id      = "reese"

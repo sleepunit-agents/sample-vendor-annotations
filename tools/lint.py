@@ -35,6 +35,10 @@ ref_hosts = []
 if os.path.exists(os.path.join(ROOT, 'hosts.toml')):
     ref_hosts = [d.lower() for d in load(os.path.join(ROOT, 'hosts.toml')).get('reference', {}).get('domains', [])]
 
+lex_ids = set()
+if os.path.exists(os.path.join(ROOT, 'instruments.toml')):
+    lex_ids = {i['id'] for i in load(os.path.join(ROOT, 'instruments.toml')).get('instrument', [])}
+
 vendors = {}
 for vt in sorted(glob.glob(os.path.join(ROOT, 'vendors', '*', 'vendor.toml'))):
     slug = os.path.basename(os.path.dirname(vt))
@@ -49,7 +53,8 @@ for vt in sorted(glob.glob(os.path.join(ROOT, 'vendors', '*', 'vendor.toml'))):
     hp = v.get('homepage')
     if hp and domains and not in_domains(host_of(hp), domains):
         err(vt, f"L1 homepage host {host_of(hp)!r} not in domains")
-    vendors[slug] = {'role': role, 'domains': domains, 'path': vt}
+    vendors[slug] = {'role': role, 'domains': domains, 'path': vt,
+                     'instruments': {i['id'] for i in d.get('instrument', [])}}
 
 def check_url(where, url, domains, allow_ref=False, label='url'):
     h = host_of(url)
@@ -106,6 +111,12 @@ for key, (pt, d, slug) in packs.items():
         if not obs: warn(pt, "[acquisition] observed missing")
         elif isinstance(obs, datetime.date) and (today - obs).days > 365:
             warn(pt, f"L6 [acquisition] observed {obs} is >365 days old")
+    # [[dir]] instrument pins — a typo'd id would silently pin files to an
+    # instrument no consumer's lexicon knows
+    for dd in d.get('dir', []):
+        pin = dd.get('instrument')
+        if pin and pin not in lex_ids and pin not in V['instruments']:
+            err(pt, f"[[dir]] {dd.get('path')!r} instrument {pin!r} not in instruments.toml")
     # [[relation]]
     for r in d.get('relation', []):
         if r.get('type') not in REL_TYPES: err(pt, f"[[relation]] type {r.get('type')!r} invalid")
