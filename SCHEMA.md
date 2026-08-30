@@ -144,6 +144,20 @@ So `04. Rimshot/Rimshot TOM 31.wav` is a rimshot even though the machine
 name in the filename also says "TOM", while `Drums/Kick 01.wav` is still
 a kick. Unlabelled files stay unlabelled: never guess.
 
+The shared `instruments.toml` also carries `[[family]]` blocks — rendering
+knowledge about a whole family. `flat = true` tells consumers that build
+folder trees not to split that family by instrument (bass sub-typing is
+genre jargon, not a reliable label); the instrument entries still resolve
+into metadata. A `[[family]]` id must be a family some instrument entry
+belongs to (linted). Families are shared-lexicon-only — vendors don't
+override them.
+
+```toml
+[[family]]
+id   = "bass"
+flat = true
+```
+
 ## [naming] — filename grammar
 
 Conventions inside filenames, for tools that rename for constrained

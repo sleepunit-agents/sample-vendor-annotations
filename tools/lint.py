@@ -37,7 +37,16 @@ if os.path.exists(os.path.join(ROOT, 'hosts.toml')):
 
 lex_ids = set()
 if os.path.exists(os.path.join(ROOT, 'instruments.toml')):
-    lex_ids = {i['id'] for i in load(os.path.join(ROOT, 'instruments.toml')).get('instrument', [])}
+    lex_path = os.path.join(ROOT, 'instruments.toml')
+    lex = load(lex_path)
+    lex_ids = {i['id'] for i in lex.get('instrument', [])}
+    # [[family]] blocks carry rendering knowledge (flat = true); a typo'd
+    # id would silently mark nothing, so it must name a family some
+    # instrument actually belongs to
+    lex_families = {i.get('family') for i in lex.get('instrument', []) if i.get('family')}
+    for fam in lex.get('family', []):
+        if fam.get('id') not in lex_families:
+            err(lex_path, f"[[family]] {fam.get('id')!r} is no instrument's family")
 
 vendors = {}
 for vt in sorted(glob.glob(os.path.join(ROOT, 'vendors', '*', 'vendor.toml'))):

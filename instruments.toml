@@ -28,6 +28,35 @@
 # Observed against Samples From Mars (83 packs), Splice (220), Polyend (23),
 # Zero-G, Blu Mar Ten, Rhythm Lab, Elektron factory content, 2026-08-17.
 
+# ---- families: rendering knowledge -------------------------------------
+# `flat = true` marks a family whose output tree does NOT split by
+# instrument: just <Family>/<Loops|One-Shots|_Unsorted>/<pack>. Bass and
+# synth sub-typing (sub/reese, lead/pad/pluck) reads genre jargon out of
+# filenames — not reliable enough to fight samples over; vocal has no
+# real sub-instruments; fx typing (riser/impact/sweep) is the same
+# filename matching, so it gets the same honesty. The instrument entries
+# below still resolve and still land in harvest metadata — flat only
+# stops the folder split, so flipping a family back is deleting one line
+# here. Families without a block keep their instrument level (drums,
+# percussion, keys, strings, brass, woodwind: literal names, reliably
+# written).
+
+[[family]]
+id   = "bass"
+flat = true
+
+[[family]]
+id   = "synth"
+flat = true
+
+[[family]]
+id   = "vocal"
+flat = true
+
+[[family]]
+id   = "fx"
+flat = true
+
 # ---- transition / sfx material: listed first on purpose ----------------
 # FX-ness beats instrument-ness: a "Flute Riser" is a riser someone made
 # with a flute, and a producer browsing flutes doesn't want it — it
