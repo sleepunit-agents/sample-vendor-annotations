@@ -101,6 +101,14 @@ depth. A vendor's variants stay visible — they're the observed fact.
 Vocabulary so far: `one-shots`, `loops`, `kits`, `multisamples`, `fx`.
 Extend it in a PR when a vendor genuinely doesn't fit.
 
+A **shared category lexicon** lives at the repo root in `categories.toml`,
+mirroring `instruments.toml`: whole-word aliases over normalized path
+segments (directories deepest-first, filename stem last, first hit wins).
+It is the fallback tier — consumers apply a vendor's own `[[dir]]` maps,
+`[[category]]` rules, and `dedicated_packs` first, and consult the shared
+lexicon only when those say nothing, so it also covers vendors with no
+annotation at all (a user's own dump of loose packs).
+
 ```toml
 [[category]]
 id    = "one-shots"

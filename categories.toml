@@ -1,0 +1,59 @@
+# Shared category vocabulary — the cross-vendor fallback behind each
+# vendor's own [[category]] rules.
+#
+# WHERE THE FACTS COME FROM. Same standing as instruments.toml: vendors
+# label loop-ness in their folder and file names ("Drum Loops", "One
+# Shots", "Individual Hits", "TFH_Drum_Loop_124.wav"). Reading that label
+# is transcription, not inference — nothing here guesses from audio.
+#
+# HOW IT IS APPLIED. A vendor's own annotation goes first: a pack's
+# [[dir]] map, then the vendor's [[category]] globs, then its
+# dedicated_packs. Only when those say nothing does this lexicon run:
+# each path segment is normalized (lowercase, order prefixes dropped,
+# non-alphanumerics to spaces) and aliases are matched as whole words —
+# directories deepest-first, the filename stem last, first hit wins.
+# Folders are deliberate labels; filenames are noisier, so the stem only
+# speaks when no folder did.
+#
+# Entries are tried in file order per segment: specific beats generic.
+# `avoid` lists phrases that contain an alias but mean something else.
+#
+# Vocabulary matches SCHEMA [[category]]: one-shots, loops, kits,
+# multisamples, fx. Extend it in a PR when a vendor genuinely doesn't fit.
+
+[[category]]
+id      = "loops"
+aliases = [
+  "loop", "loops", "full beats", "whole beats", "full breaks",
+  "break", "breaks", "breakbeat", "breakbeats", "break beats",
+  "song starters", "songstarters", "construction",
+]
+# observed: "Drum Loops 120 BPM", "03. Loops", "Full Breaks",
+# "Amen Break 01.wav", "Construction Kits" (loops entry sits above kits
+# so the construction sense wins)
+
+[[category]]
+id      = "one-shots"
+aliases = [
+  "one shot", "one shots", "oneshot", "oneshots",
+  "single shot", "single shots", "shot", "shots",
+  "individual hits", "one hits", "single hits", "hit", "hits",
+  "stab", "stabs",
+]
+# observed: "01. Individual Hits", "One Shots", "Drum Hits",
+# "Snare Hit 03.wav", "Rim Shots"
+
+[[category]]
+id      = "kits"
+aliases = ["kit", "kits", "drum kit", "drum kits", "sample kit", "sample kits"]
+
+[[category]]
+id      = "fx"
+aliases = ["fx", "sfx", "effect", "effects"]
+
+[[category]]
+id      = "multisamples"
+aliases = [
+  "multisample", "multisamples", "multi sample", "multi samples",
+  "instrument samples",
+]
