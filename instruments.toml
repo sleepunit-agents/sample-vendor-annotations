@@ -37,7 +37,8 @@
 # filename matching, so it gets the same honesty. The instrument entries
 # below still resolve and still land in harvest metadata — flat only
 # stops the folder split, so flipping a family back is deleting one line
-# here. Families without a block keep their instrument level (drums,
+# here. A single entry can opt out with `split = true` (see upright-bass):
+# a genuinely named acoustic instrument inside an otherwise-jargon family. Families without a block keep their instrument level (drums,
 # percussion, keys, strings, brass, woodwind: literal names, reliably
 # written).
 
@@ -213,10 +214,32 @@ id      = "reese"
 family  = "bass"
 aliases = ["reese", "reeses"]
 
+# The one instrument in a flat family that keeps its own folder. Bass is flat
+# because sub/reese/wub is genre jargon read out of filenames — not because
+# the family has no real instruments in it. An upright is a real instrument,
+# recorded in a room, and nobody reaching for one wants it shuffled in with
+# the 808s. `split = true` exempts this entry from the family's flat
+# rendering: everything else in bass stays loose in Bass/<category>/, this
+# lands in Bass/<category>/Upright Bass/.
+#
+# Listed ABOVE the generic bass entry so "Upright Bass" doesn't read as
+# plain bass — order is specificity. "acoustic bass" is deliberately NOT an
+# alias: to a jazz player it means an upright, to everyone else it means an
+# acoustic bass guitar, so it stays with the generic entry rather than being
+# claimed wrongly half the time.
+[[instrument]]
+id      = "upright-bass"
+family  = "bass"
+split   = true
+display = "Upright Bass"
+aliases = ["upright bass", "uprightbass", "double bass", "doublebass",
+           "contrabass", "contra bass", "standup bass", "stand up bass",
+           "string bass", "wood bass", "acoustic upright"]
+
 [[instrument]]
 id      = "bass"
 family  = "bass"
-aliases = ["bass", "basses", "bassline", "bass line", "bass lines", "upright bass", "bass hits"]
+aliases = ["bass", "basses", "bassline", "bass line", "bass lines", "bass hits"]
 
 # ---- keys and tonal -----------------------------------------------------
 

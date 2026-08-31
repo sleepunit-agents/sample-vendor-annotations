@@ -47,6 +47,13 @@ if os.path.exists(os.path.join(ROOT, 'instruments.toml')):
     for fam in lex.get('family', []):
         if fam.get('id') not in lex_families:
             err(lex_path, f"[[family]] {fam.get('id')!r} is no instrument's family")
+    # split = true opts one entry out of its family's flat rendering; on an
+    # already-split family it does nothing, which reads as a fix that isn't
+    flat_families = {f['id'] for f in lex.get('family', []) if f.get('flat')}
+    for ins in lex.get('instrument', []):
+        if ins.get('split') and ins.get('family') not in flat_families:
+            err(lex_path, f"[[instrument]] {ins['id']!r} split=true but family "
+                          f"{ins.get('family')!r} is not flat — nothing to split out of")
 
 vendors = {}
 for vt in sorted(glob.glob(os.path.join(ROOT, 'vendors', '*', 'vendor.toml'))):

@@ -160,6 +160,24 @@ id   = "bass"
 flat = true
 ```
 
+A family is flat when its sub-typing is jargon, not when it holds no real
+instruments. One shared-lexicon entry can opt back out with `split = true`
+and keep its own folder while the rest of the family stays flat around it —
+an upright bass shouldn't sit loose among the 808s and reeses. `display`
+overrides the folder name a consumer would otherwise derive from the id
+(ids are slugs and the derivation keeps their hyphens). Both are
+shared-lexicon-only: a vendor block can pin one of these ids, not invent a
+new one that splits.
+
+```toml
+[[instrument]]
+id      = "upright-bass"
+family  = "bass"
+split   = true                     # keeps its folder in a flat family
+display = "Upright Bass"           # not "Upright-Bass"
+aliases = ["upright bass", "double bass", "contrabass"]
+```
+
 ## [naming] — filename grammar
 
 Conventions inside filenames, for tools that rename for constrained
