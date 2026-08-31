@@ -87,9 +87,30 @@ should skip.
 [formats]
 canonical_dir      = "WAV"        # per-pack dir holding plain audio
 parallel_dirs      = ["Ableton Live", "Kontakt", "Maschine", "..."]
+parallel_role      = "reexport"   # "cut" (default) | "reexport"
 sidecar_extensions = [".asd", ".als", ".nki", "..."]  # metadata riding
                                   # alongside audio anywhere in the tree
 ```
+
+`parallel_role` says what the parallel trees hold, which is the fact a
+consumer needs to decide whether two copies of one sample are redundant:
+
+- **`cut`** (default) — the vendor rendered once and delivered that render
+  at several bit depths or channel counts. Polyend's Palette packs are the
+  case: `Pack 24 bit stereo`, `Pack 16 bit stereo`, `Pack 16 bit mono`.
+  Every cut of a sample is therefore the **same length**, and a length that
+  disagrees means the two files are not the same recording.
+- **`reexport`** — the vendor re-rendered the whole library once per host
+  instead. Samples From Mars ships `Battery`, `Maschine`, `Kontakt`,
+  `MPC…` trees of the same hits beside the canonical `WAV` tree: same
+  filenames, different bytes, trims a few frames apart. Length proves
+  nothing here in either direction, so the tree structure carries the
+  whole proof of redundancy — same pack, same relative path, two trees the
+  vendor itself declared parallel.
+
+The distinction is observable, not editorial: hash a handful of same-named
+files across two parallel trees. Identical bytes or identical durations →
+`cut`. Differing durations under identical names → `reexport`.
 
 ## [[category]] — folder grammar → shared vocabulary
 

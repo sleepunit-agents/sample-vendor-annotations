@@ -20,6 +20,16 @@ zip_name_grammar = "lower_snake or lower-hyphen of the dir name, e.g. '808 From 
 
 [formats]
 canonical_dir = "WAV"             # 126k of 150k audio files live under it
+parallel_role = "reexport"        # SFM re-renders the whole library per
+                                  # host rather than cutting one render
+                                  # several ways: "727 From Mars/Battery/
+                                  # 727 From Mars/Assorted 1 Samples/Agogo
+                                  # Hi 727 25.wav" and its Maschine twin
+                                  # are the same hit, different bytes,
+                                  # trimmed a few frames apart. 727 From
+                                  # Mars: 1292 audio files, 1292 distinct
+                                  # sha256 — zero byte-identical pairs
+                                  # across eight parallel trees.
 # Variants seen per pack vintage; match loosely. A few packs skip the
 # format level entirely and put audio dirs at pack root ("Modular
 # Creations From Mars", "SYS100M From Mars").

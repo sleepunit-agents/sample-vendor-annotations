@@ -16,6 +16,7 @@ LICENSES = {'royalty-free', 'cc0', 'cc-by', 'cc-by-nc', 'informal-free', 'unclea
 REL_TYPES = {'subset-of', 'sampler-of', 'superseded-by', 'bundle-of', 'reissue-of'}
 REL_BASIS = {'sha', 'vendor-states', 'observed'}
 ROLES = {'house', 'marketplace', 'distributor', 'archive'}
+PARALLEL_ROLES = {'cut', 'reexport'}   # [formats] parallel_role; see SCHEMA
 
 errors, warns = [], []
 def err(where, msg): errors.append(f"{where}: {msg}")
@@ -69,6 +70,13 @@ for vt in sorted(glob.glob(os.path.join(ROOT, 'vendors', '*', 'vendor.toml'))):
     hp = v.get('homepage')
     if hp and domains and not in_domains(host_of(hp), domains):
         err(vt, f"L1 homepage host {host_of(hp)!r} not in domains")
+    fmts = d.get('formats', {})
+    prole = fmts.get('parallel_role', 'cut')
+    if prole not in PARALLEL_ROLES:
+        err(vt, f"[formats] parallel_role {prole!r} not in {sorted(PARALLEL_ROLES)}")
+    elif prole != 'cut' and not fmts.get('parallel_dirs'):
+        err(vt, f"[formats] parallel_role = {prole!r} with no parallel_dirs — "
+                "it describes trees this vendor never declares")
     vendors[slug] = {'role': role, 'domains': domains, 'path': vt,
                      'instruments': {i['id'] for i in d.get('instrument', [])}}
 
