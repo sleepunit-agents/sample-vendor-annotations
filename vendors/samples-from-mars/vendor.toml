@@ -20,6 +20,11 @@ zip_name_grammar = "lower_snake or lower-hyphen of the dir name, e.g. '808 From 
 
 [formats]
 canonical_dir = "WAV"             # 126k of 150k audio files live under it
+# A consumer that prepares libraries for devices itself should ignore the
+# parallel trees entirely rather than dedupe them: they are this vendor's
+# own device prep (each host's patches beside audio re-rendered and
+# re-trimmed for it), and the same hits sit under the canonical WAV tree
+# under different folder names, so they do not even collide with it.
 parallel_role = "reexport"        # SFM re-renders the whole library per
                                   # host rather than cutting one render
                                   # several ways: "727 From Mars/Battery/

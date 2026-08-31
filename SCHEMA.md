@@ -112,6 +112,17 @@ The distinction is observable, not editorial: hash a handful of same-named
 files across two parallel trees. Identical bytes or identical durations →
 `cut`. Differing durations under identical names → `reexport`.
 
+The two roles also differ in what the trees *are for*, and a consumer may
+act on that. A `cut` vendor's parallel trees are content: the 16-bit mono
+render exists because somebody's tracker wants it. A `reexport` vendor's
+are the vendor's own device prep — each host's patches beside audio
+re-rendered for that host — so a consumer that prepares libraries for
+devices itself may ignore them wholesale rather than dedupe them, since
+its own preparation replaces them. Note that deduping alone does not get
+there: the trees usually use *different folder names* for the same hits
+("Assorted 1 Samples" beside "01. Clean"), so a re-export does not even
+collide with its canonical original.
+
 ## [[category]] — folder grammar → shared vocabulary
 
 The payoff section: maps a vendor's (inconsistent) folder names to a
