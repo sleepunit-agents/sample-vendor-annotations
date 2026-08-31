@@ -31,7 +31,13 @@ sidecar_extensions = [".pti", ".pdf"]   # Tracker instruments; the licensing agr
 
 [[category]]
 id    = "one-shots"
-match = ["* 24 bit stereo", "* 16 bit stereo", "* 16 bit mono", "Downlifter", "FX", "Impact", "Riser", "Transitions", "bass", "clap and snare", "hats", "kicks and rumble", "percussion", "synths", "*Step Kits*", "Tracker PTI kits"]
+match = ["* 24 bit stereo", "* 16 bit stereo", "* 16 bit mono", "Downlifter", "FX", "Impact", "Riser", "Transitions", "bass", "clap and snare", "hats", "kicks and rumble", "percussion", "synths", "*Step Kits*", "Tracker PTI kits",
+         "cymbals and hats", "kicks", "snares", "mids", "perc", "stab", "stabs", "pluck and lead", "leads and stabs", "texture and fx",
+         "electric piano", "guitar", "upright bass"]
+# The second row is Palette category dirs observed beyond Bass Tools, incl.
+# Trio's instrument-named ones. They matter only for Heights and MNML, whose
+# packs have no format level for the first entry to catch — everywhere else
+# the "* 24 bit stereo" tree already says one-shots.
 # the Step Kits / PTI dirs are device kit presets sliced from the same
 # one-shots — kits are one-shots (separate id retired 2026-08-30)
 
@@ -42,13 +48,13 @@ take_suffix = "_N"
 
 # Instrument overrides: Polyend's own folder words that the shared lexicon
 # would otherwise read generically.
-[[instrument]]
-id      = "kick"
-aliases = ["kicks and rumble"]
-
-[[instrument]]
-id      = "snare"
-aliases = ["clap and snare"]
+#
+# "KICKS AND RUMBLE" and "CLAP AND SNARE" used to be pinned here, to kick and
+# snare — which quietly filed every rumble as a kick and every clap as a
+# snare. A folder naming two things is a label for neither: the general
+# compound rule now refuses both words and lets the filename decide, so the
+# pins are gone. Pin a compound phrase here only when the vendor really does
+# mean one instrument by it.
 
 # "MIDS" is Bass Tools' (and any DnB Palette's) word for mid bass — the layer
 # between the sub and the top end. It's genre jargon, not a general label, so

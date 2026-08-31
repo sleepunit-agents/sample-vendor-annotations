@@ -118,11 +118,12 @@ id      = "clap"
 family  = "drums"
 aliases = ["clap", "claps", "handclap", "hand clap", "cp"]
 
-# "Cymbals and Hats" is a folder holding BOTH, so neither word may claim it
-# from the directory level — hat outranks cymbal here, and a dir label beats a
-# filename label, so without this every crash and ride in such a folder reads
-# as a hi-hat. Skipped for both, the filename decides; a file whose name says
-# nothing lands in _Unsorted, which is visible rather than silently wrong.
+# "Cymbals and Hats" holds both, so neither word may claim it — hat outranks
+# cymbal here, so without a rule every crash and ride in such a folder reads
+# as a hi-hat. Consumers handle that generally now (a segment naming two
+# different instruments across an "and"/"&"/"+" claims neither; the filename
+# decides, and what is left is the shared family), so no per-phrase `avoid`
+# is needed here or for "Clap and Snare", "Pluck and Lead", "Texture and FX".
 [[instrument]]
 id      = "hat"
 family  = "drums"
@@ -130,13 +131,11 @@ aliases = [
   "hat", "hats", "hi hat", "hihat", "hi hats", "hihats", "hh",
   "closed hat", "closed hats", "open hat", "open hats", "ohh", "chh",
 ]
-avoid   = ["cymbals and hats", "cymbal and hat", "hats and cymbals"]
 
 [[instrument]]
 id      = "cymbal"
 family  = "drums"
 aliases = ["cymbal", "cymbals", "crash", "crashes", "ride", "rides", "splash"]
-avoid   = ["cymbals and hats", "cymbal and hat", "hats and cymbals"]
 
 # rim before tom: "Rimshot TOM 12" is a rimshot, and "TOM" is a machine
 # name that lands in every filename of Samples From Mars' TOM pack.
@@ -202,8 +201,12 @@ aliases = ["percussion", "perc", "percs", "percussive"]
 [[instrument]]
 id      = "sub"
 family  = "bass"
-aliases = ["sub", "subs", "sub bass", "subbass", "808 bass"]
+aliases = ["sub", "subs", "sub bass", "subbass", "808 bass", "rumble", "rumbles"]
 avoid   = ["sub urban", "suburban"]
+# "rumble" is the sustained sub tail DnB/techno packs ship beside their kicks
+# (Polyend's "KICKS AND RUMBLE"). It is a sub, not a transient — filing it
+# under Kick pollutes kick browsing. `kick` outranks this entry, so
+# "Kick_Rumble_01" still reads as a kick.
 
 [[instrument]]
 id      = "reese"
