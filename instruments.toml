@@ -118,6 +118,11 @@ id      = "clap"
 family  = "drums"
 aliases = ["clap", "claps", "handclap", "hand clap", "cp"]
 
+# "Cymbals and Hats" is a folder holding BOTH, so neither word may claim it
+# from the directory level — hat outranks cymbal here, and a dir label beats a
+# filename label, so without this every crash and ride in such a folder reads
+# as a hi-hat. Skipped for both, the filename decides; a file whose name says
+# nothing lands in _Unsorted, which is visible rather than silently wrong.
 [[instrument]]
 id      = "hat"
 family  = "drums"
@@ -125,11 +130,13 @@ aliases = [
   "hat", "hats", "hi hat", "hihat", "hi hats", "hihats", "hh",
   "closed hat", "closed hats", "open hat", "open hats", "ohh", "chh",
 ]
+avoid   = ["cymbals and hats", "cymbal and hat", "hats and cymbals"]
 
 [[instrument]]
 id      = "cymbal"
 family  = "drums"
 aliases = ["cymbal", "cymbals", "crash", "crashes", "ride", "rides", "splash"]
+avoid   = ["cymbals and hats", "cymbal and hat", "hats and cymbals"]
 
 # rim before tom: "Rimshot TOM 12" is a rimshot, and "TOM" is a machine
 # name that lands in every filename of Samples From Mars' TOM pack.

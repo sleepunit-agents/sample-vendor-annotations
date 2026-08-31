@@ -49,3 +49,13 @@ aliases = ["kicks and rumble"]
 [[instrument]]
 id      = "snare"
 aliases = ["clap and snare"]
+
+# "MIDS" is Bass Tools' (and any DnB Palette's) word for mid bass — the layer
+# between the sub and the top end. It's genre jargon, not a general label, so
+# it stays vendor-local rather than going in the shared lexicon; the bass
+# family is flat, so it renders under Bass either way.
+# Observed 2026-08-30 from a real copy: Bass Tools' category dirs are
+# BASS, CYMBALS AND HATS, FX, KICKS, MIDS, SNARES.
+[[instrument]]
+id      = "bass"
+aliases = ["mids", "mid bass", "mid basses", "midbass"]
