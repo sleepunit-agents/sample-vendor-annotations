@@ -104,10 +104,21 @@ id      = "siren"
 family  = "fx"
 aliases = ["siren", "sirens"]
 
+# Sound-design packs name the thing that made the noise, and "break" is
+# among those names: "glass break", "breaking glass". That is a foley
+# hit, not a drum break, and it must be read here — above the break
+# entry — or the drum word claims it. Only the paired forms are listed:
+# bare "glass" is a synth timbre ("Glass Pad", "Glass Bells"), and this
+# entry outranks every instrument. (Observed: Epic Stock Media
+# "ESM_SG_fx_explosions_debris_glass_break_hit_01" filed as a break,
+# 2026-09-01. The same phrase is an `avoid` on the loops entry in
+# categories.toml, or the break word would still call the file a loop.)
 [[instrument]]
 id      = "foley"
 family  = "fx"
-aliases = ["foley", "field recording", "field recordings", "found sound", "found sounds", "asmr"]
+aliases = ["foley", "field recording", "field recordings", "found sound", "found sounds", "asmr",
+           "glass break", "glass breaks", "glass breaking", "break glass", "breaking glass",
+           "glass shatter", "glass shatters", "glass smash", "debris"]
 
 # ---- vocal: the unambiguous words, above drums ---------------------------
 # Same logic as the FX section: "Vocal Loop Jack To The Beat" is a vocal

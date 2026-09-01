@@ -45,8 +45,12 @@ aliases = ["chop", "chops", "chopped"]
 [[category]]
 id      = "loops"
 aliases = ["break", "breaks", "breakbeat", "breakbeats", "break beats"]
+avoid   = ["glass break", "glass breaks", "glass breaking", "break glass", "breaking glass"]
 # observed: "Amen Break 01.wav", "Full Breaks" — a break is a loop by
-# nature, so the word stands in for the category when no folder said one
+# nature, so the word stands in for the category when no folder said one.
+# `avoid`: a glass break is a foley hit, not a drum break — the same
+# phrase is a foley alias in instruments.toml. (Observed: Epic Stock Media
+# "ESM_SG_fx_explosions_debris_glass_break_hit_01", 2026-09-01.)
 
 [[category]]
 id      = "one-shots"
