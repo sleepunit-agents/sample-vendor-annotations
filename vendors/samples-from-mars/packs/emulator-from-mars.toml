@@ -59,3 +59,29 @@ manifest    = "manifests/emulator-from-mars.sha256"
 #        1  Docs/Emulator From Mars - About.rtf
 #        1  Docs/Samples From Mars - Terms and Conditions.pdf
 #        1  Icon
+
+# Dir map — partial (2026-09-01). Only the folders whose content is known
+# are claimed; the six sound dirs (Bass/Keys/Leads/Pads/Orchestral/Vocal)
+# wait for a real listing — the consumer's chromatic-siblings fallback
+# already reads the multisample sets, and nothing in them is worth guessing.
+[[dir]]
+path = "WAV"
+role = "canonical-audio"
+
+[[dir]]
+path     = "WAV/07. Percussion"
+category = "one-shots"
+tags     = ["drums", "percussion", "sampler", "80s"]
+desc     = "Emulator drum and percussion hits — one shot per file, SFM's CH/OH/BD/SD abbreviations in the names ('CH Pedal Simple Drums Emulator 01.wav'); the folder word carries no kind, so it is pinned here"
+
+[[dir]]
+path     = "WAV/08. FX"
+category = "fx"
+
+[[dir]]
+path = "Presets"
+role = "format-tree"
+
+[[dir]]
+path = "Docs"
+role = "docs"
