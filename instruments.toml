@@ -299,6 +299,30 @@ id      = "reese"
 family  = "bass"
 aliases = ["reese", "reeses"]
 
+# Acid is bass, not lead. The TB-303 was sold as a bass machine and every
+# vendor that samples one files it that way ("Acid Synths/Basic Sub",
+# "303 Bass"); a producer reaching for a 303 line is reaching for a
+# bassline that squelches, and wants it beside the subs and reeses, not
+# among the hoovers. Until 2026-09-01 "acid" was a lead alias, which put
+# all of Acid From Mars under Synth. Bass is flat, so this splits no
+# folder — it is the fact the catalog carries (`--instrument acid`), and
+# `split = true` here is the one-line change if Bass/Acid/ is ever wanted.
+#
+# "303" is listed bare: vendors write "TB303", "TB-303" and plain "303",
+# and the normalizer opens a boundary between letters and digits so all
+# three read as the same word. Probed against 167k files (2026-09-01):
+# no file uses a bare 303 as anything but the machine. Named drum pieces
+# still win on the files of an "Acid Drums" folder because drums rank
+# above this section ("Kick_Acid" is a kick). Genre phrases are avoided:
+# an "Acid House" loop is a genre tag, not a 303 — the bass word, if the
+# vendor wrote one, still speaks for that segment.
+# (Requested by Jonathan, 2026-09-01.)
+[[instrument]]
+id      = "acid"
+family  = "bass"
+aliases = ["acid", "303", "tb 303", "tb303"]
+avoid   = ["acid house", "acid techno", "acid jazz", "acid trance"]
+
 # The one instrument in a flat family that keeps its own folder. Bass is flat
 # because sub/reese/wub is genre jargon read out of filenames — not because
 # the family has no real instruments in it. An upright is a real instrument,
@@ -358,7 +382,8 @@ aliases = ["bell", "bells", "chime", "chimes", "glockenspiel", "tubular bells"]
 [[instrument]]
 id      = "lead"
 family  = "synth"
-aliases = ["lead", "leads", "lead synth", "hoover", "hoovers", "acid", "riff", "riffs"]
+aliases = ["lead", "leads", "lead synth", "hoover", "hoovers", "riff", "riffs"]
+# "acid" is NOT here any more: it is a bass entry (2026-09-01, Jonathan).
 
 [[instrument]]
 id      = "pad"
