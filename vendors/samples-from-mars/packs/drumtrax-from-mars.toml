@@ -39,6 +39,16 @@ anchors     = [
 ]
 manifest    = "manifests/drumtrax-from-mars.sha256"
 
+# The pack's own vocabulary — consulted before the vendor block and the
+# shared lexicon (SCHEMA, pack-level [[instrument]]). This pack calls its
+# kick "Bass": "Bass Drumtrax 08.wav", under a Bass folder in
+# 01. Individual Hits, and again inside the 02. Kits copies. The product
+# page says "Linn-esc bass drum"; the shared lexicon would read every one
+# of them as bass (reported by Jonathan, 2026-09-01).
+[[instrument]]
+id      = "kick"
+aliases = ["bass"]
+
 # Layout skeleton (top two levels, file counts) — annotate with [[dir]]:
 #      384  WAV/01. Individual Hits
 #       51  Battery/Drumtrax From Mars

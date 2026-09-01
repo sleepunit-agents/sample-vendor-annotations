@@ -201,6 +201,25 @@ aliases = ["clap", "claps", "handclap", "hand clap"]
 codes   = ["cp"]                      # speaks only when no word does
 ```
 
+A **pack** may carry `[[instrument]]` blocks of its own, for a word that
+means something else inside that one pack than it does in the vendor's
+other packs. Drumtrax From Mars calls its kick "Bass" — the hits folder,
+the filename (`Bass Drumtrax 08.wav`), and the Kits copies all say so —
+and "bass" is an honest bass everywhere else in the library, so the
+vendor block can't say it. A `[[dir]]` instrument pin can't either: it
+claims a folder, and the same names recur inside the kits. Pack blocks
+are consulted before the vendor's, which are consulted before the shared
+lexicon; the shape is identical (`id`, `aliases`, `codes`, `avoid`), and
+the block adds a meaning without inventing labels — a file the pack's
+words don't describe still reads through the vendor and the lexicon.
+
+```toml
+# vendors/samples-from-mars/packs/drumtrax-from-mars.toml
+[[instrument]]
+id      = "kick"
+aliases = ["bass"]        # this pack's word for its bass drum
+```
+
 The shared `instruments.toml` also carries `[[family]]` blocks — rendering
 knowledge about a whole family. `flat = true` tells consumers that build
 folder trees not to split that family by instrument (bass sub-typing is

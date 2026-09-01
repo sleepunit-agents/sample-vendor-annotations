@@ -27,6 +27,14 @@ anchors     = [
 ]
 manifest    = "manifests/sds800-from-mars.sha256"
 
+# The pack's own vocabulary — consulted before the vendor block and the
+# shared lexicon (SCHEMA, pack-level [[instrument]]). The Simmons SDS 800
+# has four modules — Bass, Snare, Tom, Hi-Hat — and SFM names the hits
+# after them: "Bass SDS800 01.wav" is the bass drum module, not a bass.
+[[instrument]]
+id      = "kick"
+aliases = ["bass"]
+
 # Layout skeleton (top two levels, file counts) — annotate with [[dir]]:
 #      481  WAV/Individual Hits
 #      136  Battery/SDS800 From Mars

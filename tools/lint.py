@@ -135,11 +135,22 @@ for key, (pt, d, slug) in packs.items():
         if not obs: warn(pt, "[acquisition] observed missing")
         elif isinstance(obs, datetime.date) and (today - obs).days > 365:
             warn(pt, f"L6 [acquisition] observed {obs} is >365 days old")
+    # pack [[instrument]] blocks — same shape as the vendor's, same rule:
+    # the id must be one the shared lexicon (or the vendor block) knows
+    for ins in d.get('instrument', []):
+        iid = ins.get('id')
+        if not iid:
+            err(pt, "[[instrument]] without id")
+        elif iid not in lex_ids and iid not in V['instruments']:
+            err(pt, f"[[instrument]] {iid!r} not in instruments.toml")
+        if not ins.get('aliases') and not ins.get('codes'):
+            err(pt, f"[[instrument]] {iid!r} has neither aliases nor codes — it says nothing")
+    pack_inst = {i['id'] for i in d.get('instrument', []) if i.get('id')}
     # [[dir]] instrument pins — a typo'd id would silently pin files to an
     # instrument no consumer's lexicon knows
     for dd in d.get('dir', []):
         pin = dd.get('instrument')
-        if pin and pin not in lex_ids and pin not in V['instruments']:
+        if pin and pin not in lex_ids and pin not in V['instruments'] and pin not in pack_inst:
             err(pt, f"[[dir]] {dd.get('path')!r} instrument {pin!r} not in instruments.toml")
     # [[relation]]
     for r in d.get('relation', []):
