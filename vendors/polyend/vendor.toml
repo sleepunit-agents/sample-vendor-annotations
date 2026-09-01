@@ -23,6 +23,9 @@ zip_name_grammar = "<Title-With-Hyphens>-<6 lowercase alnum>.zip, e.g. Bass-Tool
 # master, the 16-bit trees are cut for the Tracker/Play/Mini (16-bit
 # engines, mono preferred). Tree names carry the pack title or the literal
 # word "Pack": "ASMR 24 bit stereo" vs "Pack 24 bit stereo".
+# Do NOT assume the three trees share sample lengths: Thump ships as
+# three inner zips, one per tree, produced separately — its renders
+# drift by milliseconds (observed 2026-08-31, kick_thick.wav collision).
 canonical_dir      = "* 24 bit stereo"
 parallel_dirs      = ["* 16 bit mono", "* 16 bit stereo", "*Step Kits*", "Tracker PTI kits"]
 sidecar_extensions = [".pti", ".pdf"]   # Tracker instruments; the licensing agreement

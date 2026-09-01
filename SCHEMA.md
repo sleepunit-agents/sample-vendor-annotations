@@ -95,11 +95,14 @@ sidecar_extensions = [".asd", ".als", ".nki", "..."]  # metadata riding
 `parallel_role` says what the parallel trees hold, which is the fact a
 consumer needs to decide whether two copies of one sample are redundant:
 
-- **`cut`** (default) — the vendor rendered once and delivered that render
-  at several bit depths or channel counts. Polyend's Palette packs are the
+- **`cut`** (default) — the vendor delivered one set of recordings at
+  several bit depths or channel counts. Polyend's Palette packs are the
   case: `Pack 24 bit stereo`, `Pack 16 bit stereo`, `Pack 16 bit mono`.
-  Every cut of a sample is therefore the **same length**, and a length that
-  disagrees means the two files are not the same recording.
+  Cuts of one render share a length, but do not count on it: the role
+  says the trees hold the *same recordings*, not that the vendor rendered
+  them in one pass. Polyend's Thump ships its three trees as three
+  separately produced zips whose trims drift by milliseconds (observed
+  2026-08-31) — same recordings, unequal lengths, still one sample.
 - **`reexport`** — the vendor re-rendered the whole library once per host
   instead. Samples From Mars ships `Battery`, `Maschine`, `Kontakt`,
   `MPC…` trees of the same hits beside the canonical `WAV` tree: same
