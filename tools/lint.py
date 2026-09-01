@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Lint the annotations repo — proposed 2026-08-19 (SCHEMA.md: [acquisition],
-[[relation]], hosts.toml). Rules L1–L6. Exit 1 on any error; warnings are
+[[relation]], hosts.toml). Rules L1–L7. Exit 1 on any error; warnings are
 reported and do not fail. Needs Python 3.11+ (tomllib) and nothing else.
+L7 (2026-09-01): [[dir]] / [[instrument]] entry hygiene — no local-only
+markers, defaults name real ids, a facet is a pin or a default, observed
+is a date.
 
   tools/lint.py            # L1–L5 (+L6 freshness warning)
   tools/lint.py --live     # also HEAD every pointer (slow; for scheduled CI)
@@ -88,7 +91,8 @@ for vt in sorted(glob.glob(os.path.join(ROOT, 'vendors', '*', 'vendor.toml'))):
         err(vt, f"[formats] parallel_role = {prole!r} with no parallel_dirs — "
                 "it describes trees this vendor never declares")
     vendors[slug] = {'role': role, 'domains': domains, 'path': vt,
-                     'instruments': {i['id'] for i in d.get('instrument', [])}}
+                     'instruments': {i['id'] for i in d.get('instrument', [])},
+                     'raw_instruments': d.get('instrument', [])}
 
 def check_url(where, url, domains, allow_ref=False, label='url'):
     h = host_of(url)
@@ -98,6 +102,19 @@ def check_url(where, url, domains, allow_ref=False, label='url'):
         err(where, f"L1 {label} host {h!r} not in vendor domains" + (" or hosts.toml reference list" if allow_ref else ""))
     if urllib.parse.urlsplit(url).path.lower().endswith(BYTE_EXT):
         err(where, f"L2 {label} points at bytes, not a page: {url}")
+
+def check_entry(pt, where, entry):
+    """L7: entry hygiene shared by [[dir]] and [[instrument]]."""
+    if 'local' in entry:
+        err(pt, f"L7 {where} carries local = {entry['local']!r} — a consumer-local marker, never committed here")
+    obs = entry.get('observed')
+    if obs is not None and not isinstance(obs, datetime.date):
+        err(pt, f"L7 {where} observed {obs!r} is not a YYYY-MM-DD date")
+
+# vendor-level [[instrument]] blocks get the same hygiene
+for slug, V in vendors.items():
+    for ins in V.get('raw_instruments', []):
+        check_entry(V['path'], f"[[instrument]] {ins.get('id')!r}", ins)
 
 packs = {}   # "vendor/pack" -> (path, data)
 for slug, V in vendors.items():
@@ -155,13 +172,22 @@ for key, (pt, d, slug) in packs.items():
             err(pt, f"[[instrument]] {iid!r} not in instruments.toml")
         if not ins.get('aliases') and not ins.get('codes'):
             err(pt, f"[[instrument]] {iid!r} has neither aliases nor codes — it says nothing")
+        check_entry(pt, f"[[instrument]] {iid!r}", ins)
     pack_inst = {i['id'] for i in d.get('instrument', []) if i.get('id')}
-    # [[dir]] instrument pins — a typo'd id would silently pin files to an
-    # instrument no consumer's lexicon knows
+    # [[dir]] instrument pins and defaults — a typo'd id would silently pin
+    # files to an instrument no consumer's lexicon knows
     for dd in d.get('dir', []):
-        pin = dd.get('instrument')
-        if pin and pin not in lex_ids and pin not in V['instruments'] and pin not in pack_inst:
-            err(pt, f"[[dir]] {dd.get('path')!r} instrument {pin!r} not in instruments.toml")
+        where = f"[[dir]] {dd.get('path')!r}"
+        for key in ('instrument', 'default_instrument'):
+            pin = dd.get(key)
+            if pin and pin not in lex_ids and pin not in V['instruments'] and pin not in pack_inst:
+                err(pt, f"{where} {key} {pin!r} not in instruments.toml")
+        if dd.get('default_category') and cat_ids and dd['default_category'] not in cat_ids:
+            err(pt, f"{where} default_category {dd['default_category']!r} not in categories.toml")
+        for facet in ('category', 'instrument'):
+            if dd.get(facet) and dd.get('default_' + facet):
+                err(pt, f"L7 {where} carries both {facet} (a pin) and default_{facet} — pick one")
+        check_entry(pt, where, dd)
     # [[relation]]
     for r in d.get('relation', []):
         if r.get('type') not in REL_TYPES: err(pt, f"[[relation]] type {r.get('type')!r} invalid")

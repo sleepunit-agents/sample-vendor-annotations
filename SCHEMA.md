@@ -170,8 +170,10 @@ in the shared lexicon. These are consulted **before** `instruments.toml`.
 
 ```toml
 [[instrument]]
-id      = "hat"                       # a canonical id from instruments.toml
-aliases = ["ch", "oh", "hh", "chh"]   # what THIS vendor writes for it
+id       = "hat"                       # a canonical id from instruments.toml
+aliases  = ["ch", "oh", "hh", "chh"]   # what THIS vendor writes for it
+observed = "2026-09-01"                # optional provenance, as on [[dir]]
+note     = "CH/OH across every SFM drum machine pack"
 ```
 
 Consumers normalize each path segment and the filename stem (lowercase,
@@ -505,6 +507,25 @@ carry no honest instrument signal: jungle breaks named after their sources
 can fix that. Pin only dirs whose content is genuinely uniform; where
 filenames do describe the sound, leave the lexicon to read them.
 
+`default_category` / `default_instrument` *(2026-09-01)* speak **last**:
+they answer only for a file that no word on its path, no vendor rule and
+no directory shape said anything about. Where `category` / `instrument`
+are pins that beat the filenames, a default fills silence — right for a
+synth pack's `Leads` folder full of patches named *David Lynch* that also
+holds one labelled kick loop (the loop stays a loop; the patches become
+multisamples / synth). An entry carries either a pin or a default per
+facet, never both. Same deepest-match rule; same id vocabularies
+(`categories.toml` ids; `instruments.toml`, vendor or pack instrument
+ids).
+
+`observed = "YYYY-MM-DD"` and `note = "…"` *(2026-09-01)* are provenance
+on a `[[dir]]` or `[[instrument]]` entry, like `[vendor] observed`: when
+this was checked against a real copy, and the evidence ("all 143 files
+are chops; the folder name lies"). A user's assertion from their own copy
+*is* this repo's "verified against a real copy" bar, which is why
+consumer-side corrections (materialized-tunes SPEC §19.5) carry these
+fields and can land here as-is.
+
 ```toml
 [[dir]]
 path = "WAV"
@@ -525,6 +546,21 @@ This is where the free stuff comes from: **views by pack** (identity),
 **views by category** (dir map + vendor rules), **tags** (path unions) —
 any consumer that can walk a tree gets them without understanding the
 vendor's naming.
+
+### The local layer — a partial tree, not a fork `(2026-09-01)`
+
+A consumer may lay a second tree in exactly this layout over its checkout
+— `vendors/<slug>/packs/<pack>.toml` holding only what the user asserted
+about their own copy, a `vendors/<slug>/` with no `vendor.toml` when the
+vendor is already known — and load both, local first. No precedence rule
+is needed: `[[dir]]` is already deepest-match with the first entry winning
+a tie, and `[[instrument]]` blocks are already first-hit, so a local entry
+at the same or deeper path simply wins. Because it holds only the diff, it
+is also the submission format: lint it, land it.
+
+One marker is local-only: `local = true` on a `[[dir]]` or `[[instrument]]`
+entry means "my opinion, keep it out of any export". Lint rejects it here
+(L7), so it cannot leak into the repo.
 
 ## Tags — `tags.toml` and `[pack] tags`
 
