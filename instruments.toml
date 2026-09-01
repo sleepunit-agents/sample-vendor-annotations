@@ -188,10 +188,20 @@ aliases = ["tom", "toms", "tom drum", "floor tom", "rack tom"]
 # (the catch-all, Drums/_General). Breaks have no one-shots. (Observed:
 # 808_Kick02 / 909_Kick04 from a kit named Beat filed under
 # Drums/Break/One-Shots, 2026-09-01.)
+#
+# `beat` and `groove` are NOT here. Bare, they do mean a break ("Beat 03",
+# "Funky Groove 12") — but they are also the commonest title words in
+# sample-land: "Groove Therapy Pad", "Bass Groove 01", "Vocal Loop Jack To
+# The Beat". A second break entry at the BOTTOM of this file carries them,
+# below every real instrument, so they only speak when nothing else did.
+# Paired with the drum catch-all word they are unambiguous and stay here.
+# (Observed: Blu Mar Ten "Groove Therapy Pad" filed as a break, 2026-09-01.)
 [[instrument]]
 id       = "break"
 family   = "drums"
-aliases  = ["break", "breaks", "breakbeat", "breakbeats", "amen", "drum break", "drum breaks", "beat", "beats", "groove", "grooves"]
+aliases  = ["break", "breaks", "breakbeat", "breakbeats", "amen", "drum break", "drum breaks",
+            "drum groove", "drum grooves", "drum beat", "drum beats", "drumbeat", "drumbeats",
+            "beat loop", "beat loops", "groove loop", "groove loops"]
 category = "loops"
 
 # ---- percussion ---------------------------------------------------------
@@ -464,6 +474,19 @@ aliases = ["woodwind", "woodwinds"]
 id      = "vocal"
 family  = "vocal"
 aliases = ["vox", "voice", "voices", "spoken", "choir", "choirs", "chant", "chants"]
+
+# ---- weak break words --------------------------------------------------
+# Second break entry: the words that mean a break only when they stand
+# alone. Same id, same family, same category as the entry in the drums
+# section — only the rank differs. Every real instrument sits above this,
+# so "Groove Therapy Pad" is a pad, "Bass Groove 01" is a bass, "Perc
+# Groove 04" is percussion; a bare "Beat 03" or "Funky Groove 12" is still
+# a break, and on a one-shot it still steps aside for Drums/_General.
+[[instrument]]
+id       = "break"
+family   = "drums"
+aliases  = ["beat", "beats", "groove", "grooves"]
+category = "loops"
 
 # ---- non-instrumental material -----------------------------------------
 # The generic fx catch-all. Specific FX types (riser, impact, sweep, …)
