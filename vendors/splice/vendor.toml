@@ -51,6 +51,14 @@ linux   = ["~/Splice/sounds/packs", "~/Splice/Samples/packs"]
 note    = "app-managed: new samples land continuously, so rescan often"
 
 # Category folders sit one level down: <pack>/<Label_-_Title_Audio>/<category>/.
+# That wrapper restates the pack's name (mostly "<Label>_-_<Title>_Audio";
+# also "91V_Ambient_Trap_Vocals", "RNT_silk_vocals", "Hard_Trap_Audio") and
+# is not a label for the sounds under it — a kick in "Vocal Pop House 2"
+# is a kick, a one-shot in a Function Loops pack is a one-shot. Consumers
+# treat a dir that echoes the pack name as a fallback read only when the
+# rest of the path said nothing (materialized-tunes v0.9.13). Some packs
+# have no wrapper and put "DRUMS" / "Loops" / "One_Shots" at that depth;
+# those are real labels and are read as such.
 # Names vary per label; observed 2026-08-16 over 202 packs (114 distinct
 # names). Matched case-insensitively by consumers. Order matters where a
 # name says two things: "*loop*" beats "*drum*"/"*hit*".

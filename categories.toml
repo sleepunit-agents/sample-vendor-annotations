@@ -27,12 +27,26 @@
 id      = "loops"
 aliases = [
   "loop", "loops", "full beats", "whole beats", "full breaks",
-  "break", "breaks", "breakbeat", "breakbeats", "break beats",
   "song starters", "songstarters", "construction",
 ]
 # observed: "Drum Loops 120 BPM", "03. Loops", "Full Breaks",
-# "Amen Break 01.wav", "Construction Kits" (loops entry sits above kits
-# so the construction sense wins)
+# "Construction Kits" (loops entry sits above kits so the construction
+# sense wins)
+
+# A chop is a slice — a one-shot by construction — so it beats the break
+# words below ("Break Chop Dr Sample 01.wav" is a hit cut from a break,
+# not a break) but loses to the loop words above ("vocal_chop_loop" is a
+# loop built from chops). That ordering is why loops is two entries.
+# (Observed: Samples From Mars "Dr Sample", Splice vocal chops, 2026-09-01.)
+[[category]]
+id      = "one-shots"
+aliases = ["chop", "chops", "chopped"]
+
+[[category]]
+id      = "loops"
+aliases = ["break", "breaks", "breakbeat", "breakbeats", "break beats"]
+# observed: "Amen Break 01.wav", "Full Breaks" — a break is a loop by
+# nature, so the word stands in for the category when no folder said one
 
 [[category]]
 id      = "one-shots"

@@ -108,6 +108,21 @@ id      = "foley"
 family  = "fx"
 aliases = ["foley", "field recording", "field recordings", "found sound", "found sounds", "asmr"]
 
+# ---- vocal: the unambiguous words, above drums ---------------------------
+# Same logic as the FX section: "Vocal Loop Jack To The Beat" is a vocal
+# loop, and a producer browsing breaks doesn't want it — the word "vocal"
+# says what the recording IS, "beat" is just the title. So the words that
+# only ever mean a voice outrank the drum vocabulary. The loose ones
+# ("vox" is also an organ and an amp, "voice" a synth voice, "choir" a pad)
+# stay in the second vocal entry near the bottom, where keys and synth
+# still beat them. (Observed: Splice "02_TA_Vocal_Loop_Jack_To_The_Beat_126"
+# filed under Break, 2026-09-01.)
+
+[[instrument]]
+id      = "vocal"
+family  = "vocal"
+aliases = ["vocal", "vocals", "acapella", "a capella", "acappella", "adlib", "adlibs", "ad lib", "ad libs", "spoken word"]
+
 # ---- drums: pieces first, families later -------------------------------
 
 [[instrument]]
@@ -166,7 +181,7 @@ aliases = ["tom", "toms", "tom drum", "floor tom", "rack tom"]
 [[instrument]]
 id      = "break"
 family  = "drums"
-aliases = ["break", "breaks", "breakbeat", "breakbeats", "amen", "drum break", "drum breaks", "beat", "beats", "groove", "grooves", "fill", "fills", "roll", "rolls"]
+aliases = ["break", "breaks", "breakbeat", "breakbeats", "amen", "drum break", "drum breaks", "beat", "beats", "groove", "grooves"]
 
 # ---- percussion ---------------------------------------------------------
 
@@ -194,6 +209,18 @@ aliases = ["cowbell", "cowbells", "agogo"]
 id      = "clave"
 family  = "percussion"
 aliases = ["clave", "claves", "guiro", "chekere", "woodblock", "wood block", "wood blocks", "claves and guiro"]
+
+# A fill is a role, not a piece — so it sits BELOW every named piece
+# ("Snare Roll" is a snare, "percussion_loop_fill_repeating_conga" is a
+# conga) and ABOVE the two catch-alls, so "percussion_loop_fill_drum_kit"
+# and a "Fills" folder land in Drums/Fill rather than dissolving into
+# Percussion/_General or Drums/_General. Until 2026-09-01 these words were
+# break aliases, which filed a conga fill under Break. (Observed: Splice
+# DECAP_DTKX_116/135, reported by Jonathan.)
+[[instrument]]
+id      = "fill"
+family  = "drums"
+aliases = ["fill", "fills", "drum fill", "drum fills", "roll", "rolls", "drum roll", "drum rolls"]
 
 [[instrument]]
 id      = "percussion"
@@ -418,10 +445,14 @@ aliases = ["woodwind", "woodwinds"]
 
 # ---- voice --------------------------------------------------------------
 
+# Second vocal entry: the loose words. Same id, same family — only the
+# rank differs. Keys and synth sit above this so "Vox Continental" stays an
+# organ and "Choir Pad" stays a pad; the words that can only mean a voice
+# are in the first vocal entry above drums.
 [[instrument]]
 id      = "vocal"
 family  = "vocal"
-aliases = ["vocal", "vocals", "vox", "voice", "voices", "acapella", "a capella", "spoken", "choir", "choirs", "chant", "chants", "adlib", "adlibs"]
+aliases = ["vox", "voice", "voices", "spoken", "choir", "choirs", "chant", "chants"]
 
 # ---- non-instrumental material -----------------------------------------
 # The generic fx catch-all. Specific FX types (riser, impact, sweep, …)
