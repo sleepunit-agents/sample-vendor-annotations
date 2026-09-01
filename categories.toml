@@ -66,6 +66,20 @@ aliases = [
 # thing ("808 Kit 1" is a folder of hits) — "Construction Kits" still
 # reads as loops because that entry sits above this one
 
+# A fill is a phrase by construction — several hits in time — so the word
+# stands in for the category when nothing else said one, exactly as a break
+# does. It sits BELOW the hit/kit entry above, so a folder that says
+# one-shots still wins: "Fills" inside a drum machine's one-shot kit stays
+# a one-shot, and only an unlabelled "Fill 03.wav" or a bare "Drum Fills"
+# folder reads as a loop. (Observed: Elektron Octatrack MKII factory
+# content filing its fills as _Unsorted, reported by Jonathan 2026-09-01.)
+[[category]]
+id      = "loops"
+aliases = [
+  "fill", "fills", "drum fill", "drum fills",
+  "roll", "rolls", "drum roll", "drum rolls",
+]
+
 [[category]]
 id      = "fx"
 aliases = ["fx", "sfx", "effect", "effects"]
