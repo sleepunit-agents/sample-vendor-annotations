@@ -181,6 +181,26 @@ So `04. Rimshot/Rimshot TOM 31.wav` is a rimshot even though the machine
 name in the filename also says "TOM", while `Drums/Kick 01.wav` is still
 a kick. Unlabelled files stay unlabelled: never guess.
 
+`codes` (shared lexicon and vendor blocks alike) hold the drum-machine
+abbreviations — "bd", "sd", "cp", "hh" — that only mean the instrument
+when the vendor wrote nothing longer. Two letters are also what a Splice
+pack code or a genre tag looks like: `FF_CP_124_drum_loop_venice_shaker`
+is a shaker loop from the pack Club Progressive, `AU_PC_94_drum_loop_full_cp`
+is cyberpunk. So a code is consulted for a segment only after every alias
+of every instrument has declined it; where it does speak it ranks as its
+instrument, and `Drum Hits/909 CP 01.wav` is still a clap. A vendor whose
+library writes "CP" as a real label (Samples From Mars) keeps it as a
+plain alias in its own block — that is the vendor's assertion, not a
+guess.
+
+```toml
+[[instrument]]
+id      = "clap"
+family  = "drums"
+aliases = ["clap", "claps", "handclap", "hand clap"]
+codes   = ["cp"]                      # speaks only when no word does
+```
+
 The shared `instruments.toml` also carries `[[family]]` blocks — rendering
 knowledge about a whole family. `flat = true` tells consumers that build
 folder trees not to split that family by instrument (bass sub-typing is

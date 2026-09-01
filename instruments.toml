@@ -21,7 +21,14 @@
 # reads as one.
 #
 # `avoid` lists phrases that contain an alias but mean something else; a
-# segment matching one is skipped for that instrument. Vendors whose naming
+# segment matching one is skipped for that instrument. `codes` are the
+# drum-machine abbreviations ("bd", "sd", "cp", "hh") vendors write when
+# they write nothing longer — and two letters are also what a Splice pack
+# code or a genre tag looks like ("FF_CP_124_drum_loop_venice_shaker" is a
+# shaker loop from the pack Club Progressive; "AU_PC_94_drum_loop_full_cp"
+# is cyberpunk). So a code only speaks for a segment when no alias of any
+# instrument does; where it speaks it ranks as its instrument, and
+# "909 CP 01" in a Drum Hits folder is still a clap. Vendors whose naming
 # needs local exceptions add [[instrument]] blocks in their own vendor.toml
 # (see SCHEMA) — those are consulted before this shared lexicon.
 #
@@ -106,18 +113,21 @@ aliases = ["foley", "field recording", "field recordings", "found sound", "found
 [[instrument]]
 id      = "kick"
 family  = "drums"
-aliases = ["kick", "kicks", "bass drum", "bassdrum", "bd", "kik", "bass drums"]
+aliases = ["kick", "kicks", "bass drum", "bassdrum", "kik", "bass drums"]
+codes   = ["bd"]
 avoid   = ["kick bass", "kickbass"]   # a bass patch named for its kick pairing
 
 [[instrument]]
 id      = "snare"
 family  = "drums"
-aliases = ["snare", "snares", "snare drum", "sd", "sn"]
+aliases = ["snare", "snares", "snare drum"]
+codes   = ["sd", "sn"]
 
 [[instrument]]
 id      = "clap"
 family  = "drums"
-aliases = ["clap", "claps", "handclap", "hand clap", "cp"]
+aliases = ["clap", "claps", "handclap", "hand clap"]
+codes   = ["cp"]
 
 # "Cymbals and Hats" holds both, so neither word may claim it — hat outranks
 # cymbal here, so without a rule every crash and ride in such a folder reads
@@ -129,9 +139,10 @@ aliases = ["clap", "claps", "handclap", "hand clap", "cp"]
 id      = "hat"
 family  = "drums"
 aliases = [
-  "hat", "hats", "hi hat", "hihat", "hi hats", "hihats", "hh",
+  "hat", "hats", "hi hat", "hihat", "hi hats", "hihats",
   "closed hat", "closed hats", "open hat", "open hats", "ohh", "chh",
 ]
+codes   = ["hh"]
 
 [[instrument]]
 id      = "cymbal"
@@ -156,11 +167,6 @@ aliases = ["tom", "toms", "tom drum", "floor tom", "rack tom"]
 id      = "break"
 family  = "drums"
 aliases = ["break", "breaks", "breakbeat", "breakbeats", "amen", "drum break", "drum breaks", "beat", "beats", "groove", "grooves", "fill", "fills", "roll", "rolls"]
-
-[[instrument]]
-id      = "drums"
-family  = "drums"
-aliases = ["drum", "drums", "drum hits", "drum one shots", "drumperc", "drum kit", "kit", "kits"]
 
 # ---- percussion ---------------------------------------------------------
 
@@ -193,6 +199,17 @@ aliases = ["clave", "claves", "guiro", "chekere", "woodblock", "wood block", "wo
 id      = "percussion"
 family  = "percussion"
 aliases = ["percussion", "perc", "percs", "percussive"]
+
+# The generic drums entry sits BELOW the percussion pieces, not at the end
+# of its own section: "drum" is the least specific word a drum vendor
+# writes, and it is written everywhere — "FF_CP_124_drum_loop_venice_shaker"
+# is a shaker loop, "Drum Loops/Tambourine 03" is a tambourine. Percussion's
+# own catch-all outranks it too: a Percussion folder inside a Drums tree
+# says more than the tree does. (Observed against Splice, 2026-09-01.)
+[[instrument]]
+id      = "drums"
+family  = "drums"
+aliases = ["drum", "drums", "drum hits", "drum one shots", "drumperc", "drum kit", "kit", "kits"]
 
 # ---- bass ---------------------------------------------------------------
 
