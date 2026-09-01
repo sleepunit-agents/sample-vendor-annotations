@@ -8,7 +8,8 @@
 #
 # HOW IT IS APPLIED. Consumers normalize each path segment and the filename
 # stem (lowercase; order prefixes like "01. " dropped; non-alphanumerics to
-# spaces) and look for these aliases as whole words. The FILENAME is checked
+# spaces; a boundary opened where a letter meets a digit, so "Kick02" and
+# "BD3" read as kick 02 and bd 3) and look for these aliases as whole words. The FILENAME is checked
 # first, then directories deepest-first — the most specific label the vendor
 # wrote wins. Entries are tried in the order below, so specific beats
 # generic ("bass drum" resolves to kick before "bass" can claim it).
@@ -178,10 +179,20 @@ aliases = ["tom", "toms", "tom drum", "floor tom", "rack tom"]
 
 # break before the generic drums entry: a drum break is the more specific
 # description of the two.
+#
+# A break is a loop by definition, and `category` says so: on a file
+# already known to be a one-shot (or a multisample) these words are a
+# title, not a label — a kit called "Beat" holds kicks, "Break Chop Dr
+# Sample 01" is a hit cut from a break — so they step aside for every
+# entry below and, when nothing else speaks, stand in for drums alone
+# (the catch-all, Drums/_General). Breaks have no one-shots. (Observed:
+# 808_Kick02 / 909_Kick04 from a kit named Beat filed under
+# Drums/Break/One-Shots, 2026-09-01.)
 [[instrument]]
-id      = "break"
-family  = "drums"
-aliases = ["break", "breaks", "breakbeat", "breakbeats", "amen", "drum break", "drum breaks", "beat", "beats", "groove", "grooves"]
+id       = "break"
+family   = "drums"
+aliases  = ["break", "breaks", "breakbeat", "breakbeats", "amen", "drum break", "drum breaks", "beat", "beats", "groove", "grooves"]
+category = "loops"
 
 # ---- percussion ---------------------------------------------------------
 

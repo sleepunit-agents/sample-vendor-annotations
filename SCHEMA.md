@@ -175,8 +175,10 @@ aliases = ["ch", "oh", "hh", "chh"]   # what THIS vendor writes for it
 ```
 
 Consumers normalize each path segment and the filename stem (lowercase,
-order prefixes dropped, non-alphanumerics to spaces), collect every label
-found, and keep the most specific one — earliest in `instruments.toml`.
+order prefixes dropped, non-alphanumerics to spaces, a boundary opened
+where a letter meets a digit so `808_Kick02` reads as `808 kick 02`),
+collect every label found, and keep the most specific one — earliest in
+`instruments.toml`.
 So `04. Rimshot/Rimshot TOM 31.wav` is a rimshot even though the machine
 name in the filename also says "TOM", while `Drums/Kick 01.wav` is still
 a kick. Unlabelled files stay unlabelled: never guess.
@@ -250,6 +252,25 @@ family  = "bass"
 split   = true                     # keeps its folder in a flat family
 display = "Upright Bass"           # not "Upright-Bass"
 aliases = ["upright bass", "double bass", "contrabass"]
+```
+
+`category` marks a word that describes a kind of recording, not just a
+sound: a break is a loop by definition. On a file whose category is
+already known to be something else — the folder said one-shots, the
+detector said multisamples — that word is a title, not a label ("Beat" is
+a kit's name; "Break Chop 01" is a hit cut from a break). Consumers pass
+it over so every lower entry gets its turn, and if none speak it stands
+in for its family alone (the family's catch-all, `Drums/_General`). On a
+loop, or when nothing said what the file is, the word stands as written.
+Shared-lexicon-only; a vendor or pack block that names the id inherits
+it. The value must be a `categories.toml` id (linted).
+
+```toml
+[[instrument]]
+id       = "break"
+family   = "drums"
+aliases  = ["break", "breaks", "amen", "beat", "beats", "groove"]
+category = "loops"                 # breaks have no one-shots
 ```
 
 ## [naming] — filename grammar

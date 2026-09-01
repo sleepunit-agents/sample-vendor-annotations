@@ -55,6 +55,16 @@ if os.path.exists(os.path.join(ROOT, 'instruments.toml')):
         if ins.get('split') and ins.get('family') not in flat_families:
             err(lex_path, f"[[instrument]] {ins['id']!r} split=true but family "
                           f"{ins.get('family')!r} is not flat — nothing to split out of")
+    # `category` gates a word to one kind of recording (break = loops); a
+    # value no category entry knows would gate it against everything
+    cat_ids = set()
+    cat_path = os.path.join(ROOT, 'categories.toml')
+    if os.path.exists(cat_path):
+        cat_ids = {c['id'] for c in load(cat_path).get('category', []) if c.get('id')}
+    for ins in lex.get('instrument', []):
+        c = ins.get('category')
+        if c and cat_ids and c not in cat_ids:
+            err(lex_path, f"[[instrument]] {ins['id']!r} category {c!r} is not in categories.toml")
 
 vendors = {}
 for vt in sorted(glob.glob(os.path.join(ROOT, 'vendors', '*', 'vendor.toml'))):
