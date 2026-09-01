@@ -1,0 +1,161 @@
+# Octatrack MKII factory content — the sample pool the unit ships with.
+# Facts from Elektron's Octatrack MKII documentation (the set is called
+# PRESET MKII on the card; 6.06 GB) and a real copy (4,724 wavs; observed
+# 2026-09-01). No [identity]: written from a file listing, not from bytes.
+
+[pack]
+name = "Octatrack MKII Factory Content"
+slug = "octatrack-mkii-factory-content"
+dir  = "Octatrack MKII Factory Content"
+archives = ["Octatrack MKII_Factory-Content.zip"]
+tags = ["elektron", "octatrack", "factory-content", "loops", "drums", "synth"]
+observed = 2026-09-01
+
+[acquisition]                 # bundled with the instrument; the support page says a registered
+                              # unit unlocks the download under the account's "My Sound Packs"
+class    = "vendor-free"
+url      = "https://www.elektron.se/support-downloads/octatrack-mkii"
+gate     = "account"
+license  = "unknown"          # covered by the Octatrack's own terms; no separate sample license text seen
+observed = 2026-09-01
+
+# Layout (file counts, observed 2026-09-01):
+#     25  PRESETS/AUDIO/Elektron                     — Elektron's own demo hits (Mdkick, Mdsnare, MMchord, Sidarp …)
+#   1273  PRESETS/AUDIO/Loopmasters                  — Loops/<genre>/{Bass,Drum,Music} Loops; Sounds and FX/{Bass,Drum,FX,Music} Hits
+#    692  PRESETS/AUDIO/Origin Sound                 — Music Loops, Music Single Hits, SFX, drum hits, drum loops
+#    871  PRESETS/AUDIO/Sample Magic                 — <pack>/<kind>[/<bpm> bpm]; eleven packs
+#   1875  PRESETS/AUDIO/Samples From Mars            — Drums/{Chains,Hits,Loops}, Synths/<machine>/<patch>
+#     52  PRESETS/PRESETS                            — bankNN.work/.strd, arrNN.work/.strd (project state)
+
+[[dir]]
+path = "PRESETS/AUDIO"
+role = "canonical-audio"
+
+[[dir]]
+path = "PRESETS/PRESETS"
+role = "format-tree"
+desc = "Octatrack bank and arrangement files for the factory project — not audio"
+
+# ---- Elektron's own 25 ---------------------------------------------------
+[[dir]]
+path     = "PRESETS/AUDIO/Elektron"
+category = "one-shots"
+tags     = ["elektron"]
+desc     = "single sounds, one per file, no folder — Machinedrum and Monomachine hits, SID tones, a Rhodes, a vocal"
+
+# ---- Loopmasters ---------------------------------------------------------
+# "Loops/<genre>/<Bass|Drum|Music> Loops" and "Sounds and FX/<…> Hits" —
+# every folder names its kind, the shared lexicon reads them; only tags here.
+[[dir]]
+path = "PRESETS/AUDIO/Loopmasters"
+tags = ["loopmasters"]
+
+[[dir]]
+path     = "PRESETS/AUDIO/Loopmasters/Sounds and FX/FX Hits"
+category = "fx"
+
+# ---- Origin Sound --------------------------------------------------------
+[[dir]]
+path = "PRESETS/AUDIO/Origin Sound"
+tags = ["origin-sound"]
+
+[[dir]]
+path     = "PRESETS/AUDIO/Origin Sound/SFX"
+category = "fx"
+
+[[dir]]
+path       = "PRESETS/AUDIO/Origin Sound/drum hits/Tops"
+instrument = "hat"
+desc       = "80 files named only 'OS_ELK_Top N' — the hat layer; nothing else in the names to read"
+
+# ---- Sample Magic --------------------------------------------------------
+# "<pack>/<kind> loops[/<bpm> bpm]" mostly says its kind. The exceptions:
+[[dir]]
+path = "PRESETS/AUDIO/Sample Magic"
+tags = ["sample-magic"]
+
+[[dir]]
+path     = "PRESETS/AUDIO/Sample Magic/cinematic atmos"
+category = "loops"
+desc     = "folders are tempos ('110 bpm', '130 bpm'), files are keyed ('closer_Am.wav') — atmosphere loops, no kind word anywhere"
+
+[[dir]]
+path     = "PRESETS/AUDIO/Sample Magic/atmospheric techno/textures"
+category = "loops"
+desc     = "'chug_128.wav' — every file carries the tempo"
+
+[[dir]]
+path     = "PRESETS/AUDIO/Sample Magic/retro future/textures"
+category = "loops"
+desc     = "'betamaxx_Dm_130.wav' — key and tempo on every file"
+
+[[dir]]
+path       = "PRESETS/AUDIO/Sample Magic/lofi techno/top loops"
+instrument = "hat"
+desc       = "'airlok_126.wav' — top loops named by tempo only"
+
+[[dir]]
+path       = "PRESETS/AUDIO/Sample Magic/organic electronica/top loops"
+instrument = "hat"
+
+[[dir]]
+path     = "PRESETS/AUDIO/Sample Magic/atmospheric techno/pads"
+category = "one-shots"
+desc     = "'beauty_Bm9.wav' — keyed, no tempo, where every loop in this pack carries one: sustained single chords"
+
+# ---- Samples From Mars -----------------------------------------------------
+# Drums/Hits and Drums/Loops say their kind. Synths/<machine>/<patch> is
+# note-suffixed multisample sets ("Triangle MSx10 C2.wav"); the chromatic
+# fallback reads the bigger ones, the pin covers the two- and three-note
+# sets. Two Loops folders inside Synths are tempo'd ("STO Modular A 01
+# 120.wav", "Loop SYS100 01 124.wav").
+[[dir]]
+path = "PRESETS/AUDIO/Samples From Mars"
+tags = ["samples-from-mars"]
+
+[[dir]]
+path     = "PRESETS/AUDIO/Samples From Mars/Drums/Chains"
+category = "one-shots"
+tags     = ["sample-chain", "octatrack"]
+desc     = "32 hits per file with a .ot slice map beside it ('8x8 Chain 32.wav') — a kit in one wav, cut by the Octatrack's slicer"
+
+[[dir]]
+path     = "PRESETS/AUDIO/Samples From Mars/Synths"
+category = "multisamples"
+
+[[dir]]
+path     = "PRESETS/AUDIO/Samples From Mars/Synths/Modular/Loops"
+category = "loops"
+
+[[dir]]
+path     = "PRESETS/AUDIO/Samples From Mars/Synths/SYS100/Loops"
+category = "loops"
+
+# Instrument words that only mean what they mean inside this set. The
+# Samples From Mars folders use SFM's drum-machine abbreviations — as
+# codes, because Loopmasters names in the same pack start with three-letter
+# pack codes ("MAN_120_G_Synth_Bass_04") and a code must never outrank a
+# real word. Elektron's own files glue a machine prefix onto the drum
+# ("Mdkick"), and those are plain aliases.
+[[instrument]]
+id      = "hat"
+aliases = ["mdhat"]
+codes   = ["ch", "oh", "hh"]
+
+[[instrument]]
+id      = "kick"
+aliases = ["mdkick"]
+codes   = ["bd"]
+
+[[instrument]]
+id      = "snare"
+aliases = ["mdsnare"]
+codes   = ["sd"]
+
+[[instrument]]
+id      = "clap"
+codes   = ["cp"]
+
+[[instrument]]
+id      = "bass"
+aliases = ["distbass", "ebass", "modbass"]

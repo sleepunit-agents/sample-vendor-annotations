@@ -57,3 +57,16 @@ manifest    = "manifests/junos-from-mars.sha256"
 #        1  Docs/Junos From Mars - About.rtf
 #        1  Docs/Samples From Mars - Terms and Conditions.pdf
 #        1  Icon
+
+# Dir map (observed 2026-09-01). "05. Chords" is keyed single chords
+# ("Vibe Slide Junos Dmaj7.wav", "Stabby Junos Gm7 02.wav") — one strike
+# each, no tempo. The other five dirs are multisample sets the
+# chromatic-siblings fallback already reads.
+[[dir]]
+path = "WAV"
+role = "canonical-audio"
+
+[[dir]]
+path     = "WAV/05. Chords"
+category = "one-shots"
+tags     = ["chords"]

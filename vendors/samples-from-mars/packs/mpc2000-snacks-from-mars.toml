@@ -60,3 +60,11 @@ manifest    = "manifests/mpc2000-snacks-from-mars.sha256"
 #        6  Reason/Reason NN-XT
 #        6  SFZ/MPC 2000 Snacks From Mars
 #        5  Docs/Installation Instructions For Ableton
+
+# Dir map (observed 2026-09-01). Six kits of 16 hits each, folders named
+# for the kit ("06. Quarantine Club/SD 909 Hi MPC2000.wav") — the vendor's
+# SD/CH aliases name the drum; nothing on the path says one-shot.
+[[dir]]
+path     = "WAV"
+role     = "canonical-audio"
+category = "one-shots"

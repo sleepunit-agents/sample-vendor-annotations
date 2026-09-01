@@ -60,3 +60,22 @@ manifest    = "manifests/micro-from-mars.sha256"
 #       56  WAV/MicroMoog 7
 #       54  WAV/MicroMoog 11
 #       54  WAV/MicroMoog 22
+
+# Dir map (observed 2026-09-01). "MicroMoog 1" … "MicroMoog 27" are
+# multisample sets: "SFM-MicroMoog25-84.wav" numbers its files by MIDI
+# note (47–108 observed), which the chromatic-siblings fallback cannot
+# see because no note name is written. "MicroMoog FX1–4" are effects;
+# "MicroMoog Noise" and "MicroMoog Panic Attack" are numbered takes
+# with no note or kind and stay unpinned.
+[[dir]]
+path = "WAV"
+role = "canonical-audio"
+
+[[dir]]
+path     = "WAV/MicroMoog [0-9]*"
+category = "multisamples"
+desc     = "one patch per folder, files numbered by MIDI note"
+
+[[dir]]
+path     = "WAV/MicroMoog FX*"
+category = "fx"

@@ -48,3 +48,15 @@ manifest    = "manifests/databenders-toolkit-samples-from-mars.sha256"
 #       17  Logic EXS/Databenders_Toolkit
 #       16  Kontakt/Databenders_Toolkit
 #        1  Icon
+
+# Dir map (observed 2026-09-01). "DRUMS" holds hits in per-drum folders
+# ("KICK AND SUB/Kick-Verb.wav", "SNARE/Snare-Lo.wav") with no kind word.
+# "MISC" and "MORPHBOT" are numbered takes ("Misc-32-note.wav",
+# "Morphbot-15.wav") and stay unpinned; "FX" and "STABS" read on their own.
+[[dir]]
+path = "WAV"
+role = "canonical-audio"
+
+[[dir]]
+path     = "WAV/DRUMS"
+category = "one-shots"

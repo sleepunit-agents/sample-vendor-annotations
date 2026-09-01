@@ -169,6 +169,12 @@ aliases = [
   "hat", "hats", "hi hat", "hihat", "hi hats", "hihats",
   "closed hat", "closed hats", "open hat", "open hats", "ohh", "chh",
 ]
+# "tops" is deliberately NOT here. It names a layer (hats + percussion
+# over a beat), not a piece, and an entry this high would outrank the
+# real piece in the file name — "02. Tops/Clave Slider Ekko Color 140.wav"
+# is a clave, "07. Tom Combos/TomCombos_Tops_909Loops_05.wav" a tom
+# (probed 2026-09-01 across the whole archive). A folder of nothing but
+# tops gets a [[dir]] instrument pin in its pack file instead.
 codes   = ["hh"]
 
 [[instrument]]
@@ -240,7 +246,10 @@ aliases = ["cowbell", "cowbells", "agogo"]
 [[instrument]]
 id      = "clave"
 family  = "percussion"
-aliases = ["clave", "claves", "guiro", "chekere", "woodblock", "wood block", "wood blocks", "claves and guiro"]
+aliases = ["clave", "claves", "guiro", "guira", "chekere", "woodblock", "wood block", "wood blocks", "claves and guiro",
+           "jam block", "jamblock", "jamblok"]
+# guira: the Dominican metal scraper; jam block: LP's plastic woodblock —
+# Polyend Festival ships both as folders (observed 2026-09-01)
 
 # A fill is a role, not a piece — so it sits BELOW every named piece
 # ("Snare Roll" is a snare, "percussion_loop_fill_repeating_conga" is a
@@ -354,7 +363,9 @@ aliases = ["lead", "leads", "lead synth", "hoover", "hoovers", "acid", "riff", "
 [[instrument]]
 id      = "pad"
 family  = "synth"
-aliases = ["pad", "pads", "atmosphere", "atmospheres", "wash", "drone", "drones", "ambient", "ambience", "texture", "textures"]
+aliases = ["pad", "pads", "atmosphere", "atmospheres", "atmos", "wash", "drone", "drones", "ambient", "ambience", "texture", "textures"]
+# "atmos" is the sample-pack short form of atmosphere (Sample Magic
+# "cinematic atmos", Origin Sound "Atmos Pads"; observed 2026-09-01)
 
 [[instrument]]
 id      = "pluck"

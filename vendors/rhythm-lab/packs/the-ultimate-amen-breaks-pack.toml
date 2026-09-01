@@ -42,6 +42,7 @@ manifest    = "manifests/the-ultimate-amen-breaks-pack.sha256"
 path = "Original"
 role = "canonical-audio"
 category = "loops"
+instrument = "break"      # every file is the Amen; names say the processor, not the drum
 tags = ["amen", "original"]
 desc = "the Amen break as sampled from CD/vinyl/unknown sources; several are AIFF named .wav"
 
@@ -49,30 +50,35 @@ desc = "the Amen break as sampled from CD/vinyl/unknown sources; several are AIF
 path = "AKAI S1100"
 role = "canonical-audio"
 category = "loops"
+instrument = "break"      # every file is the Amen; names say the processor, not the drum
 tags = ["amen", "akai-s1100", "resampled"]
 
 [[dir]]
 path = "AKAI MPC1000"
 role = "canonical-audio"
 category = "loops"
+instrument = "break"      # every file is the Amen; names say the processor, not the drum
 tags = ["amen", "mpc1000", "resampled"]
 
 [[dir]]
 path = "Roland VP9000"
 role = "canonical-audio"
 category = "loops"
+instrument = "break"      # every file is the Amen; names say the processor, not the drum
 tags = ["amen", "vp-9000", "resampled", "time-stretch"]
 
 [[dir]]
 path = "Yamaha SU700"
 role = "canonical-audio"
 category = "loops"
+instrument = "break"      # every file is the Amen; names say the processor, not the drum
 tags = ["amen", "su700", "resampled"]
 
 [[dir]]
 path = "Fanu"
 role = "canonical-audio"
 category = "loops"
+instrument = "break"      # every file is the Amen; names say the processor, not the drum
 tags = ["amen"]
 desc = "Fanu's Amen collection, included with permission"
 
@@ -80,16 +86,19 @@ desc = "Fanu's Amen collection, included with permission"
 path = "Havoc"
 role = "canonical-audio"
 category = "loops"
+instrument = "break"      # every file is the Amen; names say the processor, not the drum
 tags = ["amen"]
 
 [[dir]]
 path = "Processed"
 role = "canonical-audio"
 category = "loops"
+instrument = "break"      # every file is the Amen; names say the processor, not the drum
 tags = ["amen", "processed"]
 
 [[dir]]
 path = "SAMPLED AND REMIXED"
 role = "canonical-audio"
 category = "loops"
+instrument = "break"      # every file is the Amen; names say the processor, not the drum
 tags = ["amen", "remixed"]

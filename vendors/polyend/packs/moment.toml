@@ -54,3 +54,9 @@ desc = "same one-shots cut 16-bit for Tracker/Play"
 path = "Pack 24 bit stereo"
 role = "canonical-audio"
 category = "one-shots"
+
+# "Clanks/Clank_Blast.wav" — struck-metal foley percussion. The word is
+# this pack's own; it reads as percussion here (observed 2026-09-01).
+[[instrument]]
+id      = "percussion"
+aliases = ["clank", "clanks"]

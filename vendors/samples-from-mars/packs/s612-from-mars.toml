@@ -60,3 +60,20 @@ manifest    = "manifests/s612-from-mars.sha256"
 #        1  Docs/Installation Instructions For MPC1000 & MPC2500.rtf
 #        1  Docs/Installation Instructions For Reason.rtf
 #        1  Docs/S612 From Mars - Art.jpg
+
+# Dir map (observed 2026-09-01). "WAV/Synths" is note-suffixed multisample
+# sets, one patch per folder ("Synth Bass/Juno Six0/17 Juno Six0 S612
+# F-1.wav"); the chromatic fallback reads the big sets and this pin covers
+# the small ones it passes over. "WAV/Drums" reads on its own.
+[[dir]]
+path = "WAV"
+role = "canonical-audio"
+
+[[dir]]
+path     = "WAV/Synths"
+category = "multisamples"
+
+[[dir]]
+path     = "WAV/Synths/FX"
+category = "fx"
+desc     = "seven effect patches sampled across the keyboard — the vendor filed them as FX, and that stands"

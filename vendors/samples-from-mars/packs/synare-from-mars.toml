@@ -59,3 +59,17 @@ manifest    = "manifests/synare-from-mars.sha256"
 #        1  Docs/Installation Instructions - All.rtf
 #        1  Docs/Installation Instructions For Kontakt.rtf
 #        1  Docs/Installation Instructions For MPC.rtf
+
+# Dir map (observed 2026-09-01 against a real copy's listing).
+# "03. Effected" is the "01. One Hits" set re-recorded Wet/Dry through
+# effects — "Blip/Blip Synare Wet 04.wav" — hits, but no hit word on the
+# path, so the category is pinned. "02. Chromatic" reads as multisamples
+# through the chromatic-siblings fallback and needs nothing here.
+[[dir]]
+path = "WAV"
+role = "canonical-audio"
+
+[[dir]]
+path     = "WAV/03. Effected"
+category = "one-shots"
+desc     = "the One Hits set through effects, Wet/Dry takes per patch"

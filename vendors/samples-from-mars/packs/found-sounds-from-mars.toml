@@ -59,3 +59,20 @@ manifest    = "manifests/found-sounds-from-mars.sha256"
 #        1  Docs/Installation Instructions For FL Studio.rtf
 #        1  Docs/Installation Instructions For Kontakt.rtf
 #        1  Icon
+
+# Dir map (observed 2026-09-01). The whole WAV tree is struck found
+# objects, one hit per file, in Clean / Half Speed / Double Speed / Tube
+# takes ("Outdoors/Clean/WaterDrop3-Clean.wav"); the folders name the
+# material (Wood, Metal, Plastic Glass, Body Misc, Outdoors, Mechanical,
+# Vortex), never the kind. "FX Textures" is the exception and reads as fx.
+# No instrument pin: many names do carry the drum they stand in for
+# ("GardenForkSnare1", "WoodTom1", "LayeredClap") and the lexicon reads those.
+[[dir]]
+path     = "WAV"
+role     = "canonical-audio"
+category = "one-shots"
+tags     = ["found-sound", "foley"]
+
+[[dir]]
+path     = "WAV/FX Textures"
+category = "fx"

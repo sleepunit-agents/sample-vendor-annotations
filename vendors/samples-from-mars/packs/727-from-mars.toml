@@ -60,3 +60,23 @@ manifest    = "manifests/727-from-mars.sha256"
 #        1  Docs/Installation Instructions - All.rtf
 #        1  Docs/Installation Instructions For Battery.rtf
 #        1  Docs/Installation Instructions For Kontakt.rtf
+
+# Dir map (observed 2026-09-01). The hits sit under "01. Clean" and
+# "02. Tape" (two captures of the machine), each split "01. Hits" /
+# "02. Flams" and, under Tape, "01. Unpitched" / "02. Pitched". Hits and
+# flams are single strokes; the tree names the capture, not the kind, so
+# both capture dirs are pinned one-shots. "03. Kits" already reads as
+# one-shots through the vendor's kits rule.
+[[dir]]
+path = "WAV"
+role = "canonical-audio"
+
+[[dir]]
+path     = "WAV/01. Clean"
+category = "one-shots"
+tags     = ["clean"]
+
+[[dir]]
+path     = "WAV/02. Tape"
+category = "one-shots"
+tags     = ["tape"]

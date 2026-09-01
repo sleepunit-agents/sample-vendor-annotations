@@ -59,3 +59,14 @@ manifest    = "manifests/101-drums-from-mars.sha256"
 #        1  WAV/101_Drums_07.wav
 #        1  WAV/101_Drums_08.wav
 #        1  WAV/101_Drums_09.wav
+
+# Dir map (observed 2026-09-01). 62 SH-101 drum hits named
+# "101_Drums_NN.wav" under a flat WAV dir — the pack IS the drum kit, so
+# both the category and the instrument family are pinned; nothing in the
+# names could say more. The Ableton / Kontakt / Logic dirs are the same
+# hits packaged per host.
+[[dir]]
+path       = "WAV"
+role       = "canonical-audio"
+category   = "one-shots"
+instrument = "drums"

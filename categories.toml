@@ -58,11 +58,13 @@ aliases = [
   "one shot", "one shots", "oneshot", "oneshots",
   "single shot", "single shots", "shot", "shots",
   "individual hits", "one hits", "single hits", "hit", "hits",
+  "flam", "flams",
   "stab", "stabs",
   "kit", "kits", "drum kit", "drum kits", "sample kit", "sample kits",
 ]
 # observed: "01. Individual Hits", "One Shots", "Drum Hits",
-# "Snare Hit 03.wav", "Rim Shots"; kit words are slang for the same
+# "Snare Hit 03.wav", "Rim Shots"; a flam is one stroke — Samples From
+# Mars 727 "02. Flams/Conga Lo Flam D 727 08.wav" (2026-09-01); kit words are slang for the same
 # thing ("808 Kit 1" is a folder of hits) — "Construction Kits" still
 # reads as loops because that entry sits above this one
 

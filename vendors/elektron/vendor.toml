@@ -1,0 +1,36 @@
+# Elektron (Stockholm) — the Octatrack MKII factory content, as shipped
+# on the unit's CF card and offered as a download from the support page.
+# Observed 2026-09-01 against a full copy laid out one dir for the set
+# with the vendor's zip beside it. Elektron is the house here: the audio
+# inside is licensed from four content partners (Loopmasters, Origin
+# Sound, Sample Magic, Samples From Mars), each under its own top-level
+# folder with its own grammar — the pack map carries all four.
+
+[vendor]
+name     = "Elektron"
+slug     = "elektron"
+aliases  = ["Elektron Music Machines"]
+homepage = "https://www.elektron.se"
+role     = "house"
+domains  = ["elektron.se"]   # hosts pointers may use (lint L1)
+observed = 2026-09-01
+
+[packs]
+grammar     = "top-level-dirs"     # one dir per content set
+sibling_zip = "archival-original"
+zip_name_grammar = "'Octatrack MKII_Factory-Content.zip' beside dir 'Octatrack MKII Factory Content'; the zip unpacks to an Octatrack Set — PRESETS/AUDIO is the sample pool, PRESETS/PRESETS the banks"
+
+[formats]
+canonical_dir = "PRESETS/AUDIO"    # the Set's audio pool; everything under it is plain WAV
+# The Set's other tree is Octatrack project state, not audio:
+parallel_dirs = ["PRESETS/PRESETS"]
+sidecar_extensions = [".ot", ".work", ".strd"]   # .ot = Octatrack slice/attribute file riding beside a wav
+
+[naming]
+# Partner grammars differ; the harvester reads them through the shared
+# lexicon plus the pack map. Loopmasters: "<pack code>_<bpm>_<key>_<name>_<n>"
+# ("MAN_120_G_Synth_Bass_04.wav"). Origin Sound: "OS_ELK_<bpm>_<key>_<name>"
+# or "OS_ELK_<name> <n>". Sample Magic: "<word>_<key>.wav" or "<word>_<bpm>.wav",
+# bpm also as a folder ("110 bpm"). Samples From Mars: "<name> <machine> <n|note>",
+# machine names slightly altered ("MPCx60", "Lxnn60", "CRx78").
+take_suffix = " NN"

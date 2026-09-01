@@ -1,0 +1,40 @@
+# Postcard — Textures. The one Palette pack missing from the set annotated
+# 2026-08-16; written 2026-09-01 from a real copy's listing (102 files per
+# tree, every file "Texture_<name>.wav"). No [identity]: no bytes seen.
+
+[pack]
+name = "Postcard"
+slug = "postcard"
+dir  = "Postcard"
+url  = "https://polyend.com/product/postcard/"
+samples_listed = 102
+tags = ["texture", "pad", "ambient"]
+observed = 2026-09-01
+
+[meta]
+title = "Postcard"
+type  = "product"
+# no image: the page's og:image is the site's generic card, not the pack art
+
+[acquisition]                 # WooCommerce, priced; no published sample license text (2026-09-01)
+class    = "vendor-paid"
+url      = "https://polyend.com/product/postcard/"
+gate     = "purchase"
+license  = "unknown"
+observed = 2026-09-01
+
+[[dir]]
+path = "Postcard 16 bit mono"
+role = "format-tree"
+desc = "same one-shots cut 16-bit for Tracker/Play"
+
+[[dir]]
+path = "Postcard 16 bit stereo"
+role = "format-tree"
+desc = "same one-shots cut 16-bit for Tracker/Play"
+
+[[dir]]
+path = "Postcard 24 bit stereo"
+role = "canonical-audio"
+category = "one-shots"
+desc = "102 textures, 'Texture_Seaside.wav' — no Docs folder in this pack"

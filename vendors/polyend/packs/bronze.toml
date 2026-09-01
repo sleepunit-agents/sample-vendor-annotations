@@ -54,3 +54,11 @@ desc = "same one-shots cut 16-bit for Tracker/Play"
 path = "Pack 24 bit stereo"
 role = "canonical-audio"
 category = "one-shots"
+
+# Bronze names its hats by state, not by piece: "Closed_Machine_Kuy.wav",
+# "Open_Live_Space.wav" (93 of 127 files; the rest say "Shaker_"). Inside
+# this pack those words mean the hat — a pack-level block, because
+# "open"/"closed" mean nothing of the sort anywhere else (observed 2026-09-01).
+[[instrument]]
+id      = "hat"
+aliases = ["closed", "open"]

@@ -55,3 +55,11 @@ manifest    = "manifests/arp-omni-from-mars.sha256"
 #        1  Docs/Installation Instructions - All.rtf
 #        1  Docs/Installation Instructions For Kontakt.rtf
 #        1  Icon
+
+# Dir map (observed 2026-09-01). Every WAV dir is one Omni patch sampled
+# across the keyboard, files named "Omni Long-12B.wav" — index glued to
+# the note name, which the chromatic-siblings fallback does not parse.
+[[dir]]
+path     = "WAV"
+role     = "canonical-audio"
+category = "multisamples"

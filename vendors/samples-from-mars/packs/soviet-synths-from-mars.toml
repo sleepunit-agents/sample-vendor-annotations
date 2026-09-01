@@ -59,3 +59,14 @@ manifest    = "manifests/soviet-synths-from-mars.sha256"
 #        1  Docs/Installation Instructions For Kontakt.rtf
 #        1  Docs/Installation Instructions For Reason.rtf
 #        1  Docs/Soviet Synths From Mars - Art.jpg
+
+# Dir map (observed 2026-09-01). "07. Drums" is drum hits off the Soviet
+# machines ("BD LELL UDS A 02.wav", "SD FORMANTA UDS 03.wav") — the
+# vendor's BD/SD aliases name the drum; the folder says no kind.
+[[dir]]
+path = "WAV"
+role = "canonical-audio"
+
+[[dir]]
+path     = "WAV/07. Drums"
+category = "one-shots"

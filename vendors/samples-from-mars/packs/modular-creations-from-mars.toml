@@ -59,3 +59,29 @@ manifest    = "manifests/modular-creations-from-mars.sha256"
 #        1  5. Docs/Logic EXS - Installation Instructions.rtf
 #        1  5. Docs/REX2 Installation Instructions.rtf
 #        1  Icon
+
+# Dir map (observed 2026-09-01). No WAV level: the numbered dirs sit at
+# pack root. "1. Modular Loops (120 BPM)" reads as loops on its own.
+# "2. Modular Drones" and "3. Modular Raw Voltage" are untempo'd sustained
+# recordings ("DarkModulator_Drones_08.wav", "DPO_RawVoltages_13.wav") —
+# every tempo'd thing in this pack is under the loops dir, so these are
+# pinned one-shots. "4. Modular Instruments" nests Kontakt 5.5 / Ableton
+# Live trees (host packaging of the same material) and "5. Docs" is docs.
+[[dir]]
+path     = "2. Modular Drones"
+category = "one-shots"
+tags     = ["drone"]
+
+[[dir]]
+path     = "3. Modular Raw Voltage"
+category = "one-shots"
+tags     = ["raw-oscillator"]
+
+[[dir]]
+path = "4. Modular Instruments"
+role = "format-tree"
+desc = "Kontakt 5.5 and Ableton Live instruments built from the same recordings"
+
+[[dir]]
+path = "5. Docs"
+role = "docs"

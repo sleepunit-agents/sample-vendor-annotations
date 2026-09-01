@@ -60,3 +60,15 @@ manifest    = "manifests/mpc60-from-mars.sha256"
 #        1  Docs/Installation Instructions For Battery.rtf
 #        1  Docs/Installation Instructions For Kontakt.rtf
 #        1  Docs/Installation Instructions For Reason.rtf
+
+# Dir map (observed 2026-09-01). "Simple WAV" is a flat one-shot set
+# beside "Individual Hits" and "Kits": "01. Bass Drum/BD 606 Punch Long
+# Dark MPC60 05.wav" — hits, folder word says nothing of the kind.
+[[dir]]
+path = "WAV"
+role = "canonical-audio"
+
+[[dir]]
+path     = "WAV/Simple WAV"
+category = "one-shots"
+desc     = "flat hits set, one folder per drum"

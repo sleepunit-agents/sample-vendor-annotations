@@ -60,3 +60,17 @@ manifest    = "manifests/dr-sample-from-mars.sha256"
 #       26  Reason Kong/Dr Sample From Mars
 #        5  Docs/Installation Instructions For Ableton
 #        2  Docs/Installation Instructions For Logic EXS
+
+# Dir map (observed 2026-09-01). "06. Chords" is keyed single chords
+# ("Universe Chord Dr Sample 10 Ebmaj7.wav") — no tempo anywhere, one
+# strike each. "07. Textures" mixes cinema scenes, pads, vox and chops
+# and stays unpinned: its chops read as one-shots on their own and the
+# rest carries no kind word.
+[[dir]]
+path = "WAV"
+role = "canonical-audio"
+
+[[dir]]
+path     = "WAV/06. Chords"
+category = "one-shots"
+tags     = ["chords"]

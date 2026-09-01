@@ -59,3 +59,14 @@ manifest    = "manifests/vinyl-synths-from-mars.sha256"
 #        1  Docs/Artwork - Vinyl Synths From Mars.jpg
 #        1  Docs/Samples From Mars - Terms and Conditions.pdf
 #        1  Docs/Vinyl Synths From Mars - About.rtf
+
+# Dir map (observed 2026-09-01). "05. Percussive" is single-note hits, all
+# at C3 ("Sub37 Knock Wide Vinyl Synths C3.wav") — one pitch, so not a
+# multisample set, and no kind word on the path.
+[[dir]]
+path = "WAV"
+role = "canonical-audio"
+
+[[dir]]
+path     = "WAV/05. Percussive"
+category = "one-shots"
