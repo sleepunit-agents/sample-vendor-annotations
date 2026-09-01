@@ -386,6 +386,15 @@ aliases = ["lead", "leads", "lead synth", "hoover", "hoovers", "riff", "riffs"]
 # "acid" is NOT here any more: it is a bass entry (2026-09-01, Jonathan).
 
 [[instrument]]
+id      = "vocoder"
+family  = "synth"
+aliases = ["vocoder", "vocoders"]
+# Only ever seen as a Samples From Mars preset folder (VP330 From Mars:
+# "Presets/Vocoder/", 883 samples reached through the document tier);
+# zero audio paths in the 167k house listing carry the word, so no
+# collateral (2026-09-01).
+
+[[instrument]]
 id      = "pad"
 family  = "synth"
 aliases = ["pad", "pads", "atmosphere", "atmospheres", "atmos", "wash", "drone", "drones", "ambient", "ambience", "texture", "textures"]
