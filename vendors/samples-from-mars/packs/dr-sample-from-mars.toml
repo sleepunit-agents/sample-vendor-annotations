@@ -63,9 +63,15 @@ manifest    = "manifests/dr-sample-from-mars.sha256"
 
 # Dir map (observed 2026-09-01). "06. Chords" is keyed single chords
 # ("Universe Chord Dr Sample 10 Ebmaj7.wav") — no tempo anywhere, one
-# strike each. "07. Textures" mixes cinema scenes, pads, vox and chops
-# and stays unpinned: its chops read as one-shots on their own and the
-# rest carries no kind word.
+# strike each. "07. Textures" is ten SP-303 texture kits — sixteen
+# numbered chops each ("Choir School Dr Sample 01…16", "Cinema Dr
+# Sample 01…16"), the same sixteen the Maschine / Battery / MPC trees lay
+# across pads — so the kind is one-shots by default: only "01. Break"
+# names its own kind (a chopped break, loops) and keeps it. Left at
+# "stays unpinned" on 2026-09-01; 144 of the 160 files carried no kind
+# and every Textures rack under Ableton/…/Presets/07. Textures inherited
+# the silence and asked "loop or one-shot?" on a folder of .adg
+# (Jonathan, 2026-09-02).
 [[dir]]
 path = "WAV"
 role = "canonical-audio"
@@ -74,3 +80,10 @@ role = "canonical-audio"
 path     = "WAV/06. Chords"
 category = "one-shots"
 tags     = ["chords"]
+
+[[dir]]
+path             = "WAV/07. Textures"
+default_category = "one-shots"
+tags             = ["chops"]
+observed         = 2026-09-02
+note             = "ten texture kits of sixteen numbered chops; 01. Break keeps loops by its own word"
