@@ -264,6 +264,27 @@ aliases = ["clave", "claves", "guiro", "guira", "chekere", "woodblock", "wood bl
 # guira: the Dominican metal scraper; jam block: LP's plastic woodblock —
 # Polyend Festival ships both as folders (observed 2026-09-01)
 
+# Mallets are tuned percussion, and vendors file them with the drums:
+# SFM 360's "06. Perc/Vibes", "06. Perc/Mallet Multi Filter". Every
+# alias here was already in the file, but the entry sat in the keys
+# block — BELOW the percussion catch-all — so the parent folder's "perc"
+# outranked the file's own "vibes" and 297 chromatic patches read
+# Percussion/_General. A vibraphone is percussion the way a piano is, so
+# the family stays keys (Keys/Mallet) and the entry ranks with the named
+# pieces, above the catch-alls. (Jonathan, "vibes vibrato under perc …
+# it goes under mallet", 2026-09-02.)
+[[instrument]]
+id      = "mallet"
+family  = "keys"
+aliases = ["mallet", "mallets", "marimba", "vibraphone", "vibes", "xylophone", "kalimba"]
+
+# Same folder, same rank problem: 360 "06. Perc/Timpani", SP1200
+# "Factory Drums/7. Timpani". A named orchestral drum, so percussion.
+[[instrument]]
+id      = "timpani"
+family  = "percussion"
+aliases = ["timpani", "timpanis", "kettle drum", "kettle drums"]
+
 # A fill is a role, not a piece — so it sits BELOW every named piece
 # ("Snare Roll" is a snare, "percussion_loop_fill_repeating_conga" is a
 # conga) and ABOVE the two catch-alls, so "percussion_loop_fill_drum_kit"
@@ -415,16 +436,22 @@ aliases = ["organ", "organs", "hammond", "vox organ", "harmonium"]
 # harmonium: a reed organ; SFM Mini "Harmonium" (observed 2026-09-02). Acid's
 # "Harmonium Sine" stays acid — the folder word ranks earlier.
 
+# The clavinet is a named keyboard, and vendors write it constantly:
+# SFM DX100 "Easy Clav" / "Fuzz Clav", OB "Clav Funk", Junos "01. Keys/
+# Clav", S612 "Rhodes & Clav", Soviet Synths "Clavinet - MAESTRO" — 1,085
+# paths in the house listing. Until 2026-09-02 the word was an alias of
+# the keys catch-all, so all of them rendered Keys/_General. (Jonathan,
+# "we should be able to stick clav stuff somewhere automatically".)
+[[instrument]]
+id      = "clav"
+family  = "keys"
+aliases = ["clav", "clavs", "clavinet", "clavinets", "clavi"]
+
 [[instrument]]
 id      = "keys"
 family  = "keys"
-aliases = ["key", "keys", "keyboard", "clav", "clavinet", "harpsichord", "harpsi", "celeste"]
+aliases = ["key", "keys", "keyboard", "harpsichord", "harpsi", "celeste"]
 # harpsi: vendor short form of harpsichord; SFM DX100 "Harpsi FM" (observed 2026-09-02)
-
-[[instrument]]
-id      = "mallet"
-family  = "keys"
-aliases = ["mallet", "mallets", "marimba", "vibraphone", "vibes", "xylophone", "kalimba"]
 
 [[instrument]]
 id      = "bell"
@@ -535,13 +562,29 @@ id      = "tuba"
 family  = "brass"
 aliases = ["tuba", "tubas", "sousaphone"]
 
-# "horn"/"horns" stays in the catch-all: a vendor's "Horns" folder is
-# usually the whole section, not french horns.
+[[instrument]]
+id      = "french-horn"
+family  = "brass"
+aliases = ["french horn", "french horns"]
+
+# "Horns" in a sample pack is the section — layered, enveloped, stabbed:
+# Voyetra "Layered Horns", DX100 "Soft Horns" — not a french horn, and
+# not nothing either. Until 2026-09-02 the word was an alias of the brass
+# catch-all, so a folder that plainly said what it was rendered
+# Brass/_General. A bare "Brass" folder still does: that word is the
+# family's own name and says nothing about which instrument. (Jonathan,
+# "do we not have horns or translate horns to something? that seems like
+# a miss", 2026-09-02.)
+[[instrument]]
+id      = "horns"
+family  = "brass"
+aliases = ["horn", "horns", "horn section", "brass section"]
+avoid   = ["english horn", "french horn", "air horn", "air horns"]   # oboe entry below; french-horn above; the dancehall air horn is fx
+
 [[instrument]]
 id      = "brass"
 family  = "brass"
-aliases = ["brass", "horn", "horns"]
-avoid   = ["english horn"]   # that one is the oboe entry, listed below
+aliases = ["brass"]
 
 [[instrument]]
 id      = "flute"
