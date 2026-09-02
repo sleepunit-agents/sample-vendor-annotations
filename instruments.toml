@@ -98,7 +98,12 @@ aliases = ["downlifter", "downlifters"]
 [[instrument]]
 id      = "impact"
 family  = "fx"
-aliases = ["impact", "impacts"]
+aliases = ["impact", "impacts", "braam", "braams", "braaam", "braaams"]
+# a braam is the trailer-house cinematic hit (Function Loops
+# "FL_CC_Braaam_Loops"; Splice library 2026-09-02). "boom" was tried the
+# same day and backed out: in the house listing it is a flavour, not a
+# thing — "Tom Boom", "Kick_Boom", "Boom Bap", Jungle Warfare's "Boom
+# 161.5" drum loops — and 44 files left their pieces for it.
 
 [[instrument]]
 id      = "sweep"
@@ -153,7 +158,8 @@ id      = "kick"
 family  = "drums"
 aliases = ["kick", "kicks", "bass drum", "bassdrum", "kik", "bass drums"]
 codes   = ["bd"]
-avoid   = ["kick bass", "kickbass"]   # a bass patch named for its kick pairing
+avoid   = ["kick bass", "kickbass",   # a bass patch named for its kick pairing
+           "no kick", "no kicks", "kickless", "without kick"]   # a loop WITHOUT one is a top (below)
 
 [[instrument]]
 id      = "snare"
@@ -383,8 +389,12 @@ aliases = ["fill", "fills", "drum fill", "drum fills", "roll", "rolls", "drum ro
 id       = "top"
 family   = "drums"
 aliases  = ["top", "tops", "top loop", "top loops", "toploop", "toploops",
-            "percussion loop", "percussion loops", "perc loop", "perc loops", "percloop", "percloops"]
+            "percussion loop", "percussion loops", "perc loop", "perc loops", "percloop", "percloops",
+            "no kick", "no kicks", "kickless", "without kick"]
 category = "loops"
+# "No Kick" is a top by definition — the drum loop with the kick left out
+# (Trance Wave & Midtempo Glitch "Drum_Loops/No_Kick"); kick avoids the
+# phrase so the word inside it cannot claim the file.
 # "percussion loop" is a top by another name: a percussion phrase that is
 # not a whole beat is the layer over one. The phrase ranks here, so a loop
 # that names its piece keeps it ("percussion_loop_shaker_…" is a shaker
@@ -412,6 +422,13 @@ aliases = ["cym", "cyms"]
 id      = "percussion"
 family  = "percussion"
 aliases = ["percussion", "perc", "percs", "percussive"]
+avoid   = ["percussion top loop", "percussion top loops", "percussion and top loop", "percussion and top loops",
+           "perc top loop", "perc top loops", "perc and top loop", "perc and top loops"]
+# "percussion_&_top_loops" is one folder in six Zenhiser-era trance /
+# techno packs (Aperture, Electro Trance, Gripping / Industrial Techno,
+# Obsidian, Shadows): read as a folder naming two things it stayed silent
+# (percussion vs drums, no shared family). It names one — tops — so the
+# catch-all steps aside and "top loops" speaks. (Splice library, 2026-09-02)
 
 # "Drum loop" is a break by another name — the commonest name, in fact:
 # 1,870 files in the house listing say it and nothing more specific, and
@@ -484,7 +501,8 @@ aliases = ["reese", "reeses"]
 id      = "acid"
 family  = "bass"
 aliases = ["acid", "303", "tb 303", "tb303"]
-avoid   = ["acid house", "acid techno", "acid jazz", "acid trance"]
+avoid   = ["acid house", "acid techno", "acid jazz", "acid trance",
+           "wav acid", "acid wav", "acidized", "acidised"]   # Sony ACIDized WAV, a format ("WAV_ACID_Essential_Flamenco_Guitars")
 
 # The one instrument in a flat family that keeps its own folder. Bass is flat
 # because sub/reese/wub is genre jargon read out of filenames — not because
@@ -557,7 +575,7 @@ aliases = ["harpsichord", "harpsichords", "harpsi", "cembalo"]
 [[instrument]]
 id      = "keys"
 family  = "keys"
-aliases = ["key", "keys", "keyboard", "celeste"]
+aliases = ["key", "keys", "keyboard", "keyboards", "celeste"]
 
 # ---- synth voices -------------------------------------------------------
 
@@ -597,7 +615,7 @@ category = "multisamples"
 [[instrument]]
 id      = "pad"
 family  = "synth"
-aliases = ["pad", "pads", "atmosphere", "atmospheres", "atmos", "wash", "drone", "drones", "ambient", "ambience", "texture", "textures"]
+aliases = ["pad", "pads", "atmosphere", "atmospheres", "atmos", "atmo", "wash", "drone", "drones", "ambient", "ambience", "ambiences", "ambiance", "ambiances", "texture", "textures"]
 # "atmos" is the sample-pack short form of atmosphere (Sample Magic
 # "cinematic atmos", Origin Sound "Atmos Pads"; observed 2026-09-01)
 

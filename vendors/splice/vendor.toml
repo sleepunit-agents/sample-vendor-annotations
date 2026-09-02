@@ -64,7 +64,17 @@ note    = "app-managed: new samples land continuously, so rescan often"
 # name says two things: "*loop*" beats "*drum*"/"*hit*".
 [[category]]
 id    = "loops"
-match = ["*loop*", "songstarters", "*song_starter*", "*construction*"]
+match = ["*loop*", "*songstarter*", "*song_starter*", "*song starter*", "*construction*",
+         "*demo_kit*", "*demo kit*", "*demokit*", "*song_kit*", "*song kit*", "*songkit*",
+         "*music_kit*", "*music kit*", "*vocal_kit*", "*vocal kit*", "*kit*[0-9][0-9][0-9]*"]
+# A kit with a tempo and a key is a song: the "Demo Kits" / "Kit03_168_F#m"
+# / "FL_ST_Kit06_130_F#m" folders Function Loops, Cr2, Sample Magic and the
+# Acid House & Rave / Hard Trap packs ship are construction kits — the
+# song's stems as loops (a hat loop, a bass loop, a vocal loop). Before
+# 2026-09-02 "*kit*" below caught them and every stem was a one-shot, the
+# filename's own "Loop" notwithstanding (the folder rule speaks first).
+# "*kit*[0-9][0-9][0-9]*" is the tempo in the name; a drum kit numbered
+# past 99 would be caught by it, and none has been seen.
 
 [[category]]
 id    = "one-shots"
