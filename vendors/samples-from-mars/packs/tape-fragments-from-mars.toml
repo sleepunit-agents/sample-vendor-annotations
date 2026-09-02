@@ -59,3 +59,12 @@ manifest    = "manifests/tape-fragments-from-mars.sha256"
 #        1  WAV/Cerebral Swell Tape Fragments G2.wav
 #        1  WAV/Dainty Boe Tape Fragments C4.wav
 #        1  WAV/Fevering Ghost Tape Fragments A#3.wav
+
+# Flat WAV/ of 32 fragments, one name each ("Artifact Bass Tape
+# Fragments G2", "Bullet Train Tape Fragments C4"): hits with the key
+# they sit at, not a multisample — no name spans more than a note.
+[[dir]]
+path             = "WAV"
+default_category = "one-shots"
+observed         = "2026-09-02"
+note             = "32 files, 29 names, one note each"

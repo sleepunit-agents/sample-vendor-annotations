@@ -51,8 +51,8 @@ path = "PRESETS/AUDIO/Loopmasters"
 tags = ["loopmasters"]
 
 [[dir]]
-path     = "PRESETS/AUDIO/Loopmasters/Sounds and FX/FX Hits"
-category = "fx"
+path       = "PRESETS/AUDIO/Loopmasters/Sounds and FX/FX Hits"
+instrument = "fx"
 
 # ---- Origin Sound --------------------------------------------------------
 [[dir]]
@@ -60,8 +60,8 @@ path = "PRESETS/AUDIO/Origin Sound"
 tags = ["origin-sound"]
 
 [[dir]]
-path     = "PRESETS/AUDIO/Origin Sound/SFX"
-category = "fx"
+path       = "PRESETS/AUDIO/Origin Sound/SFX"
+instrument = "fx"
 
 [[dir]]
 path       = "PRESETS/AUDIO/Origin Sound/drum hits/Tops"

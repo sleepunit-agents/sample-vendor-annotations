@@ -59,3 +59,11 @@ manifest    = "manifests/trumpet-fragments-from-mars.sha256"
 #        1  WAV/Desert Pad Trumpet C4.wav
 #        1  WAV/Dont Cry Trumpet A3.wav
 #        1  WAV/Doomsday Trumpet G3.wav
+
+# Flat WAV/ of 27 fragments ("Breezy Trumpet F2", "Chordal Reef 01
+# Trumpet C3"): hits with the key they sit at, not a multisample.
+[[dir]]
+path             = "WAV"
+default_category = "one-shots"
+observed         = "2026-09-02"
+note             = "27 files, 26 names, one note each"

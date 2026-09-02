@@ -54,3 +54,18 @@ manifest    = "manifests/101-from-mars.sha256"
 #        1  Docs/Installation Instructions - All.rtf
 #        1  Docs/Installation Instructions For Kontakt.rtf
 #        1  Icon
+
+# "Keys and Pads" names two families across an "and", so the folder is
+# silent by the two-family rule and every patch under it read as a bare
+# multisample. The 13 racks under Presets/Keys/ say keys per patch
+# (Campfire, Exit Summer, Falling Sun, Fog, Hze, I Can't Change, Jazz
+# Moine, Kool Dix, Legacy Pulsar, Moon Wave, Oscar, Stereo Tracks, Tiny
+# Rave — one per subfolder), and Jonathan's call for the folder is the
+# same: keys. A default, not a pin: the racks and any real label on a
+# file's own path still win; this fills the silence where the rack join
+# doesn't reach.
+[[dir]]
+path               = "WAV/Keys and Pads"
+default_instrument = "keys"
+observed           = "2026-09-02"
+note               = "13 chromatic SH-101 patches, one subfolder each; racks file all 13 under Presets/Keys"

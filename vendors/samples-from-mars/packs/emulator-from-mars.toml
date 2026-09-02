@@ -75,8 +75,8 @@ tags     = ["drums", "percussion", "sampler", "80s"]
 desc     = "Emulator drum and percussion hits — one shot per file, SFM's CH/OH/BD/SD abbreviations in the names ('CH Pedal Simple Drums Emulator 01.wav'); the folder word carries no kind, so it is pinned here"
 
 [[dir]]
-path     = "WAV/08. FX"
-category = "fx"
+path       = "WAV/08. FX"
+instrument = "fx"
 
 [[dir]]
 path = "Presets"

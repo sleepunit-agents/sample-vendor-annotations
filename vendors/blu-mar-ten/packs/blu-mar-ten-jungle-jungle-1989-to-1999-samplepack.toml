@@ -74,5 +74,5 @@ tags = ["vocal"]
 [[dir]]
 path = "FX"
 role = "canonical-audio"
-category = "fx"
+instrument = "fx"
 tags = ["fx"]

@@ -31,10 +31,6 @@ match = ["Straight Loops", "Programmed Loops", "Drum Loops", "Bass Lines*", "Dru
 id    = "one-shots"
 match = ["Percussion Hits", "Pecussion Hits", "Instruments", "Instruments/*"]
 
-[[category]]
-id    = "fx"
-match = ["Instruments/Special FX", "Instruments/FX", "Instruments/Vox FX"]
-
 [naming]
 # Vendor typo "Pecussion" persists in Vol 1 dir names; Vol 2/3 loop dirs
 # carry the BPM ("Ezee Rolla 165.5"); files end " (JWn)" for the volume.

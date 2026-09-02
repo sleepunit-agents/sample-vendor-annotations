@@ -29,10 +29,6 @@ match = ["Breaks"]
 id    = "one-shots"
 match = ["Bass", "Pads", "Riffs, Arps & Hits", "Vocals"]
 
-[[category]]
-id    = "fx"
-match = ["FX"]
-
 [naming]
 # Musical files end ' - <key>' in Camelot notation ("Champion Sub - 10A.wav").
 key_suffix = " - <camelot>"

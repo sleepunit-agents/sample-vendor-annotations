@@ -74,5 +74,5 @@ category = "one-shots"
 tags     = ["found-sound", "foley"]
 
 [[dir]]
-path     = "WAV/FX Textures"
-category = "fx"
+path       = "WAV/FX Textures"
+instrument = "fx"

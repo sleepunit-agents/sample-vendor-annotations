@@ -43,24 +43,19 @@ manifest    = "manifests/heights.sha256"
 [[dir]]
 path = "Downlifter"
 role = "canonical-audio"
-category = "fx"
 
 [[dir]]
 path = "FX"
 role = "canonical-audio"
-category = "fx"
 
 [[dir]]
 path = "Impact"
 role = "canonical-audio"
-category = "fx"
 
 [[dir]]
 path = "Riser"
 role = "canonical-audio"
-category = "fx"
 
 [[dir]]
 path = "Transitions"
 role = "canonical-audio"
-category = "fx"

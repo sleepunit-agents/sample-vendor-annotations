@@ -133,9 +133,12 @@ shared category vocabulary, so "give me the one-shots" needs no globs.
 `match` patterns apply to directory names under the canonical tree, at any
 depth. A vendor's variants stay visible — they're the observed fact.
 
-Vocabulary so far: `one-shots`, `loops`, `multisamples`, `fx`. (`kits`
-was retired 2026-08-30: a kit is a folder of one-shots, so "kit" words
-are one-shots aliases now.)
+Vocabulary so far: `one-shots`, `loops`, `multisamples`. (`kits` was
+retired 2026-08-30: a kit is a folder of one-shots, so "kit" words are
+one-shots aliases now. `fx` was retired 2026-09-02: category says *how*
+a thing was recorded, and FX says *what* it is — that is the `fx` family
+in `instruments.toml`; pin `instrument = "fx"` on an FX folder and let
+the words, the multisample shape or a `default_category` say the kind.)
 Extend it in a PR when a vendor genuinely doesn't fit.
 
 A **shared category lexicon** lives at the repo root in `categories.toml`,

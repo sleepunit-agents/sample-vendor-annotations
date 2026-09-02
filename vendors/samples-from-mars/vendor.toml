@@ -86,10 +86,6 @@ match = ["*Instrument Samples*", "*Basic Waveforms*"]
 # ("0_Patch_SH101_C-2-…", "1_Patch_SH101_C#-2-…") reads as multisamples
 # when no label anywhere said otherwise.
 
-[[category]]
-id    = "fx"
-match = ["FX", "*. FX"]
-
 [naming]
 dir_order_prefix = "NN. "         # "01. Individual Hits" — strippable
 note_suffix      = "_<note><octave>"  # pitched: "37_ItsASurprise_2600_C#1.wav";

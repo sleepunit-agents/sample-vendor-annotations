@@ -74,6 +74,6 @@ path     = "WAV/Synths"
 category = "multisamples"
 
 [[dir]]
-path     = "WAV/Synths/FX"
-category = "fx"
-desc     = "seven effect patches sampled across the keyboard — the vendor filed them as FX, and that stands"
+path       = "WAV/Synths/FX"
+instrument = "fx"
+desc       = "seven effect patches sampled across the keyboard — the vendor filed them as FX, and that stands; multisamples by the parent's pin"

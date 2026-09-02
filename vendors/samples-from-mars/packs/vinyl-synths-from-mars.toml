@@ -70,3 +70,16 @@ role = "canonical-audio"
 [[dir]]
 path     = "WAV/05. Percussive"
 category = "one-shots"
+
+# Every WAV folder but 05. Percussive is hits with flavours — "2600
+# Dirtier Vinyl Synths C1", "BassStation Overtone Vinyl Synths G0", a
+# different patch per file, each carrying the key it was played at (65
+# files, 53 names in 01. Bass). Not multisamples, whatever the note
+# suffix suggests: no one name spans the keyboard. A default, so a
+# folder word or a real label still wins. (Jonathan, "foo A#, foo C and
+# foo D# is just one shots with flavors", 2026-09-02.)
+[[dir]]
+path             = "WAV"
+default_category = "one-shots"
+observed         = "2026-09-02"
+note             = "one patch per file with its key; 01. Bass 65 files / 53 names, 02. Keys & Pads 64 / 53, 03. Leads 38 / 30, 04. Chords 29 / 24"

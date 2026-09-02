@@ -18,10 +18,20 @@
 # Entries are tried in file order per segment: specific beats generic.
 # `avoid` lists phrases that contain an alias but mean something else.
 #
-# Vocabulary matches SCHEMA [[category]]: one-shots, loops, multisamples,
-# fx. Extend it in a PR when a vendor genuinely doesn't fit. "Kit" words
-# are one-shots aliases: a kit is a folder of one-shots, and splitting it
-# out just made two piles of the same thing (retired 2026-08-30).
+# Vocabulary matches SCHEMA [[category]]: one-shots, loops, multisamples.
+# Extend it in a PR when a vendor genuinely doesn't fit. "Kit" words are
+# one-shots aliases: a kit is a folder of one-shots, and splitting it out
+# just made two piles of the same thing (retired 2026-08-30). "fx" was
+# retired 2026-09-02: category says HOW a thing was recorded (a hit, a
+# phrase, a keyboard's worth of notes) and fx says WHAT it is — that is
+# the fx family in instruments.toml, and it was already there. As a
+# category it was never a kind of recording, it was a non-answer that
+# blocked the real ones: a rack filed under Presets/FX/ or a WAV/FX/
+# folder of chromatic patches (SFM 101 "BigSub1", DX100 "Tubular Bells")
+# read category=fx, which is non-empty, so the multisample shape never
+# got to speak and the files landed in FX/_General/_Unsorted asking
+# "loop or one-shot?". (Jonathan, "fx can be a loop or oneshot right? or
+# even a multisample", 2026-09-02.)
 
 [[category]]
 id      = "loops"
@@ -83,12 +93,29 @@ aliases = [
 ]
 
 [[category]]
-id      = "fx"
-aliases = ["fx", "sfx", "effect", "effects"]
-
-[[category]]
 id      = "multisamples"
 aliases = [
   "multisample", "multisamples", "multi sample", "multi samples",
   "instrument samples",
+]
+
+# An FX event is one hit by construction — a riser runs up to a downbeat,
+# an impact lands on one, a spinback is one gesture — so the word stands
+# in for the category the way a chop or a flam does. Last on purpose: a
+# "Riser Loop" is a loop (loops entry first), a riser inside a folder
+# that says One Shots is a one-shot for the folder's reason, and beds
+# (texture, atmos, drone) are deliberately absent — a texture is as often
+# a loop as a hit. So are "sweep" and "whoosh": SFM Junos ships a pad
+# patch called Sweep sampled across the keyboard (04. Pads/Sweep/, 85
+# files), and a word here beats the multisample shape, so only words
+# that are never a patch name belong. Added when fx stopped being a
+# category (2026-09-02): these words used to be swallowed by that
+# non-answer.
+[[category]]
+id      = "one-shots"
+aliases = [
+  "riser", "risers", "uplifter", "uplifters",
+  "downlifter", "downlifters",
+  "impact", "impacts",
+  "transition", "transitions", "spinback", "spinbacks",
 ]

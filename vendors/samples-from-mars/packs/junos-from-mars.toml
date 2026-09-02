@@ -70,3 +70,14 @@ role = "canonical-audio"
 path     = "WAV/05. Chords"
 category = "one-shots"
 tags     = ["chords"]
+
+# 06. FX is two folders of hits — "Various Percussive" (97) and "Various
+# Long" (21) — with no kind word on them; the vendor's FX folder used to
+# read as the fx category, which said nothing about the kind either.
+# Percussive and long alike are single events; a default so a labelled
+# file still wins.
+[[dir]]
+path             = "WAV/06. FX"
+default_category = "one-shots"
+observed         = "2026-09-02"
+note             = "Various Percussive 97 + Various Long 21, all single hits"

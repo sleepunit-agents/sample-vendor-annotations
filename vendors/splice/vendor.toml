@@ -74,9 +74,5 @@ match = ["*kit*"]
 # before the fx globs run
 
 [[category]]
-id    = "fx"
-match = ["fx", "*_fx", "fx_*", "*sfx*", "*riser*", "*impact*", "*texture*"]
-
-[[category]]
 id    = "one-shots"
 match = ["*one_shot*", "*one-shot*", "*oneshot*", "*hit*", "*stab*", "pads", "pianos", "organs", "choirs", "hoovers", "vocals", "*_bass", "*_acid", "*_drums"]

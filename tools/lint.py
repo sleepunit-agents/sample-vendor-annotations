@@ -40,6 +40,7 @@ if os.path.exists(os.path.join(ROOT, 'hosts.toml')):
     ref_hosts = [d.lower() for d in load(os.path.join(ROOT, 'hosts.toml')).get('reference', {}).get('domains', [])]
 
 lex_ids = set()
+cat_ids = set()
 if os.path.exists(os.path.join(ROOT, 'instruments.toml')):
     lex_path = os.path.join(ROOT, 'instruments.toml')
     lex = load(lex_path)
@@ -78,6 +79,11 @@ for vt in sorted(glob.glob(os.path.join(ROOT, 'vendors', '*', 'vendor.toml'))):
         err(vt, f"slug {v['slug']!r} != dir {slug!r}")
     role = v.get('role', 'house')
     if role not in ROLES: err(vt, f"[vendor] role {role!r} not in {sorted(ROLES)}")
+    # [[category]] rules name a kind from categories.toml — a retired or
+    # typo'd id ("fx", "kits") would pin files to a kind no consumer knows
+    for c in d.get('category', []):
+        if cat_ids and c.get('id') not in cat_ids:
+            err(vt, f"[[category]] id {c.get('id')!r} not in categories.toml")
     domains = [x.lower() for x in v.get('domains', [])]
     if not domains: warn(vt, "[vendor] domains missing — every pointer in this vendor will fail L1")
     hp = v.get('homepage')
@@ -186,8 +192,9 @@ for key, (pt, d, slug) in packs.items():
             pin = dd.get(key)
             if pin and pin not in lex_ids and pin not in V['instruments'] and pin not in pack_inst:
                 err(pt, f"{where} {key} {pin!r} not in instruments.toml")
-        if dd.get('default_category') and cat_ids and dd['default_category'] not in cat_ids:
-            err(pt, f"{where} default_category {dd['default_category']!r} not in categories.toml")
+        for key in ('category', 'default_category'):
+            if dd.get(key) and cat_ids and dd[key] not in cat_ids:
+                err(pt, f"{where} {key} {dd[key]!r} not in categories.toml")
         for facet in ('category', 'instrument'):
             if dd.get(facet) and dd.get('default_' + facet):
                 err(pt, f"L7 {where} carries both {facet} (a pin) and default_{facet} — pick one")
