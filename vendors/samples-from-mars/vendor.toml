@@ -120,3 +120,16 @@ aliases = ["custom tom"]
 [[instrument]]
 id      = "clap"
 aliases = ["cp"]
+
+# SFM files its raw-oscillator racks under "Basics" (MS10, WASP) and
+# "06. Basic Waveforms" (Soviet Synths) — the naked pulse/saw/square/
+# triangle multisamples of each synth. That is the vendor saying "synth,
+# no more specific than that", so the racks (read by the document tier)
+# and any WAV dir carrying the word land the samples in the synth family
+# with the catch-all instrument rather than staying silent. Whole-word:
+# "Basic Sub" (Acid Synths) is untouched.
+[[instrument]]
+id       = "synth"
+aliases  = ["basics", "basic waveforms"]
+observed = "2026-09-02"
+note     = "Presets/Basics (MS10, WASP: 11 racks), Presets/06. Basic Waveforms (Soviet Synths: 7 racks); 3PulseWaves said nothing spoke"

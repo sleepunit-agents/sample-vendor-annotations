@@ -9,7 +9,7 @@ is a date.
   tools/lint.py            # L1–L5 (+L6 freshness warning)
   tools/lint.py --live     # also HEAD every pointer (slow; for scheduled CI)
 """
-import sys, os, glob, tomllib, datetime, urllib.parse, urllib.request
+import sys, os, glob, re, tomllib, datetime, urllib.parse, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BYTE_EXT = ('.zip', '.rar', '.7z', '.tar', '.gz', '.wav', '.aif', '.aiff', '.flac', '.mp3')
@@ -108,7 +108,11 @@ def check_entry(pt, where, entry):
     if 'local' in entry:
         err(pt, f"L7 {where} carries local = {entry['local']!r} — a consumer-local marker, never committed here")
     obs = entry.get('observed')
-    if obs is not None and not isinstance(obs, datetime.date):
+    # A bare TOML date or a "YYYY-MM-DD" string: SCHEMA shows the string
+    # form and consumers write it (an entry's provenance is a string
+    # field there, unlike [pack]/[acquisition] observed), so both pass.
+    if obs is not None and not isinstance(obs, datetime.date) and not (
+            isinstance(obs, str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}', obs)):
         err(pt, f"L7 {where} observed {obs!r} is not a YYYY-MM-DD date")
 
 # vendor-level [[instrument]] blocks get the same hygiene
