@@ -193,6 +193,10 @@ aliases = ["rim", "rimshot", "rim shot", "rimshots"]
 id      = "tom"
 family  = "drums"
 aliases = ["tom", "toms", "tom drum", "floor tom", "rack tom"]
+# "TOM 1501" is the Formanta TOM-1501, a Soviet string synth — SFM Soviet
+# Synths names seven patch folders after it ("Clav - TOM 1501", "String
+# Combo 1 - TOM 1501"), and every one read as a tom (probed 2026-09-02).
+avoid   = ["tom 1501"]
 
 # break before the generic drums entry: a drum break is the more specific
 # description of the two.
@@ -373,17 +377,21 @@ aliases = ["bass", "basses", "bassline", "bass line", "bass lines", "bass hits"]
 [[instrument]]
 id      = "piano"
 family  = "keys"
-aliases = ["piano", "pianos", "grand piano", "upright piano", "electric piano", "rhodes", "wurli", "wurlitzer", "epiano", "e piano"]
+aliases = ["piano", "pianos", "grand piano", "upright piano", "electric piano", "rhodes", "wurli", "wurlitzer", "epiano", "e piano", "pianet"]
+# pianet: the Hohner electric piano; SFM DX100 "Digi Pianet" (observed 2026-09-02)
 
 [[instrument]]
 id      = "organ"
 family  = "keys"
-aliases = ["organ", "organs", "hammond", "vox organ"]
+aliases = ["organ", "organs", "hammond", "vox organ", "harmonium"]
+# harmonium: a reed organ; SFM Mini "Harmonium" (observed 2026-09-02). Acid's
+# "Harmonium Sine" stays acid — the folder word ranks earlier.
 
 [[instrument]]
 id      = "keys"
 family  = "keys"
-aliases = ["key", "keys", "keyboard", "clav", "clavinet", "harpsichord", "celeste"]
+aliases = ["key", "keys", "keyboard", "clav", "clavinet", "harpsichord", "harpsi", "celeste"]
+# harpsi: vendor short form of harpsichord; SFM DX100 "Harpsi FM" (observed 2026-09-02)
 
 [[instrument]]
 id      = "mallet"

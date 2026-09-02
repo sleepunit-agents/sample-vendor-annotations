@@ -59,3 +59,14 @@ manifest    = "manifests/dx100-from-mars.sha256"
 #       84  WAV/Alarm Call FX
 #       84  WAV/Clean Sine
 #       84  WAV/David Lynch
+
+# SFM ships this one multisample as two racks — Presets/Bass/ (mono) and
+# Presets/Keys & Pads/ (poly, "FM Square Distorted Poly" in the other
+# formats). Read through the document tier those disagree (bass ≠ synth)
+# and the file would say nothing; it is a distorted FM square bass, and
+# the bass reading stood before "Keys & Pads" learned to speak.
+[[dir]]
+path       = "WAV/FM Square Distorted"
+instrument = "bass"
+observed   = "2026-09-02"
+note       = "two racks over one multisample: Presets/Bass and Presets/Keys & Pads; pinned to the bass reading"

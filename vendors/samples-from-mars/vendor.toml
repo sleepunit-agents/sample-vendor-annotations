@@ -128,8 +128,21 @@ aliases = ["cp"]
 # and any WAV dir carrying the word land the samples in the synth family
 # with the catch-all instrument rather than staying silent. Whole-word:
 # "Basic Sub" (Acid Synths) is untouched.
+#
+# "Keys & Pads" / "Keys & Poly" / "Keys and Chords" are SFM's folders for
+# the polyphonic patches of a synth pack (SH5, DX100, Voyetra, Mini,
+# Soviet Synths, Vinyl Synths). Read as words they name two families —
+# keys and synth — and a two-family folder is silent by design (a
+# compound claims neither side). Read as the phrase SFM means, it is the
+# same statement as "Basics": a synth, no more specific. The phrase alias
+# is a pin at the catch-all's rank, so a real label on the file's own
+# path still wins — "Digi Pianet", "Warble Celeste", "Easy Clav",
+# "Clav - TOM 1501" stay keys; "Tri & Pulse", "Slow Rise Res", "Minor
+# Duma" land in synth instead of nowhere. "Keys and Pads" (with "and":
+# 101 From Mars, WAV) is deliberately NOT here — that pack's racks sit in
+# Presets/Keys/ and Presets/Pads/ and say the more specific thing.
 [[instrument]]
 id       = "synth"
-aliases  = ["basics", "basic waveforms"]
+aliases  = ["basics", "basic waveforms", "keys & pads", "keys & poly", "keys and chords"]
 observed = "2026-09-02"
-note     = "Presets/Basics (MS10, WASP: 11 racks), Presets/06. Basic Waveforms (Soviet Synths: 7 racks); 3PulseWaves said nothing spoke"
+note     = "Presets/Basics (MS10, WASP: 11 racks), Presets/06. Basic Waveforms (Soviet Synths: 7 racks); Presets/Keys & Pads (SH5, DX100, Voyetra: 31 racks), Keys & Poly (Mini: 10), 04. Keys and Chords (Soviet: 9 racks + WAV dir); 3PulseWaves and Tri & Pulse said nothing spoke"
