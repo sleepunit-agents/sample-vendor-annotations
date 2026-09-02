@@ -540,11 +540,24 @@ id      = "clav"
 family  = "keys"
 aliases = ["clav", "clavs", "clavinet", "clavinets", "clavi"]
 
+# The harpsichord is a named keyboard the same way the clav is: SFM DX100
+# "Harpsichord" / "Harpsi FM", Voyetra "New Age Harpsichord" — 360 paths in
+# the house listing, every one a multisample the vendor named for the
+# instrument. Until 2026-09-02 both words were aliases of the keys
+# catch-all, so all of them rendered Keys/_General. (Jonathan, "harpsichord
+# feels like one we should just be grabbing".)
+[[instrument]]
+id      = "harpsichord"
+family  = "keys"
+aliases = ["harpsichord", "harpsichords", "harpsi", "cembalo"]
+# harpsi: vendor short form; SFM DX100 "Harpsi FM" (observed 2026-09-02).
+# cembalo: the German / Italian name, Kontakt-era library spelling (0 in the
+# house listing; kept so the word has a home when it arrives).
+
 [[instrument]]
 id      = "keys"
 family  = "keys"
-aliases = ["key", "keys", "keyboard", "harpsichord", "harpsi", "celeste"]
-# harpsi: vendor short form of harpsichord; SFM DX100 "Harpsi FM" (observed 2026-09-02)
+aliases = ["key", "keys", "keyboard", "celeste"]
 
 # ---- synth voices -------------------------------------------------------
 
