@@ -268,6 +268,24 @@ id      = "percussion"
 family  = "percussion"
 aliases = ["percussion", "perc", "percs", "percussive"]
 
+# "Drum loop" is a break by another name — the commonest name, in fact:
+# 1,870 files in the house listing say it and nothing more specific, and
+# every one of them dissolved into Drums/_General because "drum" was the
+# only word the lexicon heard. A third break entry carries the phrase, and
+# its position is the whole rule: BELOW every named piece and the fill
+# ("FF_CP_124_drum_loop_venice_shaker" is a shaker, "Drum Loop Fill 03" is
+# a fill), BELOW percussion's catch-all (a Percussion folder inside a
+# Drum Loops tree still says more than the tree does, and "_Perc" on a
+# drum-loop stem is the percussion layer of it), and ABOVE the drums
+# catch-all, which is the only word it ever displaces. (Observed:
+# "01_RA_Drum_Loop_124_Full" filed as drums · loops, reported by Jonathan,
+# 2026-09-02.)
+[[instrument]]
+id       = "break"
+family   = "drums"
+aliases  = ["drum loop", "drum loops", "drumloop", "drumloops", "drums loop", "drums loops"]
+category = "loops"
+
 # The generic drums entry sits BELOW the percussion pieces, not at the end
 # of its own section: "drum" is the least specific word a drum vendor
 # writes, and it is written everywhere — "FF_CP_124_drum_loop_venice_shaker"
