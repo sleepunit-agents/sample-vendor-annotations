@@ -58,3 +58,11 @@ manifest    = "manifests/ekko-from-mars.sha256"
 #        1  Docs/Ekko From Mars - About.rtf
 #        1  Docs/Samples From Mars - Terms and Conditions.pdf
 #        1  Icon
+
+# "01. Full Loops" here is the full drum-machine pattern — the stem
+# folders beside it are Bass Drum, HH & Cymbals and Tops, nothing tonal —
+# so a Full is a drum loop, a break by our definition, not the "full"
+# family that Perkons / Pulsar mean by the same folder name. (2026-09-02.)
+[[dir]]
+path               = "WAV/02. Loops/01. Full Loops"
+default_instrument = "break"

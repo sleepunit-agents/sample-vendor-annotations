@@ -65,8 +65,9 @@ instrument = "fx"
 
 [[dir]]
 path       = "PRESETS/AUDIO/Origin Sound/drum hits/Tops"
-instrument = "hat"
-desc       = "80 files named only 'OS_ELK_Top N' — the hat layer; nothing else in the names to read"
+instrument = "top"
+category   = "one-shots"
+desc       = "80 files named only 'OS_ELK_Top N' beside Kicks / Snares / Perc / 808 under 'drum hits' — top-end hits, not top loops; the category is pinned because 'Tops' is a loops word in the shared lexicon and the deeper folder would outvote the parent (was hat until top became its own entry, 2026-09-02)"
 
 # ---- Sample Magic --------------------------------------------------------
 # "<pack>/<kind> loops[/<bpm> bpm]" mostly says its kind. The exceptions:
@@ -91,12 +92,12 @@ desc     = "'betamaxx_Dm_130.wav' — key and tempo on every file"
 
 [[dir]]
 path       = "PRESETS/AUDIO/Sample Magic/lofi techno/top loops"
-instrument = "hat"
+instrument = "top"
 desc       = "'airlok_126.wav' — top loops named by tempo only"
 
 [[dir]]
 path       = "PRESETS/AUDIO/Sample Magic/organic electronica/top loops"
-instrument = "hat"
+instrument = "top"
 
 [[dir]]
 path     = "PRESETS/AUDIO/Sample Magic/atmospheric techno/pads"

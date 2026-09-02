@@ -57,3 +57,12 @@ manifest    = "manifests/indie-tapes-from-mars.sha256"
 #        1  Docs/Indie Tapes From Mars - Melodic Chord Progression Reference.rtf
 #        1  Docs/Samples From Mars - Terms and Conditions.pdf
 #        1  Icon
+
+# The songstarters are full loops — the whole arrangement, key and tempo
+# on every name — but they sit under "02. Melodic", and "melodic" is a
+# synth word that outranks the full-loop words (those rank last by
+# design; see instruments.toml). The folder is nothing but songstarters,
+# so it is pinned. (Jonathan, "full is, well, full", 2026-09-02.)
+[[dir]]
+path       = "WAV/02. Loops/02. Melodic/01. Songstarters"
+instrument = "full"

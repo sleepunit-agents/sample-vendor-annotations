@@ -66,6 +66,15 @@ flat = true
 id   = "fx"
 flat = true
 
+# A full loop is the whole arrangement — drums, bass, keys, whatever the
+# vendor mixed down together — and it is a top-level family because it is
+# not any one of those. Flat: there is no instrument to split it by; the
+# point of the thing is that it is all of them. (Jonathan, Perkons "01.
+# Full Loops", 2026-09-02.)
+[[family]]
+id   = "full"
+flat = true
+
 # ---- transition / sfx material: listed first on purpose ----------------
 # FX-ness beats instrument-ness: a "Flute Riser" is a riser someone made
 # with a flute, and a producer browsing flutes doesn't want it — it
@@ -173,8 +182,8 @@ aliases = [
 # over a beat), not a piece, and an entry this high would outrank the
 # real piece in the file name — "02. Tops/Clave Slider Ekko Color 140.wav"
 # is a clave, "07. Tom Combos/TomCombos_Tops_909Loops_05.wav" a tom
-# (probed 2026-09-01 across the whole archive). A folder of nothing but
-# tops gets a [[dir]] instrument pin in its pack file instead.
+# (probed 2026-09-01 across the whole archive). Tops are their own entry,
+# ranked with fill — see `top` below the percussion pieces.
 codes   = ["hh"]
 
 [[instrument]]
@@ -266,6 +275,25 @@ aliases = ["clave", "claves", "guiro", "guira", "chekere", "woodblock", "wood bl
 id      = "fill"
 family  = "drums"
 aliases = ["fill", "fills", "drum fill", "drum fills", "roll", "rolls", "drum roll", "drum rolls"]
+
+# A top is a role the same way a fill is — the layer over a beat (hats,
+# shakers, percussion, the kick and snare stripped out) — so it ranks
+# exactly where fill does: BELOW every named piece, so "02. Tops/Clave
+# Slider Ekko Color 140" is still a clave and "TomCombos_Tops_909Loops_05"
+# a tom, and ABOVE the two catch-alls, so a Tops folder of files named
+# only by tempo, or a bare "Rift Top Perkons 120", lands in Drums/Top
+# instead of dissolving into Drums/_General. `category` = loops for the
+# reason break carries it: a top is a phrase by construction, so on a file
+# already known to be a hit the word is a title ("BD Soft Top" is a kick)
+# and it steps aside. A hat alias for "tops" was tried on 2026-09-01 and
+# backed out — at that rank it outranked the pieces; this rank is the one
+# the archive probe accepted. (Jonathan, "I'd love to pull Tops out like
+# we do Fills", 2026-09-02.)
+[[instrument]]
+id       = "top"
+family   = "drums"
+aliases  = ["top", "tops", "top loop", "top loops", "toploop", "toploops"]
+category = "loops"
 
 [[instrument]]
 id      = "percussion"
@@ -568,6 +596,30 @@ aliases = ["vox", "voice", "voices", "spoken", "choir", "choirs", "chant", "chan
 id       = "break"
 family   = "drums"
 aliases  = ["beat", "beats", "groove", "grooves"]
+category = "loops"
+
+# ---- full loops: the whole arrangement ---------------------------------
+# A full loop is everything mixed together — drums, bass, keys — and it is
+# its own family (see [[family]] full) because it is not any one of them.
+# Only the words that always mean that are here: a songstarter is the
+# arrangement by name. "Full loop" / "Full Loops" is NOT — it means two
+# things across one vendor: on Perkons and Pulsar (packs with a "Bass &
+# Synth" stem folder) it is the whole arrangement; on 808 Loops and Ekko
+# (every stem folder is a drum) it is the full drum-machine pattern, a
+# break by our definition. A word with two meanings is silent here and
+# each pack says which it meant with a [[dir]] default_instrument. A
+# default, not a pin, because SFM ships "Rift Beat" and "Rift Full" side
+# by side in one folder: the beat is the drum-only version and its own
+# word must still win. Bare "full" is never an alias: "Hand Full 162" is
+# a jungle break, "Full Beats" are drum patterns. The entry ranks last so
+# a songstarter that also names a part ("Songstarter Bass …") keeps the
+# part. `category` = loops for the reason break carries it. (Jonathan,
+# Perkons "01. Full Loops": "beat is a break by our definition … but full
+# is, well, full. it needs another top level category", 2026-09-02.)
+[[instrument]]
+id       = "full"
+family   = "full"
+aliases  = ["song starter", "song starters", "songstarter", "songstarters"]
 category = "loops"
 
 # ---- non-instrumental material -----------------------------------------
