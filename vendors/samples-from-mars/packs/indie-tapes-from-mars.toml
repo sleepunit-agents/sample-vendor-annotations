@@ -66,3 +66,15 @@ manifest    = "manifests/indie-tapes-from-mars.sha256"
 [[dir]]
 path       = "WAV/02. Loops/02. Melodic/01. Songstarters"
 instrument = "full"
+
+# "01. Full Beats" under "01. Drums" is 122 whole drum-machine / acoustic
+# patterns ("Bedroom Full Acoustic Indie 120", "Boombox Full A Minipops
+# Indie 100") — breaks by our definition, read Drums/_General off the
+# parent's "drums" because "full" is the arrangement family's word and
+# ranks last. "full beat(s)" is a break phrase in the shared lexicon now;
+# the pin also holds the two "Splash Full …" patterns that would otherwise
+# read cymbal. (Jonathan, "these go in breaks", 2026-09-02.)
+[[dir]]
+path       = "WAV/02. Loops/01. Drums/01. Full Beats"
+instrument = "break"
+observed   = "2026-09-02"

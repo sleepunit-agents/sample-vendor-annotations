@@ -240,8 +240,14 @@ id       = "break"
 family   = "drums"
 aliases  = ["break", "breaks", "breakbeat", "breakbeats", "break beat", "break beats", "amen", "drum break", "drum breaks",
             "drum groove", "drum grooves", "drum beat", "drum beats", "drumbeat", "drumbeats",
-            "beat loop", "beat loops", "groove loop", "groove loops"]
+            "beat loop", "beat loops", "groove loop", "groove loops",
+            "full beat", "full beats"]
 category = "loops"
+# "full beat(s)": SFM's other name for a whole drum pattern — Indie Tapes
+# "01. Drums/01. Full Beats", Modular Drum Loops "07. Full Beats", Lin
+# Loops' file names. "full" alone is the arrangement family's word and
+# ranks last, so 146 whole patterns read Drums/_General off the parent
+# "Drums" until the phrase was here. (Jonathan, 2026-09-02.)
 
 # ---- percussion ---------------------------------------------------------
 
@@ -253,7 +259,8 @@ aliases = ["shaker", "shakers", "maraca", "maracas", "cabasa"]
 [[instrument]]
 id      = "tambourine"
 family  = "percussion"
-aliases = ["tambourine", "tambourines", "tamb"]
+aliases = ["tambourine", "tambourines", "tamb", "tambo", "tambos"]
+# tambo: Rhythm From Mars "Tambo", MPC60 "Tambo Hi / Lo", Zero-G "Tambo Hit" (2026-09-02)
 
 [[instrument]]
 id      = "conga"
@@ -271,9 +278,16 @@ aliases = ["cowbell", "cowbells", "cow bell", "cow bells", "cowb", "agogo"]
 id      = "clave"
 family  = "percussion"
 aliases = ["clave", "claves", "guiro", "guira", "chekere", "woodblock", "wood block", "wood blocks", "claves and guiro",
-           "jam block", "jamblock", "jamblok"]
+           "jam block", "jamblock", "jamblok", "block", "blocks"]
 # guira: the Dominican metal scraper; jam block: LP's plastic woodblock —
 # Polyend Festival ships both as folders (observed 2026-09-01)
+# block on its own: Wendel "11. Block" / "Block Wendel Color A", Ekko
+# "Block 1", MPC60 "Block Vinyl", Zero-G "Long Block" — a bare block in a
+# drum pack is the woodblock (2026-09-02). A bare "wood" is NOT here: it
+# was tried the same day and took Modular Drums "Bell Wood", Frost
+# "Pluck_Painting_Wood" and Found Sounds' "WoodBell" off their pieces
+# (this entry outranks bell and pluck) for 36 Fractured files it got
+# right — those are pinned in the pack file instead.
 
 # Three more named pieces the drum-machine packs write as folders and the
 # lexicon had no word for, so they dissolved into Percussion/_General:
@@ -380,6 +394,19 @@ category = "loops"
 # "Loops/Drum_Loops/Percussion_Loops", Octatrack "Extra Perc Loops" /
 # "percussion loops". (Jonathan, "fill == fill, anything else == tops",
 # 2026-09-02.)
+
+# "cym" is a cymbal, but SFM also writes it as a flavour on whole
+# patterns ("16 Beat Full Viscount SD Cym Break 120", "Beguine 1 Top
+# Viscount Cym 120"), so a second cymbal entry carries the abbreviation
+# BELOW break, fill and top — those keep their loops — and ABOVE the
+# percussion catch-all, so a "Mixed Percussion" folder's "Open Cym 1" /
+# "Rev Harsh Cym" / "Bass Cym" and 606's "Cym-606_A_07" read cymbal
+# instead of dissolving. (Zero-G Jungle Warfare Vol 2, Jonathan,
+# 2026-09-02.)
+[[instrument]]
+id      = "cymbal"
+family  = "drums"
+aliases = ["cym", "cyms"]
 
 [[instrument]]
 id      = "percussion"

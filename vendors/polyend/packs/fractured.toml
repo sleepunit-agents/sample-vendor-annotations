@@ -55,6 +55,17 @@ path = "Fractured 24 bit stereo"
 role = "canonical-audio"
 category = "one-shots"
 
+# "Wood/Perc_Wood_Balsa", "Perc_Wood_Blocks", "Perc_Wood_Clack" — the
+# folder is the woodblock family and the files say only "perc" and a
+# flavour. A bare "wood" in the shared lexicon took other packs' Bell Wood
+# and Pluck Wood off their pieces, so this is a pin (Jonathan, "Wood <=
+# wood block", 2026-09-02). The 16-bit trees are the same cuts and fall
+# away in the plan.
+[[dir]]
+path       = "Fractured 24 bit stereo/Wood"
+instrument = "clave"
+observed   = "2026-09-02"
+
 [[dir]]
 path = "Step Kits"
 role = "format-tree"

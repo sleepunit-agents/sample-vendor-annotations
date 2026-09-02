@@ -72,9 +72,17 @@ path = "WAV"
 role = "canonical-audio"
 
 [[dir]]
-path     = "WAV/MicroMoog [0-9]*"
-category = "multisamples"
-desc     = "one patch per folder, files numbered by MIDI note"
+path               = "WAV/MicroMoog [0-9]*"
+category           = "multisamples"
+default_instrument = "synth"
+desc               = "one patch per folder, files numbered by MIDI note"
+observed           = "2026-09-02"
+note               = "the numbered patches carry no name at all — synth is the honest word for every one that says nothing more (Jonathan, 'micro from mars stuff could all just be synth'). A folder with a clearer sound is pinned below: a pin, because the consumer picks between defaults by pattern length and the glob is the longer string."
+
+[[dir]]
+path       = "WAV/MicroMoog 5"
+instrument = "pluck"
+observed   = "2026-09-02"
 
 [[dir]]
 path       = "WAV/MicroMoog FX*"

@@ -54,6 +54,9 @@ desc = "same one-shots cut 16-bit for Tracker/Play"
 path = "ASMR 24 bit stereo"
 role = "canonical-audio"
 category = "one-shots"
+instrument = "foley"
+observed = "2026-09-01"
+note = "kit_clique_5 / kit_crisp_10 — 'kit' read as drums; the pack is close-mic'd object recordings, foley by ear (Jonathan's copy). The 16-bit trees are the same cuts and fall away in the plan, so only the canonical dir is pinned."
 
 [[dir]]
 path = "ASMR Step Kits 16 bit mono"

@@ -60,3 +60,10 @@ manifest    = "manifests/ob-from-mars.sha256"
 #        1  Docs/Installation Instructions For Kontakt.rtf
 #        1  Docs/Installation Instructions For Reason.rtf
 #        1  Docs/Installation Instructions For SFZ.rtf
+
+# Sassy Stereo sits under WAV/Keys but is a poly synth patch; the folder
+# word would keep it in keys, so a pin (Jonathan's copy, 2026-09-01).
+[[dir]]
+path       = "WAV/Keys/Sassy Stereo"
+instrument = "synth"
+observed   = "2026-09-01"

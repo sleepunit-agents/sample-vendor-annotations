@@ -62,6 +62,9 @@ tags = ["origin-sound"]
 [[dir]]
 path       = "PRESETS/AUDIO/Origin Sound/SFX"
 instrument = "fx"
+category   = "one-shots"
+observed   = "2026-09-02"
+note       = "65 files, no kind word on any name — single hits (Jonathan's copy)"
 
 [[dir]]
 path       = "PRESETS/AUDIO/Origin Sound/drum hits/Tops"

@@ -67,6 +67,28 @@ manifest    = "manifests/modular-creations-from-mars.sha256"
 # every tempo'd thing in this pack is under the loops dir, so these are
 # pinned one-shots. "4. Modular Instruments" nests Kontakt 5.5 / Ableton
 # Live trees (host packaging of the same material) and "5. Docs" is docs.
+# The format level sits one dir DOWN in this pack: "1. Modular Loops
+# (120 BPM)" holds WAV, Apple Loops (.aif) and REX2 (.rx2) renders of the
+# same 143 loops, so the vendor's top-level globs never see them and a
+# consumer that strips trees at pack root only kept all three. Nested
+# roles are honoured by materialized-tunes from v0.9.38; the .aif set is
+# SFM's own host prep and is skipped where the WAV survives. (Jonathan,
+# "apple loops bullshit that isn't getting deduped … straight ignore
+# that shit", 2026-09-02.)
+[[dir]]
+path = "1. Modular Loops (120 BPM)/WAV"
+role = "canonical-audio"
+
+[[dir]]
+path = "1. Modular Loops (120 BPM)/Apple Loops"
+role = "format-tree"
+desc = "the same loops as .aif with Apple Loops metadata, for Logic / GarageBand"
+
+[[dir]]
+path = "1. Modular Loops (120 BPM)/REX2"
+role = "format-tree"
+desc = "the same loops as .rx2 slices"
+
 [[dir]]
 path     = "2. Modular Drones"
 category = "one-shots"

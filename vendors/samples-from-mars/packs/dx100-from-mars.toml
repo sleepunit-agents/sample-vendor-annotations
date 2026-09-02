@@ -70,3 +70,9 @@ path       = "WAV/FM Square Distorted"
 instrument = "bass"
 observed   = "2026-09-02"
 note       = "two racks over one multisample: Presets/Bass and Presets/Keys & Pads; pinned to the bass reading"
+
+[[dir]]
+path               = "WAV/FM Sawtooth"
+default_instrument = "synth"
+observed           = "2026-09-01"
+note               = "a raw waveform patch; no word on the path says what it is (Jonathan's copy)"

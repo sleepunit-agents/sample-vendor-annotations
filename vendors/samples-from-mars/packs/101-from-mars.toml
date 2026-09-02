@@ -69,3 +69,16 @@ path               = "WAV/Keys and Pads"
 default_instrument = "keys"
 observed           = "2026-09-02"
 note               = "13 chromatic SH-101 patches, one subfolder each; racks file all 13 under Presets/Keys"
+
+# Two patches the racks file under Presets/Keys read pad by ear; the
+# document tier would otherwise keep saying keys, so these are pins, not
+# defaults (Jonathan's copy, 2026-09-02).
+[[dir]]
+path       = "WAV/Keys and Pads/Oscar"
+instrument = "pad"
+observed   = "2026-09-02"
+
+[[dir]]
+path       = "WAV/Keys and Pads/KoolDix"
+instrument = "pad"
+observed   = "2026-09-02"

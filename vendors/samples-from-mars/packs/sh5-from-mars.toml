@@ -59,3 +59,11 @@ manifest    = "manifests/sh5-from-mars.sha256"
 #      109  WAV/Hiss Machine
 #      109  WAV/Moving Square
 #      109  WAV/Resonant Flute
+
+# Syn Toms: 242 files, one synth-tom patch across the keyboard. The shape
+# tier would file it as a multisample; Jonathan files drum-machine toms
+# as hits whatever pitch they come at (his copy, 2026-09-02).
+[[dir]]
+path     = "WAV/Syn Toms"
+category = "one-shots"
+observed = "2026-09-02"

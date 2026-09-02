@@ -52,3 +52,11 @@ manifest    = "manifests/2600-from-mars.sha256"
 #        1  Docs/Installation Instructions - All.rtf
 #        1  Docs/Installation Instructions For Kontakt.rtf
 #        1  Icon
+
+# "66_It'sBeat_ARP2600_F#3" — the name's "beat" is a title, the folder is
+# a chromatic synth patch; the weak break word is demoted under the
+# multisample shape but still lands Drums/_General (Jonathan's copy).
+[[dir]]
+path       = "WAV/Instrument Samples/It'sBeat"
+instrument = "synth"
+observed   = "2026-09-02"
