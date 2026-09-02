@@ -59,3 +59,13 @@ manifest    = "manifests/mr10-from-mars.sha256"
 #        1  Docs/MR10 From Mars - About.rtf
 #        1  Docs/Samples From Mars - Terms and Conditions.pdf
 #        1  Icon
+
+# The loops are full drum-machine patterns named for the dance — Mambo,
+# Rhumba, Samba, Tango, Swing, March — so only the ten "16 Beat" files
+# carried a break word and the other 56 read Drums/_General. A default,
+# not a pin: a file that names its part would still keep it.
+[[dir]]
+path               = "WAV/03. Loops"
+default_instrument = "break"
+observed           = "2026-09-02"
+note               = "66 full beats (Jonathan: 'its a bunch of full beats, but they're named like Mambo something or other 100.wav')"

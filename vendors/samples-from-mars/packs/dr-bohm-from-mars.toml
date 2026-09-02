@@ -60,3 +60,16 @@ manifest    = "manifests/dr-bohm-from-mars.sha256"
 #        2  Docs/Installation Instructions For Logic EXS
 #        2  Docs/Installation Instructions For Maschine
 #        2  FL Studio/Dr Bohm From Mars
+
+# Custom Patterns are the Dr Bohm's full patterns played and named by hand
+# — Bap, Cha Ha, Dark Tom, Haus, Tommy, Up Beat — and every one is the
+# whole beat, so the folder is pinned: "Dark Tom V4" is a pattern built on
+# toms, not a tom loop. Factory Patterns (Bossa Nova, Foxtrot, Polka …)
+# read break through the shared "patterns" word; Stripped Patterns are
+# stems and keep their piece words. The same folders sit under WAV/Loops,
+# REX2 and the Apple Loops tree, hence the glob.
+[[dir]]
+path       = "**/Custom Patterns"
+instrument = "break"
+observed   = "2026-09-02"
+note       = "40 patterns ×3 formats (Jonathan: 'Loops/Custom Patterns under Dr Bohm are definitely our breaks category')"

@@ -181,7 +181,10 @@ note     = "CH/OH across every SFM drum machine pack"
 
 Consumers normalize each path segment and the filename stem (lowercase,
 order prefixes dropped, non-alphanumerics to spaces, a boundary opened
-where a letter meets a digit so `808_Kick02` reads as `808 kick 02`),
+where a letter meets a digit so `808_Kick02` reads as `808 kick 02`, and
+where lower case meets a capital so `StringsLowGlide` reads as
+`strings low glide` — a run of capitals stays one word up to the last,
+`FMBell` is `fm bell`),
 collect every label found, and keep the most specific one — earliest in
 `instruments.toml`.
 So `04. Rimshot/Rimshot TOM 31.wav` is a rimshot even though the machine

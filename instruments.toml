@@ -9,7 +9,9 @@
 # HOW IT IS APPLIED. Consumers normalize each path segment and the filename
 # stem (lowercase; order prefixes like "01. " dropped; non-alphanumerics to
 # spaces; a boundary opened where a letter meets a digit, so "Kick02" and
-# "BD3" read as kick 02 and bd 3) and look for these aliases as whole words. The FILENAME is checked
+# "BD3" read as kick 02 and bd 3, and where lower case meets a capital, so
+# "StringsLowGlide" reads as strings low glide and "FMBell" as fm bell)
+# and look for these aliases as whole words. The FILENAME is checked
 # first, then directories deepest-first — the most specific label the vendor
 # wrote wins. Entries are tried in the order below, so specific beats
 # generic ("bass drum" resolves to kick before "bass" can claim it).
@@ -163,6 +165,8 @@ codes   = ["sd", "sn"]
 id      = "clap"
 family  = "drums"
 aliases = ["clap", "claps", "handclap", "hand clap"]
+# "snap" is a clap too, but it is a second clap entry ranked below the
+# percussion pieces — see the note there.
 codes   = ["cp"]
 
 # "Cymbals and Hats" holds both, so neither word may claim it — hat outranks
@@ -196,7 +200,12 @@ aliases = ["cymbal", "cymbals", "crash", "crashes", "ride", "rides", "splash"]
 [[instrument]]
 id      = "rim"
 family  = "drums"
-aliases = ["rim", "rimshot", "rim shot", "rimshots"]
+aliases = ["rim", "rimshot", "rim shot", "rimshots", "rim shots",
+           "sidestick", "side stick", "sidesticks", "side sticks",
+           "cross stick", "crossstick", "cross sticks", "xstick", "x stick"]
+# sidestick / cross stick: the same stroke by its other names — Lindrum
+# "01. Individual Hits/03. Sidestick" read nothing (Jonathan, 2026-09-02).
+# SFM's "SS" abbreviation is a vendor alias in its own file.
 
 [[instrument]]
 id      = "tom"
@@ -229,7 +238,7 @@ avoid   = ["tom 1501"]
 [[instrument]]
 id       = "break"
 family   = "drums"
-aliases  = ["break", "breaks", "breakbeat", "breakbeats", "amen", "drum break", "drum breaks",
+aliases  = ["break", "breaks", "breakbeat", "breakbeats", "break beat", "break beats", "amen", "drum break", "drum breaks",
             "drum groove", "drum grooves", "drum beat", "drum beats", "drumbeat", "drumbeats",
             "beat loop", "beat loops", "groove loop", "groove loops"]
 category = "loops"
@@ -254,7 +263,9 @@ aliases = ["conga", "congas", "bongo", "bongos", "tumbadora", "djembe"]
 [[instrument]]
 id      = "cowbell"
 family  = "percussion"
-aliases = ["cowbell", "cowbells", "agogo"]
+aliases = ["cowbell", "cowbells", "cow bell", "cow bells", "cowb", "agogo"]
+# cowb: SFM's short form (SP1200 / Drumtrax / Rhythm "Cowb … 01"); "cow bell"
+# is what Festival's "CowBell" reads as once camel case is split
 
 [[instrument]]
 id      = "clave"
@@ -263,6 +274,27 @@ aliases = ["clave", "claves", "guiro", "guira", "chekere", "woodblock", "wood bl
            "jam block", "jamblock", "jamblok"]
 # guira: the Dominican metal scraper; jam block: LP's plastic woodblock —
 # Polyend Festival ships both as folders (observed 2026-09-01)
+
+# Three more named pieces the drum-machine packs write as folders and the
+# lexicon had no word for, so they dissolved into Percussion/_General:
+# timbale (505 "11. Timbale", 626 "12. Timbale", 727 "Timbales", TOM),
+# tabla and udu (MPC3000 "Tabla" / "Udu", Private Reserve "09. Percussion").
+# Found by sweeping every Perc / Percussion folder in the house listing
+# for the words its catch-all files carry (2026-09-02).
+[[instrument]]
+id      = "timbale"
+family  = "percussion"
+aliases = ["timbale", "timbales", "timbal", "timbala"]
+
+[[instrument]]
+id      = "tabla"
+family  = "percussion"
+aliases = ["tabla", "tablas"]
+
+[[instrument]]
+id      = "udu"
+family  = "percussion"
+aliases = ["udu", "udus"]
 
 # Mallets are tuned percussion, and vendors file them with the drums:
 # SFM 360's "06. Perc/Vibes", "06. Perc/Mallet Multi Filter". Every
@@ -278,12 +310,35 @@ id      = "mallet"
 family  = "keys"
 aliases = ["mallet", "mallets", "marimba", "vibraphone", "vibes", "xylophone", "kalimba"]
 
+# Bells are the same case as mallets — tuned, struck, filed with the drums
+# by every drum-machine vendor (SP1200 "15. Perc/Chimes", Modular Drums
+# "Bell", 727 "Rides & Chimes") — and the entry sat in the keys block below
+# the percussion catch-all, so a Perc folder outvoted the file's own word.
+# Moved up beside mallet, family still keys (2026-09-02).
+[[instrument]]
+id      = "bell"
+family  = "keys"
+aliases = ["bell", "bells", "chime", "chimes", "glockenspiel", "tubular bells"]
+avoid   = ["bell rhodes", "rhodes bell"]   # S612 "Bell Rhodes" is a Rhodes: piano ranks below this entry now
+
 # Same folder, same rank problem: 360 "06. Perc/Timpani", SP1200
 # "Factory Drums/7. Timpani". A named orchestral drum, so percussion.
 [[instrument]]
 id      = "timpani"
 family  = "percussion"
 aliases = ["timpani", "timpanis", "kettle drum", "kettle drums"]
+
+# A finger snap is filed with the claps everywhere it appears — MPC3000
+# "03. Clap & Snap", SP1200 "3. Snap", Modern Oddities "Snaps", Vinyl
+# Drums and TOM "Snap" folders — but SFM also writes "Snap" as a FLAVOUR on
+# a named hit: "Tamb 78 Snap", "Clave Snap Cassette", "Rim LXR Snap",
+# "Bongo CR78 Snap". At the clap entry's rank the flavour word stole all
+# of those (probed 2026-09-02), so snap is a second clap entry ranked here:
+# below every named piece, above the catch-alls. Same id, same family.
+[[instrument]]
+id      = "clap"
+family  = "drums"
+aliases = ["snap", "snaps", "finger snap", "finger snaps", "fingersnap", "fingersnaps"]
 
 # A fill is a role, not a piece — so it sits BELOW every named piece
 # ("Snare Roll" is a snare, "percussion_loop_fill_repeating_conga" is a
@@ -313,8 +368,18 @@ aliases = ["fill", "fills", "drum fill", "drum fills", "roll", "rolls", "drum ro
 [[instrument]]
 id       = "top"
 family   = "drums"
-aliases  = ["top", "tops", "top loop", "top loops", "toploop", "toploops"]
+aliases  = ["top", "tops", "top loop", "top loops", "toploop", "toploops",
+            "percussion loop", "percussion loops", "perc loop", "perc loops", "percloop", "percloops"]
 category = "loops"
+# "percussion loop" is a top by another name: a percussion phrase that is
+# not a whole beat is the layer over one. The phrase ranks here, so a loop
+# that names its piece keeps it ("percussion_loop_shaker_…" is a shaker
+# loop, "…_fill_repeating_conga" a conga) and a fill is still a fill (the
+# entry above); only the percussion loops that say nothing more land in
+# Drums/Top instead of Percussion/_General. DECAP Drums That Knock X
+# "Loops/Drum_Loops/Percussion_Loops", Octatrack "Extra Perc Loops" /
+# "percussion loops". (Jonathan, "fill == fill, anything else == tops",
+# 2026-09-02.)
 
 [[instrument]]
 id      = "percussion"
@@ -420,6 +485,7 @@ aliases = ["upright bass", "uprightbass", "double bass", "doublebass",
 id      = "bass"
 family  = "bass"
 aliases = ["bass", "basses", "bassline", "bass line", "bass lines", "bass hits"]
+avoid   = ["bass station", "bassstation"]   # the Novation synth: Vinyl Synths names 84 patches for it, under Bass, FX and Keys alike
 
 # ---- keys and tonal -----------------------------------------------------
 
@@ -432,7 +498,7 @@ aliases = ["piano", "pianos", "grand piano", "upright piano", "electric piano", 
 [[instrument]]
 id      = "organ"
 family  = "keys"
-aliases = ["organ", "organs", "hammond", "vox organ", "harmonium"]
+aliases = ["organ", "organs", "hammond", "vox organ", "harmonium", "farfisa"]
 # harmonium: a reed organ; SFM Mini "Harmonium" (observed 2026-09-02). Acid's
 # "Harmonium Sine" stays acid — the folder word ranks earlier.
 
@@ -453,11 +519,6 @@ family  = "keys"
 aliases = ["key", "keys", "keyboard", "harpsichord", "harpsi", "celeste"]
 # harpsi: vendor short form of harpsichord; SFM DX100 "Harpsi FM" (observed 2026-09-02)
 
-[[instrument]]
-id      = "bell"
-family  = "keys"
-aliases = ["bell", "bells", "chime", "chimes", "glockenspiel", "tubular bells"]
-
 # ---- synth voices -------------------------------------------------------
 
 [[instrument]]
@@ -466,14 +527,32 @@ family  = "synth"
 aliases = ["lead", "leads", "lead synth", "hoover", "hoovers", "riff", "riffs"]
 # "acid" is NOT here any more: it is a bass entry (2026-09-01, Jonathan).
 
+# Synth vox: the choir-y, vocoded, human-voice-section sounds a synth
+# makes — VP330 Ensemble Male / Female, its SVC-350 vocoder, "Vox Choir",
+# "Synth Voice" — as against a recording of a person, which is the vocal
+# family. Synth is flat, so this is the one entry in it that keeps a
+# folder (`split`, like upright-bass): Synth/<category>/Synth Vox/. Was
+# the `vocoder` entry until 2026-09-02; same rank, wider words. (Jonathan,
+# "do we have like a synth vox category? … maybe like our vocoder group?")
 [[instrument]]
-id      = "vocoder"
+id      = "synth-vox"
 family  = "synth"
-aliases = ["vocoder", "vocoders"]
-# Only ever seen as a Samples From Mars preset folder (VP330 From Mars:
-# "Presets/Vocoder/", 883 samples reached through the document tier);
-# zero audio paths in the 167k house listing carry the word, so no
-# collateral (2026-09-01).
+split   = true
+display = "Synth Vox"
+aliases = ["vocoder", "vocoders", "vocoded",
+           "synth vox", "synth voice", "synth voices", "synth choir", "synth choirs",
+           "vox synth", "voice synth", "choir synth", "vox choir"]
+
+# A choir you can PLAY is a synth vox — Mirage / Emulator "Choir" are
+# chromatic patches, the archetypal choir-y sound — and a choir you can
+# only listen to is a vocal. `category` draws that line the way it does
+# for break: on a file already known to be a loop or a hit the word is
+# passed over here and the loose vocal entry near the bottom reads it.
+[[instrument]]
+id       = "synth-vox"
+family   = "synth"
+aliases  = ["choir", "choirs"]
+category = "multisamples"
 
 [[instrument]]
 id      = "pad"
@@ -498,6 +577,11 @@ aliases = ["stab", "stabs", "chord stab", "chord stabs", "chord", "chords"]
 id      = "arp"
 family  = "synth"
 aliases = ["arp", "arps", "arpeggio", "arpeggios", "sequence", "sequences", "seq"]
+# ARP the company, not the arpeggio: SFM writes the machine into every
+# 2600 and Omni filename ("100_AllOfMyBass_ARP2600_E6"), and with the
+# camel-case split reading the patch names, the bass/lead/pad word must
+# not lose to the maker's (2026-09-02)
+avoid   = ["arp 2600", "arp2600", "arp 2500", "arp odyssey", "arp omni", "arp solina", "arp axxe", "arp quadra", "arp instruments"]
 
 [[instrument]]
 id      = "synth"
@@ -638,8 +722,14 @@ aliases = ["vox", "voice", "voices", "spoken", "choir", "choirs", "chant", "chan
 [[instrument]]
 id       = "break"
 family   = "drums"
-aliases  = ["beat", "beats", "groove", "grooves"]
+aliases  = ["beat", "beats", "groove", "grooves", "pattern", "patterns"]
 category = "loops"
+# pattern: what a drum-machine vendor calls its full loops — Dr Bohm
+# "Factory Patterns" / "Custom Patterns" (Bossa Nova, Foxtrot, Polka …),
+# Rhythm From Mars "Full Patterns" — named for the dance, never the drum,
+# so nothing above spoke and 100+ loops read Drums/_General. "Stripped
+# Patterns" are stems and keep their piece words. (Jonathan, "Custom
+# Patterns under Dr Bohm are definitely our breaks category", 2026-09-02.)
 
 # ---- full loops: the whole arrangement ---------------------------------
 # A full loop is everything mixed together — drums, bass, keys — and it is

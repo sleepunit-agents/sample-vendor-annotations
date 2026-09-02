@@ -117,6 +117,12 @@ aliases = ["custom tom"]
 id      = "clap"
 aliases = ["cp"]
 
+[[instrument]]
+id       = "rim"
+aliases  = ["ss"]
+observed = "2026-09-02"
+note     = "SS = sidestick: Lindrum 03. Sidestick and its Kits copies (SS Lindrum Color B Orig 37), Linn60, TOM, MPC3000 — 180 files, every one a drum machine's side stick"
+
 # SFM files its raw-oscillator racks under "Basics" (MS10, WASP) and
 # "06. Basic Waveforms" (Soviet Synths) — the naked pulse/saw/square/
 # triangle multisamples of each synth. That is the vendor saying "synth,

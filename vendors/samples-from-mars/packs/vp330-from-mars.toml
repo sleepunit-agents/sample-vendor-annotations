@@ -59,3 +59,47 @@ manifest    = "manifests/vp330-from-mars.sha256"
 #       49  WAV/HallOatsCombo
 #       49  WAV/Hey
 #       49  WAV/KillingAnAlien
+
+# The VP-330 is a strings-and-human-voice machine, and SFM named every
+# WAV patch folder in camel case with no spaces ("StringsLowGlide",
+# "EnsembleMaleVibe1"), which the lexicon reads as one long word. These
+# defaults say what the folder names say. Strings folders are plain
+# strings; the Ensemble folders are the Human Voice section — a choir-y
+# synth, not a singer — as is the SVC-350 vocoder material.
+[[dir]]
+path               = "WAV/StringsLow"
+default_instrument = "strings"
+observed           = "2026-09-02"
+
+[[dir]]
+path               = "WAV/StringsLowGlide"
+default_instrument = "strings"
+observed           = "2026-09-02"
+
+[[dir]]
+path               = "WAV/SaturatedGlidedStrings"
+default_instrument = "strings"
+observed           = "2026-09-02"
+
+[[dir]]
+path               = "WAV/LV223Strings"
+default_instrument = "strings"
+observed           = "2026-09-02"
+
+[[dir]]
+path               = "WAV/Ensemble*"
+default_instrument = "synth-vox"
+observed           = "2026-09-02"
+note               = "EnsembleMale / EnsembleFemale and their Vibe1 / Vibe2 variants — the VP-330 Human Voice section (Jonathan: 'EnsembleMaleVibe1/2 from vp330 from mars go in there')"
+
+[[dir]]
+path               = "WAV/SVC350 OneShots"
+default_instrument = "synth-vox"
+observed           = "2026-09-02"
+note               = "Roland SVC-350 vocoder, per-note"
+
+[[dir]]
+path               = "SVC350 Loops"
+default_instrument = "synth-vox"
+observed           = "2026-09-02"
+note               = "vocoded loops, three formats"
