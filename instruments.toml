@@ -485,7 +485,24 @@ category = "loops"
 [[instrument]]
 id      = "drums"
 family  = "drums"
-aliases = ["drum", "drums", "drum hits", "drum one shots", "drumperc", "drum kit", "kit", "kits"]
+aliases = ["drum", "drums", "drum hits", "drum one shots", "drumperc", "drum kit"]
+
+# "kit" alone is the drums word for a SET OF HITS. A kit whose category is
+# already loops is a construction kit — a song's stems as loops (Night
+# Drive 2 "music_loops/NW_ND2_110_kit_cyberpunk_Abmaj/…_bass_…", Hard Trap
+# "Demo_Kits/Kit03_168_F#m", Cr2 "Loops/Demo_Kits") — and names no family
+# at all, so scoped to one-shots it is silent on a loop rather than
+# demoted (the catch-all's own word has nowhere to fall back to;
+# materialized-tunes v0.9.43) and each stem reads its own name: bass, pad,
+# full, arp. Before 2026-09-02 "kit" sat on the entry above and, ranked
+# with the catch-all, outranked every stem word below it — 102 Night Drive
+# stems were Drums/_General/Loops. "drum kit" spelled out stays above:
+# a "Drum Kit Loops" folder is drums whatever its length.
+[[instrument]]
+id       = "drums"
+family   = "drums"
+aliases  = ["kit", "kits"]
+category = "one-shots"
 
 # ---- bass ---------------------------------------------------------------
 
