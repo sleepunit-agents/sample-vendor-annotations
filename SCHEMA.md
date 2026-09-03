@@ -513,6 +513,20 @@ carry no honest instrument signal: jungle breaks named after their sources
 can fix that. Pin only dirs whose content is genuinely uniform; where
 filenames do describe the sound, leave the lexicon to read them.
 
+A `path` may name a **file or a file glob** *(2026-09-03)* —
+`PRESETS/AUDIO/Elektron/Ebass.wav`, `WAV/Textures/Chop *.wav` — for a
+folder that mixes kinds under names carrying no kind word: Elektron's 25
+Octatrack demos are one word each, and "Ebass" is an eight-second bass
+line beside "Mdkick", a hit. The entry is matched against the file's full
+in-pack path; longer than its folder's entry, it wins deepest-match for
+that file alone, and the folder's entry keeps governing the siblings. It
+carries the same facets (`category`, `instrument`, `tags`, defaults,
+provenance). Use it last: where a filename *does* carry a word, teach the
+word (a pack `[[instrument]]` alias, a lexicon entry) — a file entry is a
+fact about one file and generalises to nothing. (materialized-tunes reads
+file entries from v0.9.44; earlier builds match `[[dir]]` paths against
+the folder only and ignore them.)
+
 `default_category` / `default_instrument` *(2026-09-01)* speak **last**:
 they answer only for a file that no word on its path, no vendor rule and
 no directory shape said anything about. Where `category` / `instrument`

@@ -42,6 +42,51 @@ path     = "PRESETS/AUDIO/Elektron"
 category = "one-shots"
 tags     = ["elektron"]
 desc     = "single sounds, one per file, no folder — Machinedrum and Monomachine hits, SID tones, a Rhodes, a vocal"
+observed = "2026-09-03"
+note     = "durations from Jonathan's catalog: 19 of the 25 are 0.09–3.88 s at irregular lengths — hits and sustained single sounds (Fatty 1.63, Heaven 3.27, Modres 2.25, Modstr 3.88, Oldie 2.82); the six at exact bar lengths are loops, named below"
+
+# Six of Elektron's 25 sit at exactly 8.00 / 4.00 / 2.00 s — four, two
+# and one bar at 120, the Octatrack's default tempo — beside hits of
+# 0.09–0.56 s. A [[dir]] path may name a file (SCHEMA, 2026-09-03;
+# materialized-tunes reads it from v0.9.44): the entry is longer than the
+# folder's, so it wins deepest-match for that file alone. The 2.00 s
+# three are the softer call (a chord held for one bar is a loop the way
+# the Octatrack uses it; ears overrule).
+[[dir]]
+path     = "PRESETS/AUDIO/Elektron/Ebass.wav"
+category = "loops"
+observed = "2026-09-03"
+note     = "8.00 s mono — four bars at 120; an electric bass line, not a hit"
+
+[[dir]]
+path     = "PRESETS/AUDIO/Elektron/Isaak.wav"
+category = "loops"
+observed = "2026-09-03"
+note     = "4.00 s stereo — two bars at 120; the name says nothing about the instrument"
+
+[[dir]]
+path     = "PRESETS/AUDIO/Elektron/Percs.wav"
+category = "loops"
+observed = "2026-09-03"
+note     = "4.00 s stereo — two bars at 120; a percussion loop"
+
+[[dir]]
+path     = "PRESETS/AUDIO/Elektron/Acdrum.wav"
+category = "loops"
+observed = "2026-09-03"
+note     = "2.00 s stereo — one bar at 120; an acoustic drum loop (acdrum → drums below)"
+
+[[dir]]
+path     = "PRESETS/AUDIO/Elektron/Rhodes.wav"
+category = "loops"
+observed = "2026-09-03"
+note     = "2.00 s stereo — one bar at 120; the softer call: a Rhodes figure cut to the bar"
+
+[[dir]]
+path     = "PRESETS/AUDIO/Elektron/Vocal.wav"
+category = "loops"
+observed = "2026-09-03"
+note     = "2.00 s stereo — one bar at 120; the softer call: a vocal phrase cut to the bar"
 
 # ---- Loopmasters ---------------------------------------------------------
 # "Loops/<genre>/<Bass|Drum|Music> Loops" and "Sounds and FX/<…> Hits" —
@@ -166,10 +211,15 @@ aliases = ["distbass", "ebass", "modbass"]
 
 # The other fifteen of Elektron's 25 are one word each with no grammar at
 # all. The names that say what they are get an alias; the rest wait on
-# ears — Acdrum, Fatty, Heaven, Isaak, Oldie, Modres, Modstr — and so does
-# the folder's one-shots pin (written from a listing, not a duration;
-# Sidarp / Percs / Oldie may be phrases). (Jonathan, "this folder is a
-# nightmare of things", 2026-09-02.)
+# ears — Fatty, Heaven, Isaak, Oldie, Modres, Modstr. The folder's
+# one-shots pin was written from a listing on 2026-09-01; the durations
+# came 2026-09-03 and six files became loops (the [[dir]] entries above).
+# (Jonathan, "this folder is a nightmare of things", 2026-09-02.)
+[[instrument]]
+id      = "drums"
+aliases = ["acdrum"]                              # "acoustic drum" — a one-bar kit loop; the
+                                                  # family catch-all, since no piece is named
+
 [[instrument]]
 id      = "fx"
 aliases = ["coinup", "zzap", "stop", "mdnoise"]   # arcade coin-up, zap, tape stop, Machinedrum noise burst
