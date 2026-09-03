@@ -164,6 +164,31 @@ codes   = ["cp"]
 id      = "bass"
 aliases = ["distbass", "ebass", "modbass"]
 
+# The other fifteen of Elektron's 25 are one word each with no grammar at
+# all. The names that say what they are get an alias; the rest wait on
+# ears — Acdrum, Fatty, Heaven, Isaak, Oldie, Modres, Modstr — and so does
+# the folder's one-shots pin (written from a listing, not a duration;
+# Sidarp / Percs / Oldie may be phrases). (Jonathan, "this folder is a
+# nightmare of things", 2026-09-02.)
+[[instrument]]
+id      = "fx"
+aliases = ["coinup", "zzap", "stop", "mdnoise"]   # arcade coin-up, zap, tape stop, Machinedrum noise burst
+
+[[instrument]]
+id      = "stab"
+aliases = ["MMchord"]                             # a Monomachine chord, one hit. Kept in the
+                                                  # vendor's case: Normalize opens "MMchord" as
+                                                  # "m mchord" (a run of capitals keeps all but
+                                                  # the last), and the alias must open the same way
+
+[[instrument]]
+id      = "synth"
+aliases = ["sidsquare", "sidmixed"]               # SID chip tones
+
+[[instrument]]
+id      = "arp"
+aliases = ["sidarp"]
+
 [[dir]]
 path             = "PRESETS/AUDIO/Sample Magic/*/fx"
 instrument       = "fx"
