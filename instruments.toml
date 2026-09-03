@@ -342,7 +342,11 @@ aliases = ["udu", "udus"]
 [[instrument]]
 id      = "mallet"
 family  = "keys"
-aliases = ["mallet", "mallets", "marimba", "vibraphone", "vibes", "xylophone", "kalimba"]
+aliases = ["mallet", "mallets", "marimba", "vibraphone", "vibes", "xylophone", "kalimba",
+           "steel drum", "steel drums", "steelpan", "steel pan", "steelpans", "steel pans"]
+# steel drum: a steelpan is a tuned, struck instrument like the rest of this
+# entry; listed here so the phrase reads before the drums catch-all claims
+# "drums" (SFM DX100 "WAV/Steel Drums" read as drums, 2026-09-02)
 
 # Bells are the same case as mallets — tuned, struck, filed with the drums
 # by every drum-machine vendor (SP1200 "15. Perc/Chimes", Modular Drums
@@ -389,6 +393,8 @@ aliases = ["snap", "snaps", "finger snap", "finger snaps", "fingersnap", "finger
 id      = "fill"
 family  = "drums"
 aliases = ["fill", "fills", "drum fill", "drum fills", "roll", "rolls", "drum roll", "drum rolls"]
+avoid   = ["stab fill", "stab fills", "chord fill", "chord fills"]   # a fill made of stabs is a stab phrase, not a drum fill
+                                                                 # (SFM MPC2000 "83 on Myrtle/Myrtle Stab Fill", 2026-09-02)
 
 # A top is a role the same way a fill is — the layer over a beat (hats,
 # shakers, percussion, the kick and snare stripped out) — so it ranks
@@ -697,7 +703,13 @@ aliases = ["synth", "synths", "synthesizer", "poly", "mono synth", "tonal", "mel
 [[instrument]]
 id      = "guitar"
 family  = "strings"
-aliases = ["guitar", "guitars", "acoustic guitar", "electric guitar", "gtr"]
+aliases = ["guitar", "guitars", "acoustic guitar", "electric guitar", "gtr", "acoustic"]
+# bare "acoustic" is the guitar: in sample-pack naming an "Acoustic Lick" /
+# "Acoustic Strum" is the guitar with no adjective needed, and every other
+# acoustic thing carries its own name, which ranks above this entry (kick,
+# snare, piano, upright bass, the drums catch-all). Black Octopus Tropical
+# Funk "ONE_SHOTS/Keys_&_Guitar_-_One_Shots/TF_OneShot_C_Acoustic_Lick"
+# (Jonathan, 2026-09-02).
 
 [[instrument]]
 id      = "violin"
