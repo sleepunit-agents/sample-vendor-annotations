@@ -103,3 +103,13 @@ path               = "SVC350 Loops"
 default_instrument = "synth-vox"
 observed           = "2026-09-02"
 note               = "vocoded loops, three formats"
+
+# "Combo" is the VP-330's own word for a patch that mixes its Human Voice
+# and Strings sections — WalterBeckerCombo, DuranDuranCombo, HallOatsCombo,
+# eight folders, 384 notes that said nothing (plan dump, 2026-09-02). Filed
+# with the strings the pack already declares (StringsLow, StringsAndVoice);
+# a pack word, because "combo" means an organ elsewhere.
+[[instrument]]
+id       = "strings"
+aliases  = ["combo"]
+observed = "2026-09-02"

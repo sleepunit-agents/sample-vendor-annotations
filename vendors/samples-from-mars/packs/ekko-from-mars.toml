@@ -66,3 +66,11 @@ manifest    = "manifests/ekko-from-mars.sha256"
 [[dir]]
 path               = "WAV/02. Loops/01. Full Loops"
 default_instrument = "break"
+
+# The Ekko's triangle voice — 01. Individual Hits/10. Triangle, 18 files
+# that said nothing. A pack word: "triangle" is a waveform first (MS10
+# From Mars "WAV/Triangle").
+[[instrument]]
+id       = "percussion"
+aliases  = ["triangle"]
+observed = "2026-09-02"

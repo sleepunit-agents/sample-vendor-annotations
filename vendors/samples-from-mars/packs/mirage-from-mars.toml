@@ -58,3 +58,9 @@ manifest    = "manifests/mirage-from-mars.sha256"
 #        1  Docs/Mirage From Mars - About.rtf
 #        1  Docs/Samples From Mars - Terms and Conditions.pdf
 #        1  Icon
+
+[[dir]]
+path               = "WAV/07. Various One Shots"
+default_instrument = "synth"
+observed = "2026-09-02"
+note               = "17 chord hits named for a mood and a chord (Candlelight Night Mirage Cmaj, Drunk Quartet Mirage Fmaj7) — nothing says which of the Mirage's disks played them (plan dump, 2026-09-02)"

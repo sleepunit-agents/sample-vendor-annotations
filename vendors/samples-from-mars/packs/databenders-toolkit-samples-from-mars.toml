@@ -60,3 +60,17 @@ role = "canonical-audio"
 [[dir]]
 path     = "WAV/DRUMS"
 category = "one-shots"
+
+[[dir]]
+path             = "WAV/MISC"
+instrument       = "fx"
+default_category = "one-shots"
+observed = "2026-09-02"
+note             = "Misc-1 … Misc-41 — databent artefacts, no word on any name (plan dump, 2026-09-02)"
+
+[[dir]]
+path             = "WAV/MORPHBOT"
+instrument       = "fx"
+default_category = "one-shots"
+observed = "2026-09-02"
+note             = "Morphbot-1 … 34 and Delay-Mod — same (plan dump, 2026-09-02)"

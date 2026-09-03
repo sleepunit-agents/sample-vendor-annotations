@@ -38,7 +38,12 @@ id      = "loops"
 aliases = [
   "loop", "loops", "full beats", "whole beats", "full breaks",
   "song starters", "songstarters", "construction",
+  "stem", "stems", "full stems",
+  "acapella", "acapellas", "a capella", "acappella", "acappellas",
 ]
+# stems / acapella: a song's parts and its lone vocal are phrases by
+# construction — Black Octopus "FULL_STEMS", "Acapella_-_La_Vida_Gmin_122",
+# SFM Sample Journal "LM1 Rev2 Stem" (plan dump, 2026-09-02).
 # observed: "Drum Loops 120 BPM", "03. Loops", "Full Breaks",
 # "Construction Kits" (loops entry sits above kits so the construction
 # sense wins)

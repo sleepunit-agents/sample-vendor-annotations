@@ -64,7 +64,8 @@ manifest    = "manifests/tape-fragments-from-mars.sha256"
 # Fragments G2", "Bullet Train Tape Fragments C4"): hits with the key
 # they sit at, not a multisample — no name spans more than a note.
 [[dir]]
-path             = "WAV"
-default_category = "one-shots"
-observed         = "2026-09-02"
-note             = "32 files, 29 names, one note each"
+path               = "WAV"
+default_category   = "one-shots"
+default_instrument = "pad"
+observed           = "2026-09-02"
+note               = "32 files, 29 names, one note each; eleven (Celestial Waters, Cerebral Swell, Whale Cry …) carry no instrument word — tape-mangled textures, so pad (plan dump, 2026-09-02)"

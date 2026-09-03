@@ -70,6 +70,15 @@ path = "WAV"
 role = "canonical-audio"
 
 [[dir]]
-path     = "WAV/03. Effected"
-category = "one-shots"
-desc     = "the One Hits set through effects, Wet/Dry takes per patch"
+path               = "WAV/03. Effected"
+category           = "one-shots"
+default_instrument = "fx"
+desc               = "the One Hits set through effects, Wet/Dry takes per patch"
+observed           = "2026-09-02"
+note               = "610 files named for the patch (UFO Babies, Cosmic Waffle, Dribble) and nothing else; the One Hits they were cut from read sweep / fx / noise 640 to 156 tom, so the effected set defaults to the same family (plan dump, 2026-09-02)"
+
+[[dir]]
+path               = "WAV/02. Chromatic"
+default_instrument = "synth"
+observed           = "2026-09-02"
+note               = "Res Long / Res Short / Unison — the Synare's tone played up the keyboard, 136 notes, no word on any name (plan dump, 2026-09-02)"

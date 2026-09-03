@@ -60,6 +60,9 @@ manifest    = "manifests/arp-omni-from-mars.sha256"
 # across the keyboard, files named "Omni Long-12B.wav" — index glued to
 # the note name, which the chromatic-siblings fallback does not parse.
 [[dir]]
-path     = "WAV"
-role     = "canonical-audio"
-category = "multisamples"
+path               = "WAV"
+role               = "canonical-audio"
+category           = "multisamples"
+default_instrument = "strings"
+observed           = "2026-09-02"
+note               = "the Omni is a string machine; its patch folders (Double Octave, Long, Open Filter Saturated, Short & Funky Saturated) name the envelope, 145 notes with no instrument word (plan dump, 2026-09-02)"

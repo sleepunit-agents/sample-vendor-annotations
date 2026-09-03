@@ -58,3 +58,11 @@ manifest    = "manifests/recodrum-from-mars.sha256"
 #        1  Docs/Recodrum From Mars - About.rtf
 #        1  Docs/Samples From Mars - Terms and Conditions.pdf
 #        1  Icon
+
+# The Recodrum's stick voice — 01. Individual Hits/04. Stick, Clean and
+# Color, 64 files that said nothing. A pack word: bare "stick" is a
+# drumstick elsewhere.
+[[instrument]]
+id       = "rim"
+aliases  = ["stick"]
+observed = "2026-09-02"

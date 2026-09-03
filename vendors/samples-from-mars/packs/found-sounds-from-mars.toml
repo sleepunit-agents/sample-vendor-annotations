@@ -68,10 +68,13 @@ manifest    = "manifests/found-sounds-from-mars.sha256"
 # No instrument pin: many names do carry the drum they stand in for
 # ("GardenForkSnare1", "WoodTom1", "LayeredClap") and the lexicon reads those.
 [[dir]]
-path     = "WAV"
-role     = "canonical-audio"
-category = "one-shots"
-tags     = ["found-sound", "foley"]
+path       = "WAV"
+role       = "canonical-audio"
+category   = "one-shots"
+instrument = "foley"
+tags       = ["found-sound", "foley"]
+observed   = "2026-09-02"
+note       = "a pin, not a default: the names are the objects (BottleHandVortex, CDTrayAttackVortex, KeysUnlock) and the folders are the treatment (Tube & Clean Kits, Repitched Kits) — 'kits' was filing 140 of them as drums and 'keys' one as a keyboard; FX Textures keeps its deeper fx pin (plan dump, 2026-09-02)"
 
 [[dir]]
 path       = "WAV/FX Textures"

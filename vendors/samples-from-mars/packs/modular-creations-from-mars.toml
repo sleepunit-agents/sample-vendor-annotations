@@ -76,8 +76,11 @@ manifest    = "manifests/modular-creations-from-mars.sha256"
 # "apple loops bullshit that isn't getting deduped … straight ignore
 # that shit", 2026-09-02.)
 [[dir]]
-path = "1. Modular Loops (120 BPM)/WAV"
-role = "canonical-audio"
+path               = "1. Modular Loops (120 BPM)/WAV"
+role               = "canonical-audio"
+default_instrument = "synth"
+observed           = "2026-09-02"
+note               = "loops named for the module that made them (STO_Loops_A_01_E, Tides, VCO6, Model15, Telaharmonix, Basimilus) — 143 files, no instrument word; modular voices, so synth (plan dump, 2026-09-02)"
 
 [[dir]]
 path = "1. Modular Loops (120 BPM)/Apple Loops"
@@ -95,9 +98,12 @@ category = "one-shots"
 tags     = ["drone"]
 
 [[dir]]
-path     = "3. Modular Raw Voltage"
-category = "one-shots"
-tags     = ["raw-oscillator"]
+path               = "3. Modular Raw Voltage"
+category           = "one-shots"
+default_instrument = "synth"
+tags               = ["raw-oscillator"]
+observed           = "2026-09-02"
+note               = "DPO_RawVoltages_01 …, Model15, Mother — 35 raw oscillator hits (plan dump, 2026-09-02)"
 
 [[dir]]
 path = "4. Modular Instruments"

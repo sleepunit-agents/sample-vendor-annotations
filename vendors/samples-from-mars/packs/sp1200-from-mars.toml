@@ -51,3 +51,10 @@ manifest    = "manifests/sp1200-from-mars.sha256"
 #        1  Docs/Installation Instructions - All.rtf
 #        1  Docs/Installation Instructions For Kontakt.rtf
 #        1  Icon
+
+# Same word, same meaning as Modular Drums From Mars: Custom Drums/14.
+# Laser is 30 zaps that read the parent's "Drums" (plan dump, 2026-09-02).
+[[instrument]]
+id       = "fx"
+aliases  = ["laser", "lasers"]
+observed = "2026-09-02"

@@ -163,3 +163,21 @@ codes   = ["cp"]
 [[instrument]]
 id      = "bass"
 aliases = ["distbass", "ebass", "modbass"]
+
+[[dir]]
+path             = "PRESETS/AUDIO/Sample Magic/*/fx"
+instrument       = "fx"
+default_category = "one-shots"
+observed = "2026-09-02"
+note             = "atmospheric techno/fx, lo-fi beats/fx, raw industrial techno/fx/down — 14 keyed hits (armour_Dm, comrades_Dbm) with no kind word; pinned because the pack folder above ('lo-fi beats') was reading break (plan dump, 2026-09-02)"
+
+[[dir]]
+path       = "PRESETS/AUDIO/Sample Magic/*/fx/riser"
+instrument = "riser"
+observed   = "2026-09-02"
+note       = "the fx pin above would swallow the riser folders' own word"
+
+[[dir]]
+path       = "PRESETS/AUDIO/Sample Magic/*/fx/down"
+instrument = "downlifter"
+observed   = "2026-09-02"

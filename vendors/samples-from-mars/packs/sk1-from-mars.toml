@@ -59,3 +59,9 @@ manifest    = "manifests/sk1-from-mars.sha256"
 #        1  Apple Loops 120 BPM/MarchFill SK1.aif
 #        1  Apple Loops 120 BPM/Pops SK1.aif
 #        1  Apple Loops 120 BPM/PopsFill SK1.aif
+
+[[dir]]
+path       = "WAV/Sampler/Clicks"
+instrument = "percussion"
+observed = "2026-09-02"
+note       = "32 notes of a sampled click on the SK-1's sampler (plan dump, 2026-09-02)"

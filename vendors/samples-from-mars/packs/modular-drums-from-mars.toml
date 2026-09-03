@@ -60,3 +60,18 @@ manifest    = "manifests/modular-drums-from-mars.sha256"
 #        1  Docs/Installation Instructions For Kontakt.rtf
 #        1  Docs/Installation Instructions For MPC Live & MPC X.rtf
 #        1  Docs/Installation Instructions For MPC1000 & MPC2500.rtf
+
+[[dir]]
+path               = "WAV/01. Individual Hits/15. Resonant Hits"
+default_instrument = "percussion"
+observed = "2026-09-02"
+note               = "Skin / Wood / Metal / Tone / Air / Alien / Crushed / Fuzzy / Hard — 119 resonant modular hits named for the material, no drum word (plan dump, 2026-09-02)"
+
+# Laser is this pack's word for its zaps — 13. Laser (60 hits: Alien,
+# Beam, Distance, Hard, Space Fleet, Tight) and the 21. Short Laser /
+# 22. Lazer kits. A pack word, not a shared one: MS10 From Mars has a
+# patch called AdvancedLazer.
+[[instrument]]
+id       = "fx"
+aliases  = ["laser", "lasers", "lazer", "lazers"]
+observed = "2026-09-02"

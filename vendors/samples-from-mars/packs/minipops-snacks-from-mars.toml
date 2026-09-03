@@ -58,3 +58,9 @@ manifest    = "manifests/minipops-snacks-from-mars.sha256"
 #        1  Docs/Minipops Snacks From Mars - About.rtf
 #        1  Docs/Samples From Mars - Terms and Conditions.pdf
 #        1  Icon
+
+[[dir]]
+path               = "WAV/01. Loops"
+default_instrument = "break"
+observed = "2026-09-02"
+note               = "rhythm-box loops named for the groove (Plantain A Lo Minipops 89, Heavy Mud, Fresh Bev), 54 files with no drum word — a Minipops only plays drums, same call as Ekko's Full Loops (plan dump, 2026-09-02)"

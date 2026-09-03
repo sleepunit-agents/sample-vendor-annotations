@@ -66,14 +66,25 @@ category = "one-shots"
 desc = "pads, basses, notes, FX, vocals — the non-drum half of the disc"
 
 [[dir]]
+path = "Instruments/Sampled Notes"
+default_instrument = "synth"
+observed = "2026-09-02"
+note = "Cat Note, Choir Brass, Heep, Plip, Zap — 14 single notes of things, synth where the name says nothing (plan dump, 2026-09-02)"
+
+[[dir]]
 path = "Pecussion Hits"
 role = "canonical-audio"
 category = "one-shots"
+default_instrument = "percussion"
+observed = "2026-09-02"
+note = "the disc's spelling; Bottle Hit, Fat Drum, Gong, Triangle Open — 22 hits, the folder word misspelt so nothing read it (plan dump, 2026-09-02)"
 
 [[dir]]
 path = "Pecussion Loops"
 role = "canonical-audio"
 category = "loops"
+default_instrument = "percussion"
+observed = "2026-09-02"
 
 # The loop dirs are all drum breaks, but the grooves are named after their
 # sources — Sub-Urban, Clint Eastwood, Think, Apache — so filenames carry

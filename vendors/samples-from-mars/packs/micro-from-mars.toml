@@ -86,4 +86,20 @@ observed   = "2026-09-02"
 
 [[dir]]
 path       = "WAV/MicroMoog FX*"
+category   = "multisamples"
 instrument = "fx"
+observed   = "2026-09-02"
+note       = "FX1–FX3 are numbered by MIDI note like the patches (SFM-MicroMoogFX2-38 … 53) — the same shape without the note names, so the category is pinned (plan dump, 2026-09-02: 21 files asked loop or one-shot)"
+
+[[dir]]
+path     = "WAV/MicroMoog Noise"
+category = "multisamples"
+observed = "2026-09-02"
+note     = "six numbered notes of the noise source; 'noise' already reads fx (plan dump, 2026-09-02)"
+
+[[dir]]
+path               = "WAV/MicroMoog Panic Attack"
+default_category   = "one-shots"
+default_instrument = "synth"
+observed           = "2026-09-02"
+note               = "Moog Panic Attack-1 … 13, numbered takes, no note — hits of a patch (plan dump, 2026-09-02)"

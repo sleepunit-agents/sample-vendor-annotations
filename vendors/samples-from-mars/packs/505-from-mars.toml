@@ -60,3 +60,9 @@ manifest    = "manifests/505-from-mars.sha256"
 #        1  Docs/Installation Instructions For Kontakt.rtf
 #        1  Docs/Installation Instructions For MPC.rtf
 #        1  Docs/Installation Instructions For Reason.rtf
+
+[[dir]]
+path               = "WAV/01. Individual Hits"
+default_instrument = "drums"
+observed = "2026-09-02"
+note               = "17. Crunch and 18. Smash are the 505's voices through SFM's processing, named for the treatment — a drum machine's hit with no drum word, 13 files (plan dump, 2026-09-02)"

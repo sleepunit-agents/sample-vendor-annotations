@@ -58,3 +58,9 @@ manifest    = "manifests/viscount-from-mars.sha256"
 #        1  Docs/Samples From Mars - Terms and Conditions.pdf
 #        1  Docs/Viscount From Mars - About.rtf
 #        1  Icon
+
+[[dir]]
+path               = "WAV/03. Loops"
+default_instrument = "break"
+observed = "2026-09-02"
+note               = "the organ's rhythm box — Reggae 1 Full Viscount Repaired 120, Waltz 1 — 'full' here is the whole pattern against 'stripped', not a full arrangement (plan dump, 2026-09-02)"

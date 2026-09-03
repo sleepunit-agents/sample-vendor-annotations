@@ -135,6 +135,10 @@ family  = "fx"
 aliases = ["foley", "field recording", "field recordings", "found sound", "found sounds", "asmr",
            "glass break", "glass breaks", "glass breaking", "break glass", "breaking glass",
            "glass shatter", "glass shatters", "glass smash", "debris"]
+# The sound-design library words (explosion, gun, car, phone …) are NOT
+# here: a second foley entry at the bottom of the file carries them, so
+# that a patch called Chord Explosion stays a stab and FlyingPoliceCarPad
+# a pad (probed 2026-09-02: 73 + 36 + 24 files would have moved here).
 
 # ---- vocal: the unambiguous words, above drums ---------------------------
 # Same logic as the FX section: "Vocal Loop Jack To The Beat" is a vocal
@@ -187,7 +191,11 @@ family  = "drums"
 aliases = [
   "hat", "hats", "hi hat", "hihat", "hi hats", "hihats",
   "closed hat", "closed hats", "open hat", "open hats", "ohh", "chh",
+  "charleston", "charlestons",
 ]
+# charleston: the hi-hat by its Italian / French name — Ekko From Mars
+# "01. Individual Hits/05. Charleston" (an Italian rhythm box), 18 files
+# that said nothing (plan dump, 2026-09-02).
 # "tops" is deliberately NOT here. It names a layer (hats + percussion
 # over a beat), not a piece, and an entry this high would outrank the
 # real piece in the file name — "02. Tops/Clave Slider Ekko Color 140.wav"
@@ -199,7 +207,13 @@ codes   = ["hh"]
 [[instrument]]
 id      = "cymbal"
 family  = "drums"
-aliases = ["cymbal", "cymbals", "crash", "crashes", "ride", "rides", "splash"]
+aliases = ["cymbal", "cymbals", "crash", "crashes", "ride", "rides", "splash",
+           "china", "chinas", "china cymbal", "cup", "ride cup", "cymbal cup"]
+avoid   = ["coffee cup", "tea cup", "teacup", "paper cup", "plastic cup", "cup of"]
+# china / cup: the TR-626's two extra cymbal voices — 626 From Mars
+# "01. Individual Hits/18. China" and "20. Cup" (the ride's bell), 60
+# files that said nothing (plan dump, 2026-09-02). The avoids keep the
+# household-foley cup out.
 
 # rim before tom: "Rimshot TOM 12" is a rimshot, and "TOM" is a machine
 # name that lands in every filename of Samples From Mars' TOM pack.
@@ -338,7 +352,11 @@ aliases = ["mallet", "mallets", "marimba", "vibraphone", "vibes", "xylophone", "
 [[instrument]]
 id      = "bell"
 family  = "keys"
-aliases = ["bell", "bells", "chime", "chimes", "glockenspiel", "tubular bells"]
+aliases = ["bell", "bells", "chime", "chimes", "glockenspiel", "tubular bells",
+           "celeste", "celesta", "music box", "music boxes", "musicbox"]
+# celeste / celesta: a keyboard that strikes bells — Mirage From Mars
+# "01. Keys/Celeste" (73 notes) read the keys catch-all (plan dump,
+# 2026-09-02); a music box is the same mechanism without the keys.
 avoid   = ["bell rhodes", "rhodes bell"]   # S612 "Bell Rhodes" is a Rhodes: piano ranks below this entry now
 
 # Same folder, same rank problem: 360 "06. Perc/Timpani", SP1200
@@ -421,9 +439,19 @@ aliases = ["cym", "cyms"]
 [[instrument]]
 id      = "percussion"
 family  = "percussion"
-aliases = ["percussion", "perc", "percs", "percussive"]
-avoid   = ["percussion top loop", "percussion top loops", "percussion and top loop", "percussion and top loops",
+aliases = ["percussion", "perc", "percs", "percussive",
+           "whistle", "whistles", "samba whistle", "quijada", "jawbone", "vibraslap"]
+avoid   = ["fall whistle", "whistle fall", "whistle down", "whistle up",
+           "percussion top loop", "percussion top loops", "percussion and top loop", "percussion and top loops",
            "perc top loop", "perc top loops", "perc and top loop", "perc and top loops"]
+# "fall whistle": Synare "04. Various FX/04. Fall Whistle" is a synth
+# fall, not a whistle (17 files, probed 2026-09-02).
+# whistle / quijada: the TR-727's Latin voices — 727 From Mars "02. Tape/
+# 02. Pitched/01. Hits/Quijada", "Whistle Long", "Whistle Short", 505
+# "19. Whistle": 96 files that said nothing (plan dump, 2026-09-02). A
+# quijada is the jawbone; a vibraslap is its modern copy. "triangle" is
+# deliberately NOT here — it is a waveform first (MS10 "WAV/Triangle");
+# Ekko carries it as a pack word.
 # "percussion_&_top_loops" is one folder in six Zenhiser-era trance /
 # techno packs (Aperture, Electro Trance, Gripping / Industrial Techno,
 # Obsidian, Shadows): read as a folder naming two things it stayed silent
@@ -556,7 +584,7 @@ aliases = ["organ", "organs", "hammond", "vox organ", "harmonium", "farfisa"]
 [[instrument]]
 id      = "clav"
 family  = "keys"
-aliases = ["clav", "clavs", "clavinet", "clavinets", "clavi"]
+aliases = ["clav", "clavs", "clavinet", "clavinets", "clavi", "clavie"]
 
 # The harpsichord is a named keyboard the same way the clav is: SFM DX100
 # "Harpsichord" / "Harpsi FM", Voyetra "New Age Harpsichord" — 360 paths in
@@ -575,7 +603,7 @@ aliases = ["harpsichord", "harpsichords", "harpsi", "cembalo"]
 [[instrument]]
 id      = "keys"
 family  = "keys"
-aliases = ["key", "keys", "keyboard", "keyboards", "celeste"]
+aliases = ["key", "keys", "keyboard", "keyboards"]
 
 # ---- synth voices -------------------------------------------------------
 
@@ -615,7 +643,7 @@ category = "multisamples"
 [[instrument]]
 id      = "pad"
 family  = "synth"
-aliases = ["pad", "pads", "atmosphere", "atmospheres", "atmos", "atmo", "wash", "drone", "drones", "ambient", "ambience", "ambiences", "ambiance", "ambiances", "texture", "textures"]
+aliases = ["pad", "pads", "atmosphere", "atmospheres", "atmospheric", "atmos", "atmo", "wash", "drone", "drones", "ambient", "ambience", "ambiences", "ambiance", "ambiances", "texture", "textures"]
 # "atmos" is the sample-pack short form of atmosphere (Sample Magic
 # "cinematic atmos", Origin Sound "Atmos Pads"; observed 2026-09-01)
 
@@ -645,6 +673,7 @@ avoid   = ["arp 2600", "arp2600", "arp 2500", "arp odyssey", "arp omni", "arp so
 id      = "synth"
 family  = "synth"
 aliases = ["synth", "synths", "synthesizer", "poly", "mono synth", "tonal", "melodic"]
+
 
 # ---- acoustic / recorded ------------------------------------------------
 
@@ -768,7 +797,31 @@ aliases = ["woodwind", "woodwinds"]
 [[instrument]]
 id      = "vocal"
 family  = "vocal"
-aliases = ["vox", "voice", "voices", "spoken", "choir", "choirs", "chant", "chants"]
+aliases = ["vox", "voice", "voices", "spoken", "choir", "choirs", "chant", "chants",
+           "ooo", "ooh", "oohs", "aah", "aahs", "ahh", "ahhs"]
+# ooo / aah: the syllable a sampled voice was singing — SK1 From Mars
+# "WAV/Sampler/Ooo", 64 notes of a Casio SK-1's sampled "ooo" (plan dump,
+# 2026-09-02).
+
+# Second synth entry: the words a vendor uses for "the melodic material,
+# not the drums" when it will not say which instrument — Loopmasters
+# "Loops/EDM/Music Loops", Sample Magic "music_loops" / "one shots/music",
+# Origin Sound "Music Loops/Melody", Black Octopus "Music_-_Loops". Not
+# `full`: a full loop has the drums in it and these are the layer without
+# them; the synth catch-all is the honest nearest, and it sits below every
+# real instrument — the acoustic ones and the loose vocal words included,
+# which is why it is down here and not beside the synth catch-all: probed
+# above them, "Trap/Music Loops/… Vocal" read synth (2026-09-02). Bleeps
+# and blips are synth tones by construction (SYS100M "Bleeps" loops,
+# Synare "Blip"), below perc so "Perc Vinyl Blip" stays perc. (Plan dump,
+# 2026-09-02: 160 files in these folders said nothing.)
+[[instrument]]
+id      = "synth"
+family  = "synth"
+aliases = ["music", "music loop", "music loops", "music kit", "music kits", "musical",
+           "melody", "melodies", "melody loop", "melody loops",
+           "bleep", "bleeps", "blip", "blips"]
+avoid   = ["music box", "music boxes"]
 
 # ---- weak break words --------------------------------------------------
 # Second break entry: the words that mean a break only when they stand
@@ -810,10 +863,32 @@ category = "loops"
 [[instrument]]
 id       = "full"
 family   = "full"
-aliases  = ["song starter", "song starters", "songstarter", "songstarters"]
+aliases  = ["song starter", "song starters", "songstarter", "songstarters", "vinyl cut", "vinyl cuts"]
 category = "loops"
+# vinyl cut: a phrase lifted whole off a record is the whole arrangement
+# by construction — Sample Magic Flipped Funk 2 "loops/vinyl_cut_loops"
+# (plan dump, 2026-09-02).
 
 # ---- non-instrumental material -----------------------------------------
+# Second foley entry: what a sound-design library records. Splice's
+# Hollywood Explosions, Machine Guns, Pistols and Revolvers, Auto Vehicles,
+# Traditional Telephones, Household Source, Human Nature (dialogue) name
+# the thing and nothing else, and fifteen of Jonathan's ship no folders
+# at all, so only the file name can speak (plan dump, 2026-09-02). Ranked
+# LOW on purpose, unlike the foley entry at the top: these are nouns synth
+# patches borrow — Mirage "Chord Explosion", SYS100M "PistolsOnly", VP330
+# "FlyingPoliceCarPad", MPC3000 "Perc Gun" — so every instrument word
+# beats them and they speak only where nothing else did. Whole-word:
+# "Carbon" and "Carnival" do not read car.
+[[instrument]]
+id      = "foley"
+family  = "fx"
+aliases = ["explosion", "explosions", "gunshot", "gunshots", "gun", "guns", "pistol", "pistols",
+           "revolver", "revolvers", "rifle", "rifles", "shotgun", "shotguns", "machine gun", "machine guns",
+           "weapon", "weapons", "vehicle", "vehicles", "car", "cars", "motorcycle", "motorcycles",
+           "telephone", "telephones", "phone", "phones", "dialogue", "dialog", "footstep", "footsteps",
+           "door", "doors", "household"]
+
 # The generic fx catch-all. Specific FX types (riser, impact, sweep, …)
 # live at the TOP of this file — see the note there. This entry stays
 # last so ambiguous words ("noise", "reverse") only win when nothing

@@ -43,12 +43,17 @@ manifest    = "manifests/asmr.sha256"
 [[dir]]
 path = "ASMR 16 bit mono"
 role = "format-tree"
+category = "one-shots"
+instrument = "foley"
 desc = "same one-shots cut 16-bit for Tracker/Play"
 
 [[dir]]
 path = "ASMR 16 bit stereo"
 role = "format-tree"
+category = "one-shots"
+instrument = "foley"
 desc = "same one-shots cut 16-bit for Tracker/Play"
+note = "the pins are repeated on the cuts on purpose: a copy that holds only the 16-bit stereo tree (Jonathan's, plan dump 2026-09-02) placed all 152 files as drums from 'kit_bearings_1', the pack name having swallowed the ASMR folder word"
 
 [[dir]]
 path = "ASMR 24 bit stereo"

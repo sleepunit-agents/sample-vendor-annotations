@@ -59,3 +59,32 @@ manifest    = "manifests/sys100m-from-mars.sha256"
 #       82  Loops (120BPM)/REX2
 #       81  Loops (120BPM)/Apple Loops
 #       81  Loops (120BPM)/WAV
+
+# The loops live under their own format level at pack root, like Modular
+# Creations — WAV is the audio, Apple Loops and REX2 are the same twenty
+# loops per folder re-cut (plan dump, 2026-09-02: the Apple Loops copy of
+# "03. Bleeps" was placing beside the WAV one).
+[[dir]]
+path = "Loops (120BPM)/WAV"
+role = "canonical-audio"
+
+[[dir]]
+path = "Loops (120BPM)/Apple Loops"
+role = "format-tree"
+
+[[dir]]
+path = "Loops (120BPM)/REX2"
+role = "format-tree"
+
+[[dir]]
+path               = "WAV"
+role               = "canonical-audio"
+default_instrument = "synth"
+observed           = "2026-09-02"
+note               = "patch folders named for the patch (GoodSigns, GigerCounter, Bad Signs, MexicanHistory) — same call as MS10 and Micro: a synth, no more specific (plan dump, 2026-09-02)"
+
+[[dir]]
+path       = "WAV/PistolsOnly"
+instrument = "synth"
+observed   = "2026-09-02"
+note       = "a patch name; 'pistols' is a sound-design word in the shared lexicon and would file 73 notes as foley"

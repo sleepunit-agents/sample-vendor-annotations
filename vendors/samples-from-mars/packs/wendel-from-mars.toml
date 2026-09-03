@@ -59,3 +59,9 @@ manifest    = "manifests/wendel-from-mars.sha256"
 #        1  Docs/Installation Instructions For All.rtf
 #        1  Docs/Installation Instructions For Battery.rtf
 #        1  Docs/Installation Instructions For FL Studio.rtf
+
+[[dir]]
+path               = "WAV/01. Individual Hits"
+default_instrument = "drums"
+observed = "2026-09-02"
+note               = "the Wendel's effected voices — 12. Echo, 18. Short Duck, 19. Long Duck, 20. Xplo — carry no drum word, 288 files; every voice on the machine is a drum (plan dump, 2026-09-02)"

@@ -60,3 +60,21 @@ manifest    = "manifests/ms10-from-mars.sha256"
 #       25  WAV/SweeterPushin
 #       21  Ableton Live/MS10 From Mars
 #       18  FL Studio/MS10 From Mars
+
+[[dir]]
+path               = "WAV"
+default_instrument = "synth"
+observed = "2026-09-02"
+note               = "patch folders named for the patch (ChillingGhosts, MsDub, 1Shot) — a monosynth, synth is the honest word where the name says nothing (plan dump, 2026-09-02)"
+
+[[dir]]
+path     = "WAV/1Shot"
+category = "multisamples"
+observed = "2026-09-02"
+note     = "73 notes of a patch called 1Shot (24 1Shot MS10 C0 … 96 1Shot MS10 C6) — the name is the envelope, not the kind; 'shot' read one-shots over the chromatic shape"
+
+[[dir]]
+path     = "WAV/MsDub"
+category = "multisamples"
+observed = "2026-09-02"
+note     = "80 notes, one per MIDI number — a drum rack in the Live tree references them, and the rack's kind was outvoting the shape"
