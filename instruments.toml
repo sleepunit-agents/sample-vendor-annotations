@@ -382,6 +382,23 @@ id      = "clap"
 family  = "drums"
 aliases = ["snap", "snaps", "finger snap", "finger snaps", "fingersnap", "fingersnaps"]
 
+# Brushes are played on the snare, and every time the archive writes the
+# word beside a piece it is that piece: Polyend Snap "Layered/Snare_Brush",
+# SFM Lo-Fi Drum Machines "02. Snare/SD DR550 Brush", Private Reserve
+# "02. Snare Drum/SD Acoustic Brush Reserve". So brush is a FLAVOUR word
+# like snap, not a piece, and it belongs at the same rank: below every
+# named piece and below break, so SFM Vinyl Breaks' "082 Golden Brush
+# Vinyl Breaks" stays a break (the break is NAMED Golden Brush). Where it
+# actually speaks is the one place the word stands alone — Dr Bohm From
+# Mars "WAV/Individual Hits/Dr Bohm/Brush Dr Bohm", the Böhm's brush
+# voice, and the only silent file in that pack's 536. (Jonathan, "brush is
+# one I caught in the small pile that we should be grabbing for drums",
+# 2026-09-03.)
+[[instrument]]
+id      = "snare"
+family  = "drums"
+aliases = ["brush", "brushes", "brushed"]
+
 # A fill is a role, not a piece — so it sits BELOW every named piece
 # ("Snare Roll" is a snare, "percussion_loop_fill_repeating_conga" is a
 # conga) and ABOVE the two catch-alls, so "percussion_loop_fill_drum_kit"
