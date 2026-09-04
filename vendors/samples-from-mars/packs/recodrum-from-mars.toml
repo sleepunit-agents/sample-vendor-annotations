@@ -59,6 +59,28 @@ manifest    = "manifests/recodrum-from-mars.sha256"
 #        1  Docs/Samples From Mars - Terms and Conditions.pdf
 #        1  Icon
 
+# WAV/01. Individual Hits (624) is the canonical one-shot source.
+# Presets/MPC (203 wavs) holds the same hits organized as MPC programs.
+# 10 of those files fall to _Unsorted because their only identifier is a
+# two-letter code + "Reco" (pack name) + note — e.g. "HP Reco D2.wav".
+# "HP" is unrecognized: likely Hi-Perc or a specific Recodrum voice name.
+#
+# NOTE FOR JONATHAN: if you want MPC-organized Recodrum hits in the library,
+# identify what "HP" maps to (and any other unresolved codes) and add
+# per-pack [[instrument]] entries. Format-tree below is the clean exclusion.
+[[dir]]
+path     = "WAV/01. Individual Hits"
+role     = "canonical-audio"
+category = "one-shots"
+observed = "2026-09-04"
+note     = "624 individually named Recodrum hits — canonical one-shot source"
+
+[[dir]]
+path     = "Presets/MPC"
+role     = "format-tree"
+observed = "2026-09-04"
+note     = "203 wavs organized as MPC programs; 10 had unresolvable codes ('HP Reco D2.wav' — HP = unknown voice, Jonathan to confirm) (t-412)"
+
 # The Recodrum's stick voice — 01. Individual Hits/04. Stick, Clean and
 # Color, 64 files that said nothing. A pack word: bare "stick" is a
 # drumstick elsewhere.

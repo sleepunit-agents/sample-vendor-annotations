@@ -60,3 +60,21 @@ manifest    = "manifests/cr78-from-mars.sha256"
 #        1  Docs/Installation Instructions For Kontakt.rtf
 #        1  Docs/Installation Instructions For REX2.rtf
 #        1  Icon
+
+# The WAV/One Shots (199) and WAV/Drum Loops 120 BPM (102) resolve through
+# their own folder and file words ("drum loops" → break; individual hit files
+# carry voice names). The Apple Loops and REX2 trees are format reexports of
+# the same content — same 102 loops re-encoded. Jonathan: "apple loops
+# bullshit that isn't getting deduped … straight ignore that shit" (Modular
+# Creations precedent, 2026-09-02).
+[[dir]]
+path     = "Apple Loops 120 BPM"
+role     = "format-tree"
+observed = "2026-09-04"
+note     = "same 102 patterns as WAV/Drum Loops 120 BPM, re-encoded as Apple Loops .aif — format reexport, not primary content (t-412)"
+
+[[dir]]
+path     = "REX2 120 BPM"
+role     = "format-tree"
+observed = "2026-09-04"
+note     = "same 102 patterns in REX2 format — format reexport (t-412)"

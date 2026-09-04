@@ -60,6 +60,17 @@ manifest    = "manifests/sk1-from-mars.sha256"
 #        1  Apple Loops 120 BPM/Pops SK1.aif
 #        1  Apple Loops 120 BPM/PopsFill SK1.aif
 
+# 10 Apple Loops drum patterns (BossaNova, Disco, March, Pops, Samba + Fill
+# variants) — same content as WAV/Drum Loops 120 BPM (22 loops) re-encoded as
+# Apple Loops .aif. Fall to _Unsorted because "Apple Loops 120 BPM" has no
+# drum piece word. Format-tree exclusion matches Modular Creations / SYS100M
+# precedent (Jonathan, 2026-09-02). (t-412)
+[[dir]]
+path     = "Apple Loops 120 BPM"
+role     = "format-tree"
+observed = "2026-09-04"
+note     = "10 rhythm presets re-encoded as Apple Loops .aif — format reexport of WAV/Drum Loops 120 BPM (t-412)"
+
 [[dir]]
 path       = "WAV/Sampler/Clicks"
 instrument = "percussion"

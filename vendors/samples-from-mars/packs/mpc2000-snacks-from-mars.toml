@@ -68,3 +68,19 @@ manifest    = "manifests/mpc2000-snacks-from-mars.sha256"
 path     = "WAV"
 role     = "canonical-audio"
 category = "one-shots"
+
+# MPC and Maschine dirs hold the same 96 hits organized as device programs.
+# 5 of 391 MPC wavs fall to _Unsorted — same shape (c) as Lindrum/Recodrum:
+# two-letter codes + pack name only. Format-tree excludes them; WAV is
+# canonical. Battery, FL Studio, Kontakt, Logic EXS, Reason, SFZ are
+# non-audio preset files — already skipped, but format-tree for clarity. (t-412)
+[[dir]]
+path     = "MPC"
+role     = "format-tree"
+observed = "2026-09-04"
+note     = "same 96 hits as WAV organized as MPC programs (MPC 2000/1000 & 2500/5000/Live & X); 5 wavs had unresolved two-letter codes (t-412)"
+
+[[dir]]
+path     = "Maschine"
+role     = "format-tree"
+observed = "2026-09-04"

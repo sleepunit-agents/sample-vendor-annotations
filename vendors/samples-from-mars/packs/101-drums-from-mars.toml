@@ -70,3 +70,22 @@ path       = "WAV"
 role       = "canonical-audio"
 category   = "one-shots"
 instrument = "drums"
+
+# The Ableton Live 9.7, Kontakt 5.6, and Logic EXS dirs are the same 62 hits
+# packaged per host (see note above). Mark format-tree so the system skips
+# them; WAV is the canonical source. (t-412)
+[[dir]]
+path     = "Kontakt 5.6"
+role     = "format-tree"
+observed = "2026-09-04"
+note     = "61 wavs — same SH-101 drum hits repackaged as Kontakt instrument; 'VariousOneShots' grab-bag has no instrument words (t-412)"
+
+[[dir]]
+path     = "Ableton Live 9.7"
+role     = "format-tree"
+observed = "2026-09-04"
+
+[[dir]]
+path     = "Logic EXS"
+role     = "format-tree"
+observed = "2026-09-04"

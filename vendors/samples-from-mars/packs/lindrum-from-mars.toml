@@ -60,3 +60,35 @@ manifest    = "manifests/lindrum-from-mars.sha256"
 #        1  Docs/Art - Lindrum From Mars.jpg
 #        1  Docs/Installation Instructions - All.rtf
 #        1  Docs/Installation Instructions - Grooves.rtf
+
+# WAV/01. Individual Hits (1456) is the canonical one-shot source; the device
+# format trees hold the same hits reorganized for each host.
+#
+# Shape (c) — MPC device-tree program bags: files named with two-letter drum
+# codes + pack name only, e.g. "Co Lindrum A#3.wav" (Co = cowbell on the
+# LinnDrum) and 34 others. Rather than extending the code lexicon pack-wide
+# (which risks polluting neighbouring hits), mark the MPC program dirs as
+# format-tree: they are not primary content, the WAV tree is.
+#
+# NOTE FOR JONATHAN: if you want MPC-organized Lindrum hits in the library,
+# don't use format-tree — instead add per-pack [[instrument]] codes (e.g.
+# codes = ["co"] on cowbell). The other failing codes are unknown without the
+# full MPC file listing (need: ls "MPC1000 & MPC2500/LindrumFromMars/").
+[[dir]]
+path     = "WAV/01. Individual Hits"
+role     = "canonical-audio"
+category = "one-shots"
+observed = "2026-09-04"
+note     = "1456 individually named LinnDrum hits — the canonical one-shot source"
+
+[[dir]]
+path     = "MPC1000 & MPC2500"
+role     = "format-tree"
+observed = "2026-09-04"
+note     = "163 wavs — same hits as WAV/01. Individual Hits organized as MPC programs; 35 had unresolvable two-letter codes ('Co Lindrum' = cowbell, others unknown) (t-412)"
+
+[[dir]]
+path     = "MPC Live & X"
+role     = "format-tree"
+observed = "2026-09-04"
+note     = "163 wavs — same hits, MPC Live / X variant (t-412)"

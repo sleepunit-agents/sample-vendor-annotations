@@ -73,3 +73,11 @@ path       = "**/Custom Patterns"
 instrument = "break"
 observed   = "2026-09-02"
 note       = "40 patterns ×3 formats (Jonathan: 'Loops/Custom Patterns under Dr Bohm are definitely our breaks category')"
+
+# The 6 Kontakt instrument files are the same hits as WAV/Individual Hits
+# packaged for Kontakt. Format-tree so they don't reach the harvest. (t-412)
+[[dir]]
+path     = "Kontakt"
+role     = "format-tree"
+observed = "2026-09-04"
+note     = "6 Kontakt instrument files — same hits as WAV/Individual Hits; the 6 _Unsorted files are these (t-412)"

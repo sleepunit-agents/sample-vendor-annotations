@@ -57,3 +57,28 @@ manifest    = "manifests/s950-snacks-from-mars.sha256"
 #        1  Docs/S950 Snacks From Mars - About.rtf
 #        1  Docs/Samples From Mars - Terms and Conditions.pdf
 #        1  Icon
+
+# WAV/Drums (224) and WAV/Keys (245) are the canonical audio trees. The
+# Presets tree holds MPC/Maschine/Kontakt/etc. re-encodings of the same
+# hits. 2 files fall to _Unsorted from Presets/MPC — same shape (c) as
+# Lindrum/Recodrum: two-letter codes + pack name only. Format-tree exclusion
+# on the whole Presets tree handles all device dirs cleanly. (t-412)
+[[dir]]
+path     = "WAV/Drums"
+role     = "canonical-audio"
+category = "one-shots"
+observed = "2026-09-04"
+note     = "224 S950-sampled drum hits — canonical one-shot source"
+
+[[dir]]
+path     = "WAV/Keys"
+role     = "canonical-audio"
+category = "multisamples"
+observed = "2026-09-04"
+note     = "245 S950 keyboard samples (chromatic sets by note)"
+
+[[dir]]
+path     = "Presets"
+role     = "format-tree"
+observed = "2026-09-04"
+note     = "MPC/Maschine/Kontakt/Logic EXS/Reason NN-XT/SFZ/FL Studio/Battery/Ableton presets — same hits organized per host; 2 MPC wavs had unresolved codes (t-412)"
